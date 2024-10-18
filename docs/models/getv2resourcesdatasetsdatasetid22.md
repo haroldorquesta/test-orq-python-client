@@ -1,0 +1,11 @@
+# GetV2ResourcesDatasetsDatasetID22
+
+The image part of the prompt message. Only supported with vision models.
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `type`                                                                                                             | [models.GetV2ResourcesDatasetsDatasetID2ResourcesType](../models/getv2resourcesdatasetsdatasetid2resourcestype.md) | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |
+| `image_url`                                                                                                        | [models.GetV2ResourcesDatasetsDatasetID2ImageURL](../models/getv2resourcesdatasetsdatasetid2imageurl.md)           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

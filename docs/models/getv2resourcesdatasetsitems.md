@@ -1,0 +1,14 @@
+# GetV2ResourcesDatasetsItems
+
+Returned dataset row model from the API.
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `id`                                                                                       | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `messages`                                                                                 | List[[models.GetV2ResourcesDatasetsMessages](../models/getv2resourcesdatasetsmessages.md)] | :heavy_check_mark:                                                                         | Input message(s) of the dataset row                                                        |
+| `expected_output`                                                                          | *OptionalNullable[str]*                                                                    | :heavy_minus_sign:                                                                         | Reference of the dataset row                                                               |
+| `created`                                                                                  | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | The date and time the resource was created                                                 |
+| `updated`                                                                                  | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | The date and time the resource was last updated                                            |

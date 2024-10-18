@@ -1,0 +1,11 @@
+# PostV2ResourcesDatasetsDatasetIDRowsBulk22
+
+The image part of the prompt message. Only supported with vision models.
+
+
+## Fields
+
+| Field                                                                                                                                | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `type`                                                                                                                               | [models.PostV2ResourcesDatasetsDatasetIDRowsBulk2ResourcesType](../models/postv2resourcesdatasetsdatasetidrowsbulk2resourcestype.md) | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |
+| `image_url`                                                                                                                          | [models.PostV2ResourcesDatasetsDatasetIDRowsBulk2ImageURL](../models/postv2resourcesdatasetsdatasetidrowsbulk2imageurl.md)           | :heavy_check_mark:                                                                                                                   | N/A                                                                                                                                  |

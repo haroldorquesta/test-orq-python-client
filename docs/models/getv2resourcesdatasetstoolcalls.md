@@ -1,0 +1,11 @@
+# GetV2ResourcesDatasetsToolCalls
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `type`                                                                               | [models.GetV2ResourcesDatasetsType](../models/getv2resourcesdatasetstype.md)         | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `function`                                                                           | [models.GetV2ResourcesDatasetsFunction](../models/getv2resourcesdatasetsfunction.md) | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `id`                                                                                 | *Optional[str]*                                                                      | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `index`                                                                              | *Optional[float]*                                                                    | :heavy_minus_sign:                                                                   | N/A                                                                                  |

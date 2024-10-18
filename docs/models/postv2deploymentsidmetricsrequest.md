@@ -1,0 +1,9 @@
+# PostV2DeploymentsIDMetricsRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `id`                                                                                               | *str*                                                                                              | :heavy_check_mark:                                                                                 | Deployment ID                                                                                      |
+| `request_body`                                                                                     | [models.PostV2DeploymentsIDMetricsRequestBody](../models/postv2deploymentsidmetricsrequestbody.md) | :heavy_check_mark:                                                                                 | The deployment request payload                                                                     |

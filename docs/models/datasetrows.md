@@ -1,0 +1,11 @@
+# DatasetRows
+
+Expected dataset row model when talking to the API.
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `messages`                                                                                                                     | List[[models.PostV2ResourcesDatasetsDatasetIDRowsBulkMessages](../models/postv2resourcesdatasetsdatasetidrowsbulkmessages.md)] | :heavy_check_mark:                                                                                                             | Input message(s) of the dataset row                                                                                            |
+| `expected_output`                                                                                                              | *OptionalNullable[str]*                                                                                                        | :heavy_minus_sign:                                                                                                             | Reference of the dataset row                                                                                                   |

@@ -1,0 +1,11 @@
+# PostV2DeploymentsGetConfig22Input
+
+The image part of the prompt message. Only supported with vision models.
+
+
+## Fields
+
+| Field                                                                                                                                  | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                                 | [models.PostV2DeploymentsGetConfig2DeploymentsPublicRequestType](../models/postv2deploymentsgetconfig2deploymentspublicrequesttype.md) | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |
+| `image_url`                                                                                                                            | [models.PostV2DeploymentsGetConfig2ImageURL](../models/postv2deploymentsgetconfig2imageurl.md)                                         | :heavy_check_mark:                                                                                                                     | N/A                                                                                                                                    |

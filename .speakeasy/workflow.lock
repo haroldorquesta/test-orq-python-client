@@ -1,0 +1,26 @@
+speakeasyVersion: 1.419.0
+sources:
+    orq-OAS:
+        sourceNamespace: orq-oas
+        sourceRevisionDigest: sha256:08e9dcd1162b5c7d0da27e2286515e3f9592ff87a9742a6740c84eedb0d0e0b8
+        sourceBlobDigest: sha256:1192ce49ced2e950cf7fecb556329717481e67fc7fdd0c07a336fc580f373d6e
+        tags:
+            - latest
+targets:
+    orq:
+        source: orq-OAS
+        sourceNamespace: orq-oas
+        sourceRevisionDigest: sha256:08e9dcd1162b5c7d0da27e2286515e3f9592ff87a9742a6740c84eedb0d0e0b8
+        sourceBlobDigest: sha256:1192ce49ced2e950cf7fecb556329717481e67fc7fdd0c07a336fc580f373d6e
+workflow:
+    workflowVersion: 1.0.0
+    sources:
+        orq-OAS:
+            inputs:
+                - location: ../.openapi/v2/public/openapi.json
+            registry:
+                location: registry.speakeasyapi.dev/orq/orq/orq-oas
+    targets:
+        orq:
+            target: python
+            source: orq-OAS

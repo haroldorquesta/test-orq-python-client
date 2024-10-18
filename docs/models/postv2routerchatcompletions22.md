@@ -1,0 +1,9 @@
+# PostV2RouterChatCompletions22
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `type`                                                                                               | [models.PostV2RouterChatCompletions2RouterType](../models/postv2routerchatcompletions2routertype.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `image_url`                                                                                          | [models.PostV2RouterChatCompletions2ImageURL](../models/postv2routerchatcompletions2imageurl.md)     | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

@@ -1,0 +1,11 @@
+workflowVersion: 1.0.0
+sources:
+    orq-OAS:
+        inputs:
+            - location: ../.openapi/v2/public/openapi.json
+        registry:
+            location: registry.speakeasyapi.dev/orq/orq/orq-oas
+targets:
+    orq:
+        target: python
+        source: orq-OAS
