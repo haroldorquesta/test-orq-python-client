@@ -9,3 +9,6 @@ targets:
     orq:
         target: python
         source: orq-OAS
+        publish:
+            pypi:
+                token: $pypi_token
