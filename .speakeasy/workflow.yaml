@@ -2,7 +2,7 @@ workflowVersion: 1.0.0
 sources:
     orq-OAS:
         inputs:
-            - location: ../.openapi/v2/public/openapi.json
+            - location: https://raw.githubusercontent.com/haroldorquesta/test-orq-typescript-client/refs/heads/main/openapi.json
         registry:
             location: registry.speakeasyapi.dev/orq/orq/orq-oas
 targets:
