@@ -18,7 +18,7 @@ Creates an embedding vector representing the input text.
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -60,8 +60,8 @@ For sending requests to chat completion models
 ### Example Usage
 
 ```python
-import orq_python_client
-from orq_python_client import Orq
+import orq_poc_python_client
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -72,7 +72,7 @@ res = s.router.post_v2_router_chat_completions(request={
     "model": "Land Cruiser",
     "messages": [
         {
-            "role": orq_python_client.PostV2RouterChatCompletionsMessagesRouterPublicRole.TOOL,
+            "role": orq_poc_python_client.PostV2RouterChatCompletionsMessagesRouterPublicRole.TOOL,
             "tool_call_id": "<id>",
             "content": "<value>",
         },
@@ -110,7 +110,7 @@ For sending requests to legacy completion models
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -149,7 +149,7 @@ For sending requests to rerank models
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -186,7 +186,7 @@ if res is not None:
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(

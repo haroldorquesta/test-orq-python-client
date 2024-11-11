@@ -1,26 +1,39 @@
-speakeasyVersion: 1.419.0
+speakeasyVersion: 1.436.0
 sources:
     orq-OAS:
         sourceNamespace: orq-oas
-        sourceRevisionDigest: sha256:08e9dcd1162b5c7d0da27e2286515e3f9592ff87a9742a6740c84eedb0d0e0b8
-        sourceBlobDigest: sha256:1192ce49ced2e950cf7fecb556329717481e67fc7fdd0c07a336fc580f373d6e
+        sourceRevisionDigest: sha256:c92c663e1c71cb7f23a63e45b7a3e277a4ee4b0f88e0cd0330ae35f71d6abc69
+        sourceBlobDigest: sha256:a945bd4af42919d1d979ff4382ea957e7acafba9abd9962f155399eea415180c
         tags:
             - latest
+            - main
 targets:
     orq:
         source: orq-OAS
         sourceNamespace: orq-oas
-        sourceRevisionDigest: sha256:08e9dcd1162b5c7d0da27e2286515e3f9592ff87a9742a6740c84eedb0d0e0b8
-        sourceBlobDigest: sha256:1192ce49ced2e950cf7fecb556329717481e67fc7fdd0c07a336fc580f373d6e
+        sourceRevisionDigest: sha256:c92c663e1c71cb7f23a63e45b7a3e277a4ee4b0f88e0cd0330ae35f71d6abc69
+        sourceBlobDigest: sha256:a945bd4af42919d1d979ff4382ea957e7acafba9abd9962f155399eea415180c
+        codeSamplesNamespace: orq-oas-code-samples
+        codeSamplesRevisionDigest: sha256:bb9a06e33be5405661f280e66988fad9663461385bc02ceb4a30115c13fefc02
 workflow:
     workflowVersion: 1.0.0
+    speakeasyVersion: latest
     sources:
         orq-OAS:
             inputs:
-                - location: ../.openapi/v2/public/openapi.json
+                - location: https://raw.githubusercontent.com/haroldorquesta/test-orq-python-client/refs/heads/main/openapi.json
+            overlays:
+                - location: https://raw.githubusercontent.com/haroldorquesta/test-orq-python-client/refs/heads/main/openapi-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/orq/orq/orq-oas
     targets:
         orq:
             target: python
             source: orq-OAS
+            publish:
+                pypi:
+                    token: $pypi_token
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/orq/orq/orq-oas-code-samples
+                blocking: false

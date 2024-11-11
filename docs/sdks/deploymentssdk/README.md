@@ -8,6 +8,7 @@
 * [post_v2_deployments_get_config](#post_v2_deployments_get_config) - Get config
 * [post_v2_deployments_invoke](#post_v2_deployments_invoke) - Invoke
 * [post_v2_deployments_id_metrics](#post_v2_deployments_id_metrics) - Add metrics
+* [get_v2_deployments](#get_v2_deployments) - List all deployments
 
 ## post_v2_deployments_get_config
 
@@ -16,7 +17,7 @@ Retrieve the deployment configuration
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -57,7 +58,7 @@ Invoke a deployment with a given payload
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -99,7 +100,7 @@ Add metrics to a deployment
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -131,3 +132,44 @@ if res is not None:
 | Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
+
+## get_v2_deployments
+
+Returns a list of your deployments. The deployments are returned sorted by creation date, with the most recent deployments appearing first.
+
+### Example Usage
+
+```python
+from orq_poc_python_client import Orq
+import os
+
+s = Orq(
+    bearer=os.getenv("ORQ_BEARER", ""),
+)
+
+res = s.deployments.get_v2_deployments()
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                                                                                                                                         | Required                                                                                                                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `limit`                                                                                                                                                                                                                                                                                                                                      | *Optional[float]*                                                                                                                                                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                           | A limit on the number of objects to be returned. Limit can range between 1 and 50, and the default is 10                                                                                                                                                                                                                                     |
+| `after`                                                                                                                                                                                                                                                                                                                                      | *Optional[str]*                                                                                                                                                                                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                           | A cursor for use in pagination. `after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 20 objects, ending with `ed33dade-ae32-4959-8c5c-7ae4aad748b5`, your subsequent call can include `after=ed33dade-ae32-4959-8c5c-7ae4aad748b5` in order to fetch the next page of the list. |
+| `retries`                                                                                                                                                                                                                                                                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                           | Configuration to override the default retry behavior of the client.                                                                                                                                                                                                                                                                          |
+
+### Response
+
+**[models.GetV2DeploymentsResponseBody](../../models/getv2deploymentsresponsebody.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| models.HonoAPIError | 500                 | application/json    |
+| models.SDKError     | 4XX, 5XX            | \*/\*               |

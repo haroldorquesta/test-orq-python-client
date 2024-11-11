@@ -15,7 +15,7 @@ Files are used to upload documents that can be used with features like [Deployme
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -54,8 +54,8 @@ Files are used to upload documents that can be used with features like [Deployme
 ### Example Usage
 
 ```python
-import orq_python_client
-from orq_python_client import Orq
+import orq_poc_python_client
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -64,9 +64,12 @@ s = Orq(
 
 res = s.files.post_v2_files_bulk(request={
     "files": [
-        "<value>",
+        {
+            "file_name": "example.file",
+            "content": open("example.file", "rb"),
+        },
     ],
-    "purpose": orq_python_client.PostV2FilesBulkPurpose.RETRIEVAL,
+    "purpose": orq_poc_python_client.PostV2FilesBulkPurpose.RETRIEVAL,
 })
 
 if res is not None:
