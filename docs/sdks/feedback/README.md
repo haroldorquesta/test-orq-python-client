@@ -5,23 +5,23 @@
 
 ### Available Operations
 
-* [post_feedback](#post_feedback) - Submit feedback
+* [post_v2_feedback](#post_v2_feedback) - Submit feedback
 
-## post_feedback
+## post_v2_feedback
 
 Submit feedback for the LLM transaction via the API
 
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.feedback.post_feedback(request={
+res = s.feedback.post_v2_feedback(request={
     "property": "rating",
     "value": [
         "good",
@@ -37,14 +37,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [models.PostFeedbackRequestBody](../../models/postfeedbackrequestbody.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-| `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [models.PostV2FeedbackRequestBody](../../models/postv2feedbackrequestbody.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
 
 ### Response
 
-**[models.PostFeedbackResponseBody](../../models/postfeedbackresponsebody.md)**
+**[models.PostV2FeedbackResponseBody](../../models/postv2feedbackresponsebody.md)**
 
 ### Errors
 
