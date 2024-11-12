@@ -12,7 +12,6 @@ from orq_poc_python_client.contacts import Contacts
 from orq_poc_python_client.deployments_sdk import DeploymentsSDK
 from orq_poc_python_client.feedback import Feedback
 from orq_poc_python_client.files import Files
-from orq_poc_python_client.public import Public
 from orq_poc_python_client.remoteconfig import Remoteconfig
 from orq_poc_python_client.router import Router
 from orq_poc_python_client.types import OptionalNullable, UNSET
@@ -27,7 +26,6 @@ class Orq(BaseSDK):
     contacts: Contacts
     feedback: Feedback
     deployments: DeploymentsSDK
-    public: Public
     files: Files
     router: Router
     remoteconfig: Remoteconfig
@@ -114,7 +112,6 @@ class Orq(BaseSDK):
         self.contacts = Contacts(self.sdk_configuration)
         self.feedback = Feedback(self.sdk_configuration)
         self.deployments = DeploymentsSDK(self.sdk_configuration)
-        self.public = Public(self.sdk_configuration)
         self.files = Files(self.sdk_configuration)
         self.router = Router(self.sdk_configuration)
         self.remoteconfig = Remoteconfig(self.sdk_configuration)

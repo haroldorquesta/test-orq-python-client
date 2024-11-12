@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 30923d32-a782-4297-8a44-2a8c9d8fa755
 management:
-  docChecksum: 4f138ce64868b7be0d99bc1e6978561f
+  docChecksum: 2995142f86b52fe4292c11a93d817023
   docVersion: "2.0"
-  speakeasyVersion: 1.436.0
-  generationVersion: 2.455.2
-  releaseVersion: 0.1.0
-  configChecksum: 21518a88ec0ceb82e6d040897e89bade
+  speakeasyVersion: 1.438.1
+  generationVersion: 2.457.2
+  releaseVersion: 0.2.0
+  configChecksum: 4311dcc092f7e31ed9288782978cc660
   repoURL: https://github.com/haroldorquesta/test-orq-python-client.git
   installationURL: https://github.com/haroldorquesta/test-orq-python-client.git
   published: true
@@ -25,9 +25,11 @@ features:
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
+    groups: 3.0.0
     inputOutputModels: 3.0.0
     methodArguments: 1.0.2
     multipartFileContentType: 1.0.0
+    nameOverrides: 3.0.0
     nullables: 1.0.0
     responseFormat: 1.0.1
     retries: 3.0.2
@@ -82,7 +84,7 @@ generatedFiles:
   - docs/models/getv2deploymentscontent2.md
   - docs/models/getv2deploymentsdata.md
   - docs/models/getv2deploymentsdeploymentsfunction.md
-  - docs/models/getv2deploymentsdeploymentspublictype.md
+  - docs/models/getv2deploymentsdeploymentsresponsetype.md
   - docs/models/getv2deploymentsdeploymentstype.md
   - docs/models/getv2deploymentsencodingformat.md
   - docs/models/getv2deploymentsformat.md
@@ -137,19 +139,19 @@ generatedFiles:
   - docs/models/parameters.md
   - docs/models/performance.md
   - docs/models/photorealversion.md
-  - docs/models/postcontactsrequestbody.md
-  - docs/models/postcontactsresponsebody.md
+  - docs/models/postv2contactsrequestbody.md
+  - docs/models/postv2contactsresponsebody.md
   - docs/models/postv2deploymentsgetconfig21.md
   - docs/models/postv2deploymentsgetconfig22.md
   - docs/models/postv2deploymentsgetconfig22input.md
   - docs/models/postv2deploymentsgetconfig2deployments1.md
   - docs/models/postv2deploymentsgetconfig2deployments2.md
   - docs/models/postv2deploymentsgetconfig2deploymentsimageurl.md
-  - docs/models/postv2deploymentsgetconfig2deploymentspublic1.md
-  - docs/models/postv2deploymentsgetconfig2deploymentspublicrequesttype.md
-  - docs/models/postv2deploymentsgetconfig2deploymentspublicresponse200type.md
-  - docs/models/postv2deploymentsgetconfig2deploymentspublicresponsetype.md
-  - docs/models/postv2deploymentsgetconfig2deploymentspublictype.md
+  - docs/models/postv2deploymentsgetconfig2deploymentsrequestrequestbodytype.md
+  - docs/models/postv2deploymentsgetconfig2deploymentsrequesttype.md
+  - docs/models/postv2deploymentsgetconfig2deploymentsresponse1.md
+  - docs/models/postv2deploymentsgetconfig2deploymentsresponse200type.md
+  - docs/models/postv2deploymentsgetconfig2deploymentsresponsetype.md
   - docs/models/postv2deploymentsgetconfig2deploymentstype.md
   - docs/models/postv2deploymentsgetconfig2imageurl.md
   - docs/models/postv2deploymentsgetconfig2imageurlinput.md
@@ -162,13 +164,13 @@ generatedFiles:
   - docs/models/postv2deploymentsgetconfigdeploymentscontent.md
   - docs/models/postv2deploymentsgetconfigdeploymentsfunction.md
   - docs/models/postv2deploymentsgetconfigdeploymentsmessages.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublicfunction.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublicresponse200type.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublicresponsefunction.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublicresponsetype.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublicrole.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublictoolcalls.md
-  - docs/models/postv2deploymentsgetconfigdeploymentspublictype.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponse200applicationjsontype.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponse200function.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponse200type.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponsefunction.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponserole.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponsetoolcalls.md
+  - docs/models/postv2deploymentsgetconfigdeploymentsresponsetype.md
   - docs/models/postv2deploymentsgetconfigdeploymentsrole.md
   - docs/models/postv2deploymentsgetconfigdeploymentstoolcalls.md
   - docs/models/postv2deploymentsgetconfigdeploymentstype.md
@@ -218,10 +220,10 @@ generatedFiles:
   - docs/models/postv2deploymentsinvokemessagedeployments1.md
   - docs/models/postv2deploymentsinvokemessagedeployments2.md
   - docs/models/postv2deploymentsinvokemessagedeploymentsfunction.md
-  - docs/models/postv2deploymentsinvokemessagedeploymentspublicresponse200role.md
-  - docs/models/postv2deploymentsinvokemessagedeploymentspublicresponse200texteventstreamrole.md
-  - docs/models/postv2deploymentsinvokemessagedeploymentspublicresponserole.md
-  - docs/models/postv2deploymentsinvokemessagedeploymentspublicrole.md
+  - docs/models/postv2deploymentsinvokemessagedeploymentsresponse200role.md
+  - docs/models/postv2deploymentsinvokemessagedeploymentsresponse200texteventstreamresponsebodyrole.md
+  - docs/models/postv2deploymentsinvokemessagedeploymentsresponse200texteventstreamrole.md
+  - docs/models/postv2deploymentsinvokemessagedeploymentsresponserole.md
   - docs/models/postv2deploymentsinvokemessagedeploymentsrole.md
   - docs/models/postv2deploymentsinvokemessagedeploymentstoolcalls.md
   - docs/models/postv2deploymentsinvokemessagedeploymentstype.md
@@ -252,29 +254,29 @@ generatedFiles:
   - docs/models/postv2routerchatcompletions22.md
   - docs/models/postv2routerchatcompletions2detail.md
   - docs/models/postv2routerchatcompletions2imageurl.md
-  - docs/models/postv2routerchatcompletions2router1.md
-  - docs/models/postv2routerchatcompletions2router2.md
-  - docs/models/postv2routerchatcompletions2routerimageurl.md
-  - docs/models/postv2routerchatcompletions2routerpublic1.md
-  - docs/models/postv2routerchatcompletions2routerpublic2.md
-  - docs/models/postv2routerchatcompletions2routerpublicimageurl.md
-  - docs/models/postv2routerchatcompletions2routerpublicrequestrequestbodymessagestype.md
-  - docs/models/postv2routerchatcompletions2routerpublicrequestrequestbodytype.md
-  - docs/models/postv2routerchatcompletions2routerpublicrequesttype.md
-  - docs/models/postv2routerchatcompletions2routerpublictype.md
-  - docs/models/postv2routerchatcompletions2routertype.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletions1.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletions2.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsimageurl.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequest1.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequest2.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequestimageurl.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequestrequestbodymessages4type.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequestrequestbodymessagestype.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequestrequestbodytype.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionsrequesttype.md
+  - docs/models/postv2routerchatcompletions2routerchatcompletionstype.md
   - docs/models/postv2routerchatcompletions2type.md
   - docs/models/postv2routerchatcompletionscontent2.md
-  - docs/models/postv2routerchatcompletionscontentrouter2.md
-  - docs/models/postv2routerchatcompletionscontentrouterpublic2.md
+  - docs/models/postv2routerchatcompletionscontentrouterchatcompletions2.md
+  - docs/models/postv2routerchatcompletionscontentrouterchatcompletionsrequest2.md
   - docs/models/postv2routerchatcompletionsfunction.md
   - docs/models/postv2routerchatcompletionsmessages.md
   - docs/models/postv2routerchatcompletionsmessagescontent.md
   - docs/models/postv2routerchatcompletionsmessagesrole.md
-  - docs/models/postv2routerchatcompletionsmessagesroutercontent.md
-  - docs/models/postv2routerchatcompletionsmessagesrouterpubliccontent.md
-  - docs/models/postv2routerchatcompletionsmessagesrouterpublicrole.md
-  - docs/models/postv2routerchatcompletionsmessagesrouterrole.md
+  - docs/models/postv2routerchatcompletionsmessagesrouterchatcompletionscontent.md
+  - docs/models/postv2routerchatcompletionsmessagesrouterchatcompletionsrequestcontent.md
+  - docs/models/postv2routerchatcompletionsmessagesrouterchatcompletionsrequestrole.md
+  - docs/models/postv2routerchatcompletionsmessagesrouterchatcompletionsrole.md
   - docs/models/postv2routerchatcompletionsrequestbody.md
   - docs/models/postv2routerchatcompletionsresponse.md
   - docs/models/postv2routerchatcompletionsresponsebody.md
@@ -283,13 +285,13 @@ generatedFiles:
   - docs/models/postv2routerchatcompletionsresponsebodyfinishreason.md
   - docs/models/postv2routerchatcompletionsresponsebodyfunction.md
   - docs/models/postv2routerchatcompletionsresponsebodyrole.md
-  - docs/models/postv2routerchatcompletionsresponsebodyroutertoplogprobs.md
+  - docs/models/postv2routerchatcompletionsresponsebodyrouterchatcompletionstoplogprobs.md
   - docs/models/postv2routerchatcompletionsresponsebodytoolcalls.md
   - docs/models/postv2routerchatcompletionsresponsebodytoplogprobs.md
   - docs/models/postv2routerchatcompletionsresponsebodytype.md
   - docs/models/postv2routerchatcompletionsresponsebodyusage.md
-  - docs/models/postv2routerchatcompletionsrouterresponsebody.md
-  - docs/models/postv2routerchatcompletionsroutertype.md
+  - docs/models/postv2routerchatcompletionsrouterchatcompletionsresponsebody.md
+  - docs/models/postv2routerchatcompletionsrouterchatcompletionstype.md
   - docs/models/postv2routerchatcompletionstype.md
   - docs/models/postv2routercompletionschoices.md
   - docs/models/postv2routercompletionsrequestbody.md
@@ -299,7 +301,7 @@ generatedFiles:
   - docs/models/postv2routerembeddingsobject.md
   - docs/models/postv2routerembeddingsrequestbody.md
   - docs/models/postv2routerembeddingsresponsebody.md
-  - docs/models/postv2routerembeddingsrouterobject.md
+  - docs/models/postv2routerembeddingsrouterembeddingsobject.md
   - docs/models/postv2routerembeddingsusage.md
   - docs/models/postv2routerimagesgenerationschoices.md
   - docs/models/postv2routerimagesgenerationsmessage.md
@@ -308,8 +310,8 @@ generatedFiles:
   - docs/models/postv2routerimagesgenerationsmessage3.md
   - docs/models/postv2routerimagesgenerationsmessagefunction.md
   - docs/models/postv2routerimagesgenerationsmessagerole.md
-  - docs/models/postv2routerimagesgenerationsmessagerouterpublicrole.md
-  - docs/models/postv2routerimagesgenerationsmessagerouterrole.md
+  - docs/models/postv2routerimagesgenerationsmessagerouterimagesresponserole.md
+  - docs/models/postv2routerimagesgenerationsmessagerouterimagesrole.md
   - docs/models/postv2routerimagesgenerationsmessagetoolcalls.md
   - docs/models/postv2routerimagesgenerationsmessagetype.md
   - docs/models/postv2routerimagesgenerationsrequestbody.md
@@ -365,12 +367,16 @@ generatedFiles:
   - docs/models/userid.md
   - docs/models/utils/retryconfig.md
   - docs/models/value.md
+  - docs/sdks/chat/README.md
+  - docs/sdks/completions/README.md
   - docs/sdks/contacts/README.md
   - docs/sdks/deploymentssdk/README.md
+  - docs/sdks/embeddings/README.md
   - docs/sdks/feedback/README.md
   - docs/sdks/files/README.md
+  - docs/sdks/images/README.md
   - docs/sdks/orq/README.md
-  - docs/sdks/public/README.md
+  - docs/sdks/orqcompletions/README.md
   - docs/sdks/remoteconfig/README.md
   - docs/sdks/router/README.md
   - poetry.toml
@@ -385,16 +391,20 @@ generatedFiles:
   - src/orq_poc_python_client/_hooks/types.py
   - src/orq_poc_python_client/_version.py
   - src/orq_poc_python_client/basesdk.py
+  - src/orq_poc_python_client/chat.py
+  - src/orq_poc_python_client/completions.py
   - src/orq_poc_python_client/contacts.py
   - src/orq_poc_python_client/deployments_sdk.py
+  - src/orq_poc_python_client/embeddings.py
   - src/orq_poc_python_client/feedback.py
   - src/orq_poc_python_client/files.py
   - src/orq_poc_python_client/httpclient.py
+  - src/orq_poc_python_client/images.py
   - src/orq_poc_python_client/models/__init__.py
   - src/orq_poc_python_client/models/deployments.py
   - src/orq_poc_python_client/models/get_v2_deploymentsop.py
   - src/orq_poc_python_client/models/honoapierror.py
-  - src/orq_poc_python_client/models/post_contactsop.py
+  - src/orq_poc_python_client/models/post_v2_contactsop.py
   - src/orq_poc_python_client/models/post_v2_deployments_get_configop.py
   - src/orq_poc_python_client/models/post_v2_deployments_id_metricsop.py
   - src/orq_poc_python_client/models/post_v2_deployments_invokeop.py
@@ -409,7 +419,7 @@ generatedFiles:
   - src/orq_poc_python_client/models/post_v2_router_rerankop.py
   - src/orq_poc_python_client/models/sdkerror.py
   - src/orq_poc_python_client/models/security.py
-  - src/orq_poc_python_client/public.py
+  - src/orq_poc_python_client/orq_completions.py
   - src/orq_poc_python_client/py.typed
   - src/orq_poc_python_client/remoteconfig.py
   - src/orq_poc_python_client/router.py
@@ -494,7 +504,7 @@ examples:
         application/json: {"model": "Land Cruiser", "messages": [{"role": "tool", "tool_call_id": "<id>", "content": "<value>"}]}
       responses:
         "200":
-          application/json: {"id": "<id>", "choices": [{"finish_reason": "tool_calls", "index": "1486.49", "logprobs": {"content": [{"token": "<value>", "logprob": "2644.65", "bytes": ["8038.28", "379.60"], "top_logprobs": [{"token": "<value>", "logprob": "3899.37", "bytes": ["7192.33", "1442.13"]}, {"token": "<value>", "logprob": "5367.29", "bytes": ["1604.15"]}]}, {"token": "<value>", "logprob": "57.93", "bytes": ["9924.98"], "top_logprobs": [{"token": "<value>", "logprob": "108.92", "bytes": ["3006.35", "8280.13", "9595.61"]}, {"token": "<value>", "logprob": "9457.57", "bytes": ["9909.46", "8477.76"]}, {"token": "<value>", "logprob": "7392.15", "bytes": ["291.86", "56.16"]}]}, {"token": "<value>", "logprob": "499.57", "bytes": ["2753.09", "9535.70", "776.70"], "top_logprobs": [{"token": "<value>", "logprob": "4472.96", "bytes": ["357.46", "646.56", "9497.39"]}]}], "refusal": []}, "delta": {"content": "<value>", "refusal": "<value>", "tool_calls": [], "role": "assistant"}}], "created": "6111.01", "model": "Ranchero", "system_fingerprint": "<value>", "object": "<value>"}
+          application/json: {"id": "<id>", "choices": [{"finish_reason": "length", "index": "1343.65", "message": {"content": "<value>", "refusal": "<value>", "tool_calls": [], "role": "correction"}, "logprobs": {"content": [{"token": "<value>", "logprob": "0.87", "bytes": [], "top_logprobs": []}, {"token": "<value>", "logprob": "7926.20", "bytes": ["5862.20", "7524.37", "9574.08"], "top_logprobs": [{"token": "<value>", "logprob": "2596.30", "bytes": []}]}, {"token": "<value>", "logprob": "2303.13", "bytes": [], "top_logprobs": []}], "refusal": [{"token": "<value>", "logprob": "1856.93", "bytes": [], "top_logprobs": []}]}}, {"finish_reason": "content_filter", "index": "3392.36", "message": {"content": "<value>", "refusal": "<value>", "tool_calls": [], "role": "tool"}, "logprobs": {"content": [{"token": "<value>", "logprob": "2006.64", "bytes": [], "top_logprobs": [{"token": "<value>", "logprob": "276.20", "bytes": ["5504.83", "9065.37"]}, {"token": "<value>", "logprob": "4522.24", "bytes": ["2597.72"]}]}, {"token": "<value>", "logprob": "7823.67", "bytes": [], "top_logprobs": [{"token": "<value>", "logprob": "9209.94", "bytes": ["7602.58", "2199.75", "4492.21"]}, {"token": "<value>", "logprob": "4278.87", "bytes": ["934.71", "4914.27"]}]}], "refusal": [{"token": "<value>", "logprob": "3254.63", "bytes": ["454.16", "1296.63", "2881.04"], "top_logprobs": [{"token": "<value>", "logprob": "5193.59", "bytes": ["4078.33"]}, {"token": "<value>", "logprob": "1012.51", "bytes": []}]}]}}], "created": "8133.97", "model": "Spyder", "system_fingerprint": "<value>", "object": "<value>"}
   post_/v2/router/completions:
     speakeasy-default-post-/v2-/router/completions:
       responses:
@@ -620,3 +630,10 @@ examples:
       responses:
         "200":
           application/json: {"type": "integer"}
+  post_/v2/contacts:
+    speakeasy-default-post-/v2-/contacts:
+      requestBody:
+        application/json: {"external_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "external_id": "<id>"}

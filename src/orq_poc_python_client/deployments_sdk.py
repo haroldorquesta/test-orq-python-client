@@ -9,13 +9,13 @@ from orq_poc_python_client.utils import eventstreaming, get_security_from_env
 from typing import Any, Optional, Union, cast
 
 
-class PostV2DeploymentsInvokeAcceptEnum(str, Enum):
+class InvokeAcceptEnum(str, Enum):
     APPLICATION_JSON = "application/json"
     TEXT_EVENT_STREAM = "text/event-stream"
 
 
 class DeploymentsSDK(BaseSDK):
-    def post_v2_deployments_get_config(
+    def get_config(
         self,
         *,
         request: Union[
@@ -113,7 +113,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    async def post_v2_deployments_get_config_async(
+    async def get_config_async(
         self,
         *,
         request: Union[
@@ -211,14 +211,14 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    def post_v2_deployments_invoke(
+    def invoke(
         self,
         *,
         request: Union[models.Deployments, models.DeploymentsTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-        accept_header_override: Optional[PostV2DeploymentsInvokeAcceptEnum] = None,
+        accept_header_override: Optional[InvokeAcceptEnum] = None,
     ) -> Optional[models.PostV2DeploymentsInvokeResponse]:
         r"""Invoke
 
@@ -314,14 +314,14 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    async def post_v2_deployments_invoke_async(
+    async def invoke_async(
         self,
         *,
         request: Union[models.Deployments, models.DeploymentsTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-        accept_header_override: Optional[PostV2DeploymentsInvokeAcceptEnum] = None,
+        accept_header_override: Optional[InvokeAcceptEnum] = None,
     ) -> Optional[models.PostV2DeploymentsInvokeResponse]:
         r"""Invoke
 
@@ -417,7 +417,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    def post_v2_deployments_id_metrics(
+    def add_metrics(
         self,
         *,
         id: str,
@@ -516,7 +516,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    async def post_v2_deployments_id_metrics_async(
+    async def add_metrics_async(
         self,
         *,
         id: str,
@@ -615,7 +615,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    def get_v2_deployments(
+    def list(
         self,
         *,
         limit: Optional[float] = 10,
@@ -706,7 +706,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    async def get_v2_deployments_async(
+    async def list_async(
         self,
         *,
         limit: Optional[float] = 10,

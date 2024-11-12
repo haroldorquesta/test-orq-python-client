@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [post_v2_files](#post_v2_files) - Upload file
-* [post_v2_files_bulk](#post_v2_files_bulk) - Bulk upload file
+* [upload](#upload) - Upload file
+* [bulk_upload](#bulk_upload) - Bulk upload file
 
-## post_v2_files
+## upload
 
 Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
 
@@ -22,7 +22,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.files.post_v2_files()
+res = s.files.upload()
 
 if res is not None:
     # handle response
@@ -47,7 +47,7 @@ if res is not None:
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
 
-## post_v2_files_bulk
+## bulk_upload
 
 Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
 
@@ -62,7 +62,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.files.post_v2_files_bulk(request={
+res = s.files.bulk_upload(request={
     "files": [
         {
             "file_name": "example.file",

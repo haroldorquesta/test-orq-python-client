@@ -8,7 +8,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 
@@ -30,7 +30,7 @@ async def main():
     s = Orq(
         bearer=os.getenv("ORQ_BEARER", ""),
     )
-    res = await s.contacts.post_contacts_async(request={
+    res = await s.contacts.create_async(request={
         "external_id": "<id>",
     })
     if res is not None:

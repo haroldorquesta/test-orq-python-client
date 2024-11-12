@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_v2_remoteconfigs](#post_v2_remoteconfigs)
+* [get_config](#get_config)
 
-## post_v2_remoteconfigs
+## get_config
 
 ### Example Usage
 
@@ -19,7 +19,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.remoteconfig.post_v2_remoteconfigs()
+res = s.remoteconfig.get_config()
 
 if res is not None:
     # handle response

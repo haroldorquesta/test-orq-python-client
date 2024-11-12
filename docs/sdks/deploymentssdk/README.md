@@ -5,12 +5,12 @@
 
 ### Available Operations
 
-* [post_v2_deployments_get_config](#post_v2_deployments_get_config) - Get config
-* [post_v2_deployments_invoke](#post_v2_deployments_invoke) - Invoke
-* [post_v2_deployments_id_metrics](#post_v2_deployments_id_metrics) - Add metrics
-* [get_v2_deployments](#get_v2_deployments) - List all deployments
+* [get_config](#get_config) - Get config
+* [invoke](#invoke) - Invoke
+* [add_metrics](#add_metrics) - Add metrics
+* [list](#list) - List all deployments
 
-## post_v2_deployments_get_config
+## get_config
 
 Retrieve the deployment configuration
 
@@ -24,7 +24,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.deployments.post_v2_deployments_get_config(request={
+res = s.deployments.get_config(request={
     "key": "<key>",
 })
 
@@ -51,7 +51,7 @@ if res is not None:
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
 
-## post_v2_deployments_invoke
+## invoke
 
 Invoke a deployment with a given payload
 
@@ -65,7 +65,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.deployments.post_v2_deployments_invoke(request={
+res = s.deployments.invoke(request={
     "key": "<key>",
 })
 
@@ -93,7 +93,7 @@ if res is not None:
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
 
-## post_v2_deployments_id_metrics
+## add_metrics
 
 Add metrics to a deployment
 
@@ -107,7 +107,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.deployments.post_v2_deployments_id_metrics(id="<id>", request_body={})
+res = s.deployments.add_metrics(id="<id>", request_body={})
 
 if res is not None:
     # handle response
@@ -133,7 +133,7 @@ if res is not None:
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
 
-## get_v2_deployments
+## list
 
 Returns a list of your deployments. The deployments are returned sorted by creation date, with the most recent deployments appearing first.
 
@@ -147,7 +147,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.deployments.get_v2_deployments()
+res = s.deployments.list()
 
 if res is not None:
     # handle response
