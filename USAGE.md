@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 # Synchronous Example
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -23,7 +23,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 async def main():

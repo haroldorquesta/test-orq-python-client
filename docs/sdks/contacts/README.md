@@ -14,7 +14,7 @@ Update or add user information to workspace
 ### Example Usage
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(

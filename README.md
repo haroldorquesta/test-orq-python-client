@@ -30,6 +30,7 @@ For more information about the API: [orq.ai Documentation](https://docs.orq.ai)
 * [SDK Example Usage](#sdk-example-usage)
 * [Available Resources and Operations](#available-resources-and-operations)
 * [Server-sent event streaming](#server-sent-event-streaming)
+* [File uploads](#file-uploads)
 * [Retries](#retries)
 * [Error Handling](#error-handling)
 * [Server Selection](#server-selection)
@@ -48,7 +49,7 @@ The SDK can be installed with either *pip* or *poetry* package managers.
 *PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
-pip install git+<UNSET>.git
+pip install orq-poc-python-client
 ```
 
 ### Poetry
@@ -56,7 +57,7 @@ pip install git+<UNSET>.git
 *Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
 ```bash
-poetry add git+<UNSET>.git
+poetry add orq-poc-python-client
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -77,7 +78,7 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 ```python
 # Synchronous Example
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -99,7 +100,7 @@ The same SDK client can also be used to make asychronous requests by importing a
 ```python
 # Asynchronous Example
 import asyncio
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 async def main():
@@ -132,10 +133,11 @@ asyncio.run(main())
 * [post_v2_deployments_get_config](docs/sdks/deploymentssdk/README.md#post_v2_deployments_get_config) - Get config
 * [post_v2_deployments_invoke](docs/sdks/deploymentssdk/README.md#post_v2_deployments_invoke) - Invoke
 * [post_v2_deployments_id_metrics](docs/sdks/deploymentssdk/README.md#post_v2_deployments_id_metrics) - Add metrics
+* [get_v2_deployments](docs/sdks/deploymentssdk/README.md#get_v2_deployments) - List all deployments
 
 ### [feedback](docs/sdks/feedback/README.md)
 
-* [post_feedback](docs/sdks/feedback/README.md#post_feedback) - Submit feedback
+* [post_v2_feedback](docs/sdks/feedback/README.md#post_v2_feedback) - Submit feedback
 
 ### [files](docs/sdks/files/README.md)
 
@@ -148,6 +150,7 @@ asyncio.run(main())
 * [post_v2_deployments_get_config](docs/sdks/public/README.md#post_v2_deployments_get_config) - Get config
 * [post_v2_deployments_invoke](docs/sdks/public/README.md#post_v2_deployments_invoke) - Invoke
 * [post_v2_deployments_id_metrics](docs/sdks/public/README.md#post_v2_deployments_id_metrics) - Add metrics
+* [get_v2_deployments](docs/sdks/public/README.md#get_v2_deployments) - List all deployments
 * [post_v2_files](docs/sdks/public/README.md#post_v2_files) - Upload file
 * [post_v2_files_bulk](docs/sdks/public/README.md#post_v2_files_bulk) - Bulk upload file
 * [post_v2_router_embeddings](docs/sdks/public/README.md#post_v2_router_embeddings) - Embeddings
@@ -155,33 +158,11 @@ asyncio.run(main())
 * [post_v2_router_completions](docs/sdks/public/README.md#post_v2_router_completions) - legacy completions route
 * [post_v2_router_rerank](docs/sdks/public/README.md#post_v2_router_rerank) - rerank route
 * [post_v2_router_images_generations](docs/sdks/public/README.md#post_v2_router_images_generations)
-* [post_v2_resources_datasets](docs/sdks/public/README.md#post_v2_resources_datasets) - Create a dataset
-* [get_v2_resources_datasets](docs/sdks/public/README.md#get_v2_resources_datasets) - Get all datasets
-* [delete_v2_resources_datasets_dataset_id_](docs/sdks/public/README.md#delete_v2_resources_datasets_dataset_id_) - Delete a dataset
-* [get_v2_resources_datasets_dataset_id_](docs/sdks/public/README.md#get_v2_resources_datasets_dataset_id_) - Get one  dataset
-* [patch_v2_resources_datasets_dataset_id_](docs/sdks/public/README.md#patch_v2_resources_datasets_dataset_id_) - Update a dataset
-* [post_v2_resources_datasets_dataset_id_rows_bulk](docs/sdks/public/README.md#post_v2_resources_datasets_dataset_id_rows_bulk) - Create a list of dataset rows
-* [delete_v2_resources_datasets_dataset_id_rows_bulk](docs/sdks/public/README.md#delete_v2_resources_datasets_dataset_id_rows_bulk) - Delete a list of dataset rows
-* [post_v2_resources_datasets_dataset_id_rows](docs/sdks/public/README.md#post_v2_resources_datasets_dataset_id_rows) - Create a dataset row
-* [get_v2_resources_datasets_dataset_id_rows](docs/sdks/public/README.md#get_v2_resources_datasets_dataset_id_rows) - Retrieve all dataset rows
-* [delete_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/public/README.md#delete_v2_resources_datasets_dataset_id_rows_row_id_) - Delete a dataset row
-* [get_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/public/README.md#get_v2_resources_datasets_dataset_id_rows_row_id_) - Get one dataset row
-* [patch_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/public/README.md#patch_v2_resources_datasets_dataset_id_rows_row_id_) - Update a dataset row
+* [post_v2_remoteconfigs](docs/sdks/public/README.md#post_v2_remoteconfigs)
 
-### [resources](docs/sdks/resources/README.md)
+### [remoteconfig](docs/sdks/remoteconfig/README.md)
 
-* [post_v2_resources_datasets](docs/sdks/resources/README.md#post_v2_resources_datasets) - Create a dataset
-* [get_v2_resources_datasets](docs/sdks/resources/README.md#get_v2_resources_datasets) - Get all datasets
-* [delete_v2_resources_datasets_dataset_id_](docs/sdks/resources/README.md#delete_v2_resources_datasets_dataset_id_) - Delete a dataset
-* [get_v2_resources_datasets_dataset_id_](docs/sdks/resources/README.md#get_v2_resources_datasets_dataset_id_) - Get one  dataset
-* [patch_v2_resources_datasets_dataset_id_](docs/sdks/resources/README.md#patch_v2_resources_datasets_dataset_id_) - Update a dataset
-* [post_v2_resources_datasets_dataset_id_rows_bulk](docs/sdks/resources/README.md#post_v2_resources_datasets_dataset_id_rows_bulk) - Create a list of dataset rows
-* [delete_v2_resources_datasets_dataset_id_rows_bulk](docs/sdks/resources/README.md#delete_v2_resources_datasets_dataset_id_rows_bulk) - Delete a list of dataset rows
-* [post_v2_resources_datasets_dataset_id_rows](docs/sdks/resources/README.md#post_v2_resources_datasets_dataset_id_rows) - Create a dataset row
-* [get_v2_resources_datasets_dataset_id_rows](docs/sdks/resources/README.md#get_v2_resources_datasets_dataset_id_rows) - Retrieve all dataset rows
-* [delete_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/resources/README.md#delete_v2_resources_datasets_dataset_id_rows_row_id_) - Delete a dataset row
-* [get_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/resources/README.md#get_v2_resources_datasets_dataset_id_rows_row_id_) - Get one dataset row
-* [patch_v2_resources_datasets_dataset_id_rows_row_id_](docs/sdks/resources/README.md#patch_v2_resources_datasets_dataset_id_rows_row_id_) - Update a dataset row
+* [post_v2_remoteconfigs](docs/sdks/remoteconfig/README.md#post_v2_remoteconfigs)
 
 ### [router](docs/sdks/router/README.md)
 
@@ -204,7 +185,7 @@ terminate when the server no longer has any events to send and closes the
 underlying connection.
 
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -226,6 +207,33 @@ if res is not None:
 [generator]: https://wiki.python.org/moin/Generators
 <!-- End Server-sent event streaming [eventstream] -->
 
+<!-- Start File uploads [file-upload] -->
+## File uploads
+
+Certain SDK methods accept file objects as part of a request body or multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
+
+> [!TIP]
+>
+> For endpoints that handle file uploads bytes arrays can also be used. However, using streams is recommended for large files.
+>
+
+```python
+from orq_poc_python_client import Orq
+import os
+
+s = Orq(
+    bearer=os.getenv("ORQ_BEARER", ""),
+)
+
+res = s.public.post_v2_files()
+
+if res is not None:
+    # handle response
+    pass
+
+```
+<!-- End File uploads [file-upload] -->
+
 <!-- Start Retries [retries] -->
 ## Retries
 
@@ -234,7 +242,7 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 from orq.utils import BackoffStrategy, RetryConfig
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -255,7 +263,7 @@ if res is not None:
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 from orq.utils import BackoffStrategy, RetryConfig
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -288,17 +296,17 @@ By default, an API error will raise a models.SDKError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_v2_resources_datasets_dataset_id__async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_v2_deployments_async` method may raise the following exceptions:
 
-| Error Type                                                  | Status Code                                                 | Content Type                                                |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| models.GetV2ResourcesDatasetsDatasetIDResourcesResponseBody | 404                                                         | application/json                                            |
-| models.SDKError                                             | 4XX, 5XX                                                    | \*/\*                                                       |
+| Error Type          | Status Code | Content Type     |
+| ------------------- | ----------- | ---------------- |
+| models.HonoAPIError | 500         | application/json |
+| models.SDKError     | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
 ```python
-from orq_python_client import Orq, models
+from orq_poc_python_client import Orq, models
 import os
 
 s = Orq(
@@ -307,14 +315,14 @@ s = Orq(
 
 res = None
 try:
-    res = s.public.get_v2_resources_datasets_dataset_id_(dataset_id="<id>")
+    res = s.deployments.get_v2_deployments()
 
     if res is not None:
         # handle response
         pass
 
-except models.GetV2ResourcesDatasetsDatasetIDResourcesResponseBody as e:
-    # handle e.data: models.GetV2ResourcesDatasetsDatasetIDResourcesResponseBodyData
+except models.HonoAPIError as e:
+    # handle e.data: models.HonoAPIErrorData
     raise(e)
 except models.SDKError as e:
     # handle exception
@@ -325,41 +333,11 @@ except models.SDKError as e:
 <!-- Start Server Selection [server] -->
 ## Server Selection
 
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://my.dev.orq.ai` | None |
-
-#### Example
-
-```python
-from orq_python_client import Orq
-import os
-
-s = Orq(
-    server_idx=0,
-    bearer=os.getenv("ORQ_BEARER", ""),
-)
-
-res = s.contacts.post_contacts(request={
-    "external_id": "<id>",
-})
-
-if res is not None:
-    # handle response
-    pass
-
-```
-
-
 ### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -387,7 +365,7 @@ This allows you to wrap the client with your own custom logic, such as adding cu
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import httpx
 
 http_client = httpx.Client(headers={"x-custom-header": "someValue"})
@@ -396,8 +374,8 @@ s = Orq(client=http_client)
 
 or you could wrap the client with your own custom logic:
 ```python
-from orq_python_client import Orq
-from orq_python_client.httpclient import AsyncHttpClient
+from orq_poc_python_client import Orq
+from orq_poc_python_client.httpclient import AsyncHttpClient
 import httpx
 
 class CustomClient(AsyncHttpClient):
@@ -466,13 +444,13 @@ s = Orq(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security scheme globally:
 
-| Name                 | Type                 | Scheme               | Environment Variable |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `bearer`             | http                 | HTTP Bearer          | `ORQ_BEARER`         |
+| Name     | Type | Scheme      | Environment Variable |
+| -------- | ---- | ----------- | -------------------- |
+| `bearer` | http | HTTP Bearer | `ORQ_BEARER`         |
 
 To authenticate with the API the `bearer` parameter must be set when initializing the SDK client instance. For example:
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import os
 
 s = Orq(
@@ -497,11 +475,11 @@ You can setup your SDK to emit debug logs for SDK requests and responses.
 
 You can pass your own logger class directly into your SDK.
 ```python
-from orq_python_client import Orq
+from orq_poc_python_client import Orq
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
-s = Orq(debug_logger=logging.getLogger("orq_python_client"))
+s = Orq(debug_logger=logging.getLogger("orq_poc_python_client"))
 ```
 
 You can also enable a default debug logger by setting an environment variable `ORQ_DEBUG` to true.
