@@ -1,0 +1,11 @@
+# PostV2DeploymentsGetConfig2DeploymentsResponse1
+
+Text content part of a prompt message
+
+
+## Fields
+
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                       | [models.PostV2DeploymentsGetConfig2DeploymentsResponseType](../models/postv2deploymentsgetconfig2deploymentsresponsetype.md) | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |
+| `text`                                                                                                                       | *str*                                                                                                                        | :heavy_check_mark:                                                                                                           | N/A                                                                                                                          |

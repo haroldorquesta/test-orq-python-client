@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_contacts](#post_contacts) - Update user information
+* [create](#create) - Update user information
 
-## post_contacts
+## create
 
 Update or add user information to workspace
 
@@ -21,7 +21,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 
@@ -33,14 +33,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [models.PostContactsRequestBody](../../models/postcontactsrequestbody.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-| `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [models.PostV2ContactsRequestBody](../../models/postv2contactsrequestbody.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
 
 ### Response
 
-**[models.PostContactsResponseBody](../../models/postcontactsresponsebody.md)**
+**[models.PostV2ContactsResponseBody](../../models/postv2contactsresponsebody.md)**
 
 ### Errors
 

@@ -9,3 +9,13 @@ Based on:
 - [python v0.1.0] .
 ### Releases
 - [PyPI v0.1.0] https://pypi.org/project/orq-poc-python-client/0.1.0 - .
+
+## 2024-11-12 13:50:29
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.438.1 (2.457.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.2.0] .
+### Releases
+- [PyPI v0.2.0] https://pypi.org/project/orq-poc-python-client/0.2.0 - .

@@ -9,7 +9,7 @@ from typing import Optional, Union, cast
 
 
 class Remoteconfig(BaseSDK):
-    def post_v2_remoteconfigs(
+    def get_config(
         self,
         *,
         request: Optional[
@@ -106,7 +106,7 @@ class Remoteconfig(BaseSDK):
             http_res,
         )
 
-    async def post_v2_remoteconfigs_async(
+    async def get_config_async(
         self,
         *,
         request: Optional[

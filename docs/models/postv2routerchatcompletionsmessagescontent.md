@@ -11,9 +11,9 @@ The contents of a particular role's message.
 value: str = /* values here */
 ```
 
-### `List[models.PostV2RouterChatCompletionsContentRouter2]`
+### `List[models.PostV2RouterChatCompletionsContentRouterChatCompletions2]`
 
 ```python
-value: List[models.PostV2RouterChatCompletionsContentRouter2] = /* values here */
+value: List[models.PostV2RouterChatCompletionsContentRouterChatCompletions2] = /* values here */
 ```
 

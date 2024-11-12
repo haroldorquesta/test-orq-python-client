@@ -43,7 +43,9 @@ class PostV2DeploymentsInvokeProvider(str, Enum):
     NVIDIA = "nvidia"
 
 
-class PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200Role(str, Enum):
+class PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamRole(
+    str, Enum
+):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -57,19 +59,19 @@ class PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200Role(str, Enum):
 
 
 class PostV2DeploymentsInvokeMessage3TypedDict(TypedDict):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200Role
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamRole
     r"""The role of the prompt message"""
     url: str
 
 
 class PostV2DeploymentsInvokeMessage3(BaseModel):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200Role
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamRole
     r"""The role of the prompt message"""
 
     url: str
 
 
-class PostV2DeploymentsInvokeMessageDeploymentsPublicResponseRole(str, Enum):
+class PostV2DeploymentsInvokeMessageDeploymentsResponse200Role(str, Enum):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -83,13 +85,13 @@ class PostV2DeploymentsInvokeMessageDeploymentsPublicResponseRole(str, Enum):
 
 
 class PostV2DeploymentsInvokeMessageDeployments2TypedDict(TypedDict):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponseRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200Role
     r"""The role of the prompt message"""
     content: Nullable[str]
 
 
 class PostV2DeploymentsInvokeMessageDeployments2(BaseModel):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponseRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200Role
     r"""The role of the prompt message"""
 
     content: Nullable[str]
@@ -125,7 +127,7 @@ class PostV2DeploymentsInvokeMessageDeployments2(BaseModel):
         return m
 
 
-class PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200TextEventStreamRole(
+class PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamResponseBodyRole(
     str, Enum
 ):
     r"""The role of the prompt message"""
@@ -175,14 +177,14 @@ class PostV2DeploymentsInvokeMessageDeploymentsToolCalls(BaseModel):
 
 
 class PostV2DeploymentsInvokeMessageDeployments1TypedDict(TypedDict):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200TextEventStreamRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamResponseBodyRole
     r"""The role of the prompt message"""
     tool_calls: List[PostV2DeploymentsInvokeMessageDeploymentsToolCallsTypedDict]
     content: NotRequired[Nullable[str]]
 
 
 class PostV2DeploymentsInvokeMessageDeployments1(BaseModel):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicResponse200TextEventStreamRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponse200TextEventStreamResponseBodyRole
     r"""The role of the prompt message"""
 
     tool_calls: List[PostV2DeploymentsInvokeMessageDeploymentsToolCalls]
@@ -587,7 +589,7 @@ class PostV2DeploymentsInvokeMessage2(BaseModel):
         return m
 
 
-class PostV2DeploymentsInvokeMessageDeploymentsPublicRole(str, Enum):
+class PostV2DeploymentsInvokeMessageDeploymentsResponseRole(str, Enum):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -635,14 +637,14 @@ class PostV2DeploymentsInvokeMessageToolCalls(BaseModel):
 
 
 class PostV2DeploymentsInvokeMessage1TypedDict(TypedDict):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponseRole
     r"""The role of the prompt message"""
     tool_calls: List[PostV2DeploymentsInvokeMessageToolCallsTypedDict]
     content: NotRequired[Nullable[str]]
 
 
 class PostV2DeploymentsInvokeMessage1(BaseModel):
-    role: PostV2DeploymentsInvokeMessageDeploymentsPublicRole
+    role: PostV2DeploymentsInvokeMessageDeploymentsResponseRole
     r"""The role of the prompt message"""
 
     tool_calls: List[PostV2DeploymentsInvokeMessageToolCalls]
