@@ -3299,7 +3299,7 @@
                         "id": {
                           "type": "string",
                           "format": "ulid",
-                          "default": "01JCG9NR8CMBJDF2NCJVFCEEJ4",
+                          "default": "01JCJRMR12H8K1G0P7EQQ0TV0J",
                           "description": "The id of the resource",
                           "readOnly": true
                         },
@@ -3645,7 +3645,7 @@
                         "id": {
                           "type": "string",
                           "format": "ulid",
-                          "default": "01JCG9NR8JC1YK71R2RNGTDA75",
+                          "default": "01JCJRMR139D6014TK4YP9VY7K",
                           "description": "The id of the resource",
                           "readOnly": true
                         },
@@ -4123,7 +4123,7 @@
           "created": {
             "type": "string",
             "format": "date-time",
-            "default": "2024-11-12T13:40:39.939Z",
+            "default": "2024-11-13T12:40:44.414Z",
             "description": "The date and time the resource was created",
             "readOnly": true
           }
@@ -4182,7 +4182,7 @@
             "created": {
               "type": "string",
               "format": "date-time",
-              "default": "2024-11-12T13:40:39.939Z",
+              "default": "2024-11-13T12:40:44.414Z",
               "description": "The date and time the resource was created",
               "readOnly": true
             }
@@ -6196,7 +6196,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-12T13:40:39.730Z",
+                          "default": "2024-11-13T12:40:44.177Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -6206,7 +6206,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-12T13:40:39.730Z"
+                              "default": "2024-11-13T12:40:44.178Z"
                             },
                             {
                               "type": "string"
@@ -6246,7 +6246,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-12T13:40:39.730Z",
+                "default": "2024-11-13T12:40:44.177Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -6256,7 +6256,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-12T13:40:39.730Z"
+                    "default": "2024-11-13T12:40:44.178Z"
                   },
                   {
                     "type": "string"
@@ -7043,7 +7043,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-12T13:40:39.730Z",
+                "default": "2024-11-13T12:40:44.177Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -7053,7 +7053,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-12T13:40:39.730Z"
+                    "default": "2024-11-13T12:40:44.178Z"
                   },
                   {
                     "type": "string"
@@ -7284,7 +7284,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-12T13:40:39.730Z",
+                      "default": "2024-11-13T12:40:44.177Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -7294,7 +7294,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-12T13:40:39.730Z"
+                          "default": "2024-11-13T12:40:44.178Z"
                         },
                         {
                           "type": "string"
@@ -13961,7 +13961,7 @@
                             "id": {
                               "type": "string",
                               "format": "ulid",
-                              "default": "01JCG9NR9HWXYC2E1RB8D3YPH8",
+                              "default": "01JCJRMR220P5B2F0P02ME35X8",
                               "description": "The id of the resource",
                               "readOnly": true
                             },
@@ -14307,7 +14307,7 @@
                             "id": {
                               "type": "string",
                               "format": "ulid",
-                              "default": "01JCG9NR9JPQTSWGWQRYQ7RTGY",
+                              "default": "01JCJRMR26HDR1YSVWG7RWJ1WA",
                               "description": "The id of the resource",
                               "readOnly": true
                             },
@@ -29538,7 +29538,7 @@
                                   "id": {
                                     "type": "string",
                                     "format": "ulid",
-                                    "default": "01JCG9NRAQQHQ38A2R7205SEZQ",
+                                    "default": "01JCJRMR3B3HKQTXP8N13Y373K",
                                     "description": "The id of the resource",
                                     "readOnly": true
                                   },
@@ -29884,7 +29884,7 @@
                                   "id": {
                                     "type": "string",
                                     "format": "ulid",
-                                    "default": "01JCG9NRARYFJ3A4V180NVWW96",
+                                    "default": "01JCJRMR3CG1MMWNC98MDGMB08",
                                     "description": "The id of the resource",
                                     "readOnly": true
                                   },
@@ -37874,7 +37874,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-12T13:40:39.730Z",
+                      "default": "2024-11-13T12:40:44.177Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -37884,7 +37884,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-12T13:40:39.730Z"
+                          "default": "2024-11-13T12:40:44.178Z"
                         },
                         {
                           "type": "string"
@@ -38016,11 +38016,6 @@
         ],
         "x-speakeasy-group": "deployments",
         "x-speakeasy-name-override": "getConfig",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "description": "Retrieve the deployment configuration",
         "summary": "Get config",
         "requestBody": {
@@ -38819,11 +38814,6 @@
         "x-speakeasy-name-override": "invoke",
         "description": "Invoke a deployment with a given payload",
         "summary": "Invoke",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -39429,11 +39419,6 @@
         "x-speakeasy-name-override": "addMetrics",
         "description": "Add metrics to a deployment",
         "summary": "Add metrics",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "parameters": [
           {
             "schema": {
@@ -40398,11 +40383,6 @@
         "x-speakeasy-name-override": "upload",
         "summary": "Upload file",
         "description": "Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -40459,7 +40439,7 @@
                     "created": {
                       "type": "string",
                       "format": "date-time",
-                      "default": "2024-11-12T13:40:39.939Z",
+                      "default": "2024-11-13T12:40:44.414Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true
                     }
@@ -40491,11 +40471,6 @@
         "x-speakeasy-name-override": "bulkUpload",
         "summary": "Bulk upload file",
         "description": "Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -40560,7 +40535,7 @@
                       "created": {
                         "type": "string",
                         "format": "date-time",
-                        "default": "2024-11-12T13:40:39.939Z",
+                        "default": "2024-11-13T12:40:44.414Z",
                         "description": "The date and time the resource was created",
                         "readOnly": true
                       }
@@ -41916,11 +41891,6 @@
         ],
         "x-speakeasy-group": "router.completions",
         "x-speakeasy-name-override": "create",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "description": "For sending requests to legacy completion models",
         "summary": "legacy completions route",
         "requestBody": {
@@ -42145,11 +42115,6 @@
         ],
         "x-speakeasy-group": "router",
         "x-speakeasy-name-override": "rerank",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "description": "For sending requests to rerank models",
         "summary": "rerank route",
         "requestBody": {
@@ -42330,11 +42295,6 @@
         ],
         "x-speakeasy-group": "router.images",
         "x-speakeasy-name-override": "generate",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "requestBody": {
           "description": "A request body that follows the official OpenAI schema",
           "content": {
@@ -42601,11 +42561,6 @@
         ],
         "x-speakeasy-name-override": "getConfig",
         "x-speakeasy-group": "remoteconfig",
-        "security": [
-          {
-            "ApiKey": []
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
