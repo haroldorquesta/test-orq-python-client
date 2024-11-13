@@ -82,7 +82,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={
@@ -105,7 +105,7 @@ import os
 
 async def main():
     s = Orq(
-        open_ai=os.getenv("ORQ_OPEN_AI", ""),
+        api_key=os.getenv("ORQ_API_KEY", ""),
     )
     res = await s.contacts.create_async(request={
         "external_id": "<id>",
@@ -189,7 +189,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.deployments.invoke(request={
@@ -222,7 +222,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.files.upload()
@@ -246,7 +246,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={
@@ -268,7 +268,7 @@ import os
 
 s = Orq(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={
@@ -310,7 +310,7 @@ from orq_poc_python_client import Orq, models
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = None
@@ -342,7 +342,7 @@ import os
 
 s = Orq(
     server_url="https://my.dev.orq.ai",
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={
@@ -446,15 +446,15 @@ This SDK supports the following security scheme globally:
 
 | Name      | Type | Scheme      | Environment Variable |
 | --------- | ---- | ----------- | -------------------- |
-| `open_ai` | http | HTTP Bearer | `ORQ_OPEN_AI`        |
+| `api_key` | http | HTTP Bearer | `ORQ_API_KEY`        |
 
-To authenticate with the API the `open_ai` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python
 from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={

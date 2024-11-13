@@ -21,7 +21,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.deployments.get_config(request={
@@ -62,7 +62,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.deployments.invoke(request={
@@ -104,7 +104,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.deployments.add_metrics(id="<id>", request_body={})
@@ -144,7 +144,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.deployments.list()

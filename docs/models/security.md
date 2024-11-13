@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `open_ai`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+| `api_key`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
