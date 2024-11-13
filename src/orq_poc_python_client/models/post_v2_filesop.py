@@ -98,5 +98,5 @@ class PostV2FilesResponseBody(BaseModel):
 
     file_name: str
 
-    created: Optional[datetime] = dateutil.parser.isoparse("2024-11-13T12:40:44.414Z")
+    created: Optional[datetime] = dateutil.parser.isoparse("2024-11-13T13:42:23.560Z")
     r"""The date and time the resource was created"""
