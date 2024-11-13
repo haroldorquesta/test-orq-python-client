@@ -134,7 +134,7 @@ class PostV2ContactsResponseBody(BaseModel):
     created: Optional[datetime] = None
     r"""The date and time the resource was created"""
 
-    updated: Optional[datetime] = dateutil.parser.isoparse("2024-11-12T13:40:39.730Z")
+    updated: Optional[datetime] = dateutil.parser.isoparse("2024-11-13T12:40:44.178Z")
     r"""The date and time the resource was last updated"""
 
     @model_serializer(mode="wrap")
