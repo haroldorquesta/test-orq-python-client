@@ -5,7 +5,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    open_ai=os.getenv("ORQ_OPEN_AI", ""),
+    api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
 res = s.contacts.create(request={
@@ -28,7 +28,7 @@ import os
 
 async def main():
     s = Orq(
-        open_ai=os.getenv("ORQ_OPEN_AI", ""),
+        api_key=os.getenv("ORQ_API_KEY", ""),
     )
     res = await s.contacts.create_async(request={
         "external_id": "<id>",
