@@ -18,7 +18,7 @@ from orq_poc_python_client import Orq
 import os
 
 s = Orq(
-    bearer=os.getenv("ORQ_BEARER", ""),
+    open_ai=os.getenv("ORQ_OPEN_AI", ""),
 )
 
 res = s.router.completions.create()
