@@ -64,8 +64,8 @@ def get_security_from_env(security: Any, security_class: Any) -> Optional[BaseMo
 
     security_dict: Any = {}
 
-    if os.getenv("ORQ_BEARER"):
-        security_dict["bearer"] = os.getenv("ORQ_BEARER")
+    if os.getenv("ORQ_OPEN_AI"):
+        security_dict["open_ai"] = os.getenv("ORQ_OPEN_AI")
 
     return security_class(**security_dict) if security_dict else None
 

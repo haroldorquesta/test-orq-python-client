@@ -32,7 +32,7 @@ class Orq(BaseSDK):
 
     def __init__(
         self,
-        bearer: Optional[Union[Optional[str], Callable[[], Optional[str]]]] = None,
+        open_ai: Optional[Union[Optional[str], Callable[[], Optional[str]]]] = None,
         server_idx: Optional[int] = None,
         server_url: Optional[str] = None,
         url_params: Optional[Dict[str, str]] = None,
@@ -44,7 +44,7 @@ class Orq(BaseSDK):
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
-        :param bearer: The bearer required for authentication
+        :param open_ai: The open_ai required for authentication
         :param server_idx: The index of the server to use for all methods
         :param server_url: The server URL to use for all methods
         :param url_params: Parameters to optionally template the server URL with
@@ -71,10 +71,10 @@ class Orq(BaseSDK):
         ), "The provided async_client must implement the AsyncHttpClient protocol."
 
         security: Any = None
-        if callable(bearer):
-            security = lambda: models.Security(bearer=bearer())  # pylint: disable=unnecessary-lambda-assignment
+        if callable(open_ai):
+            security = lambda: models.Security(open_ai=open_ai())  # pylint: disable=unnecessary-lambda-assignment
         else:
-            security = models.Security(bearer=bearer)
+            security = models.Security(open_ai=open_ai)
 
         if server_url is not None:
             if url_params is not None:
