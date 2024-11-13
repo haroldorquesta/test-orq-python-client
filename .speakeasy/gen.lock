@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 30923d32-a782-4297-8a44-2a8c9d8fa755
 management:
-  docChecksum: 2995142f86b52fe4292c11a93d817023
+  docChecksum: 2a1481f10747500a04bde4f09a7630ad
   docVersion: "2.0"
   speakeasyVersion: 1.438.1
   generationVersion: 2.457.2
-  releaseVersion: 0.2.0
-  configChecksum: 4311dcc092f7e31ed9288782978cc660
+  releaseVersion: 0.2.1
+  configChecksum: 9722d1203cdacc736a0cc2e760f6b273
   repoURL: https://github.com/haroldorquesta/test-orq-python-client.git
   installationURL: https://github.com/haroldorquesta/test-orq-python-client.git
   published: true

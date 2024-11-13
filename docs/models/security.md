@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `bearer`           | *Optional[str]*    | :heavy_minus_sign: | N/A                |
+| `open_ai`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
