@@ -34,7 +34,7 @@ class PostV2DeploymentsGetConfigDeploymentsRole(str, Enum):
     EXPECTED_OUTPUT = "expected_output"
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublicRequestType(str, Enum):
+class PostV2DeploymentsGetConfig2DeploymentsRequestRequestBodyType(str, Enum):
     IMAGE_URL = "image_url"
 
 
@@ -56,33 +56,33 @@ class PostV2DeploymentsGetConfig2ImageURL(BaseModel):
 class PostV2DeploymentsGetConfig22InputTypedDict(TypedDict):
     r"""The image part of the prompt message. Only supported with vision models."""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicRequestType
+    type: PostV2DeploymentsGetConfig2DeploymentsRequestRequestBodyType
     image_url: PostV2DeploymentsGetConfig2ImageURLTypedDict
 
 
 class PostV2DeploymentsGetConfig22Input(BaseModel):
     r"""The image part of the prompt message. Only supported with vision models."""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicRequestType
+    type: PostV2DeploymentsGetConfig2DeploymentsRequestRequestBodyType
 
     image_url: PostV2DeploymentsGetConfig2ImageURL
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublicType(str, Enum):
+class PostV2DeploymentsGetConfig2DeploymentsRequestType(str, Enum):
     TEXT = "text"
 
 
 class PostV2DeploymentsGetConfig21TypedDict(TypedDict):
     r"""Text content part of a prompt message"""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicType
+    type: PostV2DeploymentsGetConfig2DeploymentsRequestType
     text: str
 
 
 class PostV2DeploymentsGetConfig21(BaseModel):
     r"""Text content part of a prompt message"""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicType
+    type: PostV2DeploymentsGetConfig2DeploymentsRequestType
 
     text: str
 
@@ -397,7 +397,7 @@ class PostV2DeploymentsGetConfigRequestBody(BaseModel):
     invoke_options: Optional[PostV2DeploymentsGetConfigInvokeOptions] = None
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicType(str, Enum):
+class PostV2DeploymentsGetConfigDeploymentsResponseType(str, Enum):
     r"""The type of the model. Current `chat`,`completion` and `image` are supported"""
 
     CHAT = "chat"
@@ -410,7 +410,7 @@ class PostV2DeploymentsGetConfigDeploymentsPublicType(str, Enum):
     RERANK = "rerank"
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicRole(str, Enum):
+class PostV2DeploymentsGetConfigDeploymentsResponseRole(str, Enum):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -423,7 +423,7 @@ class PostV2DeploymentsGetConfigDeploymentsPublicRole(str, Enum):
     EXPECTED_OUTPUT = "expected_output"
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublicResponseType(str, Enum):
+class PostV2DeploymentsGetConfig2DeploymentsResponse200Type(str, Enum):
     IMAGE_URL = "image_url"
 
 
@@ -450,45 +450,45 @@ class PostV2DeploymentsGetConfig2DeploymentsImageURL(BaseModel):
 class PostV2DeploymentsGetConfig2Deployments2TypedDict(TypedDict):
     r"""The image part of the prompt message. Only supported with vision models."""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicResponseType
+    type: PostV2DeploymentsGetConfig2DeploymentsResponse200Type
     image_url: PostV2DeploymentsGetConfig2DeploymentsImageURLTypedDict
 
 
 class PostV2DeploymentsGetConfig2Deployments2(BaseModel):
     r"""The image part of the prompt message. Only supported with vision models."""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicResponseType
+    type: PostV2DeploymentsGetConfig2DeploymentsResponse200Type
 
     image_url: PostV2DeploymentsGetConfig2DeploymentsImageURL
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublicResponse200Type(str, Enum):
+class PostV2DeploymentsGetConfig2DeploymentsResponseType(str, Enum):
     TEXT = "text"
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublic1TypedDict(TypedDict):
+class PostV2DeploymentsGetConfig2DeploymentsResponse1TypedDict(TypedDict):
     r"""Text content part of a prompt message"""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicResponse200Type
+    type: PostV2DeploymentsGetConfig2DeploymentsResponseType
     text: str
 
 
-class PostV2DeploymentsGetConfig2DeploymentsPublic1(BaseModel):
+class PostV2DeploymentsGetConfig2DeploymentsResponse1(BaseModel):
     r"""Text content part of a prompt message"""
 
-    type: PostV2DeploymentsGetConfig2DeploymentsPublicResponse200Type
+    type: PostV2DeploymentsGetConfig2DeploymentsResponseType
 
     text: str
 
 
 PostV2DeploymentsGetConfigContentDeployments2TypedDict = Union[
-    PostV2DeploymentsGetConfig2DeploymentsPublic1TypedDict,
+    PostV2DeploymentsGetConfig2DeploymentsResponse1TypedDict,
     PostV2DeploymentsGetConfig2Deployments2TypedDict,
 ]
 
 
 PostV2DeploymentsGetConfigContentDeployments2 = Union[
-    PostV2DeploymentsGetConfig2DeploymentsPublic1,
+    PostV2DeploymentsGetConfig2DeploymentsResponse1,
     PostV2DeploymentsGetConfig2Deployments2,
 ]
 
@@ -505,34 +505,34 @@ PostV2DeploymentsGetConfigDeploymentsContent = Union[
 r"""The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts."""
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicResponse200Type(str, Enum):
+class PostV2DeploymentsGetConfigDeploymentsResponse200ApplicationJSONType(str, Enum):
     FUNCTION = "function"
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicResponseFunctionTypedDict(TypedDict):
+class PostV2DeploymentsGetConfigDeploymentsResponse200FunctionTypedDict(TypedDict):
     name: str
     arguments: str
     r"""JSON string arguments for the functions"""
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicResponseFunction(BaseModel):
+class PostV2DeploymentsGetConfigDeploymentsResponse200Function(BaseModel):
     name: str
 
     arguments: str
     r"""JSON string arguments for the functions"""
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicToolCallsTypedDict(TypedDict):
-    type: PostV2DeploymentsGetConfigDeploymentsPublicResponse200Type
-    function: PostV2DeploymentsGetConfigDeploymentsPublicResponseFunctionTypedDict
+class PostV2DeploymentsGetConfigDeploymentsResponseToolCallsTypedDict(TypedDict):
+    type: PostV2DeploymentsGetConfigDeploymentsResponse200ApplicationJSONType
+    function: PostV2DeploymentsGetConfigDeploymentsResponse200FunctionTypedDict
     id: NotRequired[str]
     index: NotRequired[float]
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicToolCalls(BaseModel):
-    type: PostV2DeploymentsGetConfigDeploymentsPublicResponse200Type
+class PostV2DeploymentsGetConfigDeploymentsResponseToolCalls(BaseModel):
+    type: PostV2DeploymentsGetConfigDeploymentsResponse200ApplicationJSONType
 
-    function: PostV2DeploymentsGetConfigDeploymentsPublicResponseFunction
+    function: PostV2DeploymentsGetConfigDeploymentsResponse200Function
 
     id: Optional[str] = None
 
@@ -540,25 +540,25 @@ class PostV2DeploymentsGetConfigDeploymentsPublicToolCalls(BaseModel):
 
 
 class PostV2DeploymentsGetConfigDeploymentsMessagesTypedDict(TypedDict):
-    role: PostV2DeploymentsGetConfigDeploymentsPublicRole
+    role: PostV2DeploymentsGetConfigDeploymentsResponseRole
     r"""The role of the prompt message"""
     content: PostV2DeploymentsGetConfigDeploymentsContentTypedDict
     r"""The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts."""
     tool_calls: NotRequired[
-        List[PostV2DeploymentsGetConfigDeploymentsPublicToolCallsTypedDict]
+        List[PostV2DeploymentsGetConfigDeploymentsResponseToolCallsTypedDict]
     ]
 
 
 class PostV2DeploymentsGetConfigDeploymentsMessages(BaseModel):
-    role: PostV2DeploymentsGetConfigDeploymentsPublicRole
+    role: PostV2DeploymentsGetConfigDeploymentsResponseRole
     r"""The role of the prompt message"""
 
     content: PostV2DeploymentsGetConfigDeploymentsContent
     r"""The contents of the user message. Either the text content of the message or an array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts."""
 
-    tool_calls: Optional[List[PostV2DeploymentsGetConfigDeploymentsPublicToolCalls]] = (
-        None
-    )
+    tool_calls: Optional[
+        List[PostV2DeploymentsGetConfigDeploymentsResponseToolCalls]
+    ] = None
 
 
 class Format(str, Enum):
@@ -811,13 +811,13 @@ class PostV2DeploymentsGetConfigParameters(BaseModel):
         return m
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicResponseType(str, Enum):
+class PostV2DeploymentsGetConfigDeploymentsResponse200Type(str, Enum):
     r"""The type of the tool. Currently, only `function` is supported."""
 
     FUNCTION = "function"
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicFunctionTypedDict(TypedDict):
+class PostV2DeploymentsGetConfigDeploymentsResponseFunctionTypedDict(TypedDict):
     name: str
     r"""The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64."""
     description: NotRequired[str]
@@ -829,7 +829,7 @@ class PostV2DeploymentsGetConfigDeploymentsPublicFunctionTypedDict(TypedDict):
     """
 
 
-class PostV2DeploymentsGetConfigDeploymentsPublicFunction(BaseModel):
+class PostV2DeploymentsGetConfigDeploymentsResponseFunction(BaseModel):
     name: str
     r"""The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64."""
 
@@ -844,16 +844,16 @@ class PostV2DeploymentsGetConfigDeploymentsPublicFunction(BaseModel):
 
 
 class PostV2DeploymentsGetConfigToolsTypedDict(TypedDict):
-    type: PostV2DeploymentsGetConfigDeploymentsPublicResponseType
+    type: PostV2DeploymentsGetConfigDeploymentsResponse200Type
     r"""The type of the tool. Currently, only `function` is supported."""
-    function: PostV2DeploymentsGetConfigDeploymentsPublicFunctionTypedDict
+    function: PostV2DeploymentsGetConfigDeploymentsResponseFunctionTypedDict
 
 
 class PostV2DeploymentsGetConfigTools(BaseModel):
-    type: PostV2DeploymentsGetConfigDeploymentsPublicResponseType
+    type: PostV2DeploymentsGetConfigDeploymentsResponse200Type
     r"""The type of the tool. Currently, only `function` is supported."""
 
-    function: PostV2DeploymentsGetConfigDeploymentsPublicFunction
+    function: PostV2DeploymentsGetConfigDeploymentsResponseFunction
 
 
 class PostV2DeploymentsGetConfigResponseBodyTypedDict(TypedDict):
@@ -870,7 +870,7 @@ class PostV2DeploymentsGetConfigResponseBodyTypedDict(TypedDict):
     messages: List[PostV2DeploymentsGetConfigDeploymentsMessagesTypedDict]
     parameters: PostV2DeploymentsGetConfigParametersTypedDict
     r"""Model Parameters: Not all parameters apply to every model"""
-    type: NotRequired[PostV2DeploymentsGetConfigDeploymentsPublicType]
+    type: NotRequired[PostV2DeploymentsGetConfigDeploymentsResponseType]
     r"""The type of the model. Current `chat`,`completion` and `image` are supported"""
     tools: NotRequired[List[PostV2DeploymentsGetConfigToolsTypedDict]]
     r"""A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for."""
@@ -896,7 +896,7 @@ class PostV2DeploymentsGetConfigResponseBody(BaseModel):
     parameters: PostV2DeploymentsGetConfigParameters
     r"""Model Parameters: Not all parameters apply to every model"""
 
-    type: Optional[PostV2DeploymentsGetConfigDeploymentsPublicType] = None
+    type: Optional[PostV2DeploymentsGetConfigDeploymentsResponseType] = None
     r"""The type of the model. Current `chat`,`completion` and `image` are supported"""
 
     tools: Optional[List[PostV2DeploymentsGetConfigTools]] = None

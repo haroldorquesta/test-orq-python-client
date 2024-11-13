@@ -85,7 +85,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 
@@ -107,7 +107,7 @@ async def main():
     s = Orq(
         bearer=os.getenv("ORQ_BEARER", ""),
     )
-    res = await s.contacts.post_contacts_async(request={
+    res = await s.contacts.create_async(request={
         "external_id": "<id>",
     })
     if res is not None:
@@ -126,51 +126,51 @@ asyncio.run(main())
 
 ### [contacts](docs/sdks/contacts/README.md)
 
-* [post_contacts](docs/sdks/contacts/README.md#post_contacts) - Update user information
+* [create](docs/sdks/contacts/README.md#create) - Update user information
 
 ### [deployments](docs/sdks/deploymentssdk/README.md)
 
-* [post_v2_deployments_get_config](docs/sdks/deploymentssdk/README.md#post_v2_deployments_get_config) - Get config
-* [post_v2_deployments_invoke](docs/sdks/deploymentssdk/README.md#post_v2_deployments_invoke) - Invoke
-* [post_v2_deployments_id_metrics](docs/sdks/deploymentssdk/README.md#post_v2_deployments_id_metrics) - Add metrics
-* [get_v2_deployments](docs/sdks/deploymentssdk/README.md#get_v2_deployments) - List all deployments
+* [get_config](docs/sdks/deploymentssdk/README.md#get_config) - Get config
+* [invoke](docs/sdks/deploymentssdk/README.md#invoke) - Invoke
+* [add_metrics](docs/sdks/deploymentssdk/README.md#add_metrics) - Add metrics
+* [list](docs/sdks/deploymentssdk/README.md#list) - List all deployments
 
 ### [feedback](docs/sdks/feedback/README.md)
 
-* [post_v2_feedback](docs/sdks/feedback/README.md#post_v2_feedback) - Submit feedback
+* [create](docs/sdks/feedback/README.md#create) - Submit feedback
 
 ### [files](docs/sdks/files/README.md)
 
-* [post_v2_files](docs/sdks/files/README.md#post_v2_files) - Upload file
-* [post_v2_files_bulk](docs/sdks/files/README.md#post_v2_files_bulk) - Bulk upload file
+* [upload](docs/sdks/files/README.md#upload) - Upload file
+* [bulk_upload](docs/sdks/files/README.md#bulk_upload) - Bulk upload file
 
-
-### [public](docs/sdks/public/README.md)
-
-* [post_v2_deployments_get_config](docs/sdks/public/README.md#post_v2_deployments_get_config) - Get config
-* [post_v2_deployments_invoke](docs/sdks/public/README.md#post_v2_deployments_invoke) - Invoke
-* [post_v2_deployments_id_metrics](docs/sdks/public/README.md#post_v2_deployments_id_metrics) - Add metrics
-* [get_v2_deployments](docs/sdks/public/README.md#get_v2_deployments) - List all deployments
-* [post_v2_files](docs/sdks/public/README.md#post_v2_files) - Upload file
-* [post_v2_files_bulk](docs/sdks/public/README.md#post_v2_files_bulk) - Bulk upload file
-* [post_v2_router_embeddings](docs/sdks/public/README.md#post_v2_router_embeddings) - Embeddings
-* [post_v2_router_chat_completions](docs/sdks/public/README.md#post_v2_router_chat_completions) - Chat
-* [post_v2_router_completions](docs/sdks/public/README.md#post_v2_router_completions) - legacy completions route
-* [post_v2_router_rerank](docs/sdks/public/README.md#post_v2_router_rerank) - rerank route
-* [post_v2_router_images_generations](docs/sdks/public/README.md#post_v2_router_images_generations)
-* [post_v2_remoteconfigs](docs/sdks/public/README.md#post_v2_remoteconfigs)
 
 ### [remoteconfig](docs/sdks/remoteconfig/README.md)
 
-* [post_v2_remoteconfigs](docs/sdks/remoteconfig/README.md#post_v2_remoteconfigs)
+* [get_config](docs/sdks/remoteconfig/README.md#get_config)
 
 ### [router](docs/sdks/router/README.md)
 
-* [post_v2_router_embeddings](docs/sdks/router/README.md#post_v2_router_embeddings) - Embeddings
-* [post_v2_router_chat_completions](docs/sdks/router/README.md#post_v2_router_chat_completions) - Chat
-* [post_v2_router_completions](docs/sdks/router/README.md#post_v2_router_completions) - legacy completions route
-* [post_v2_router_rerank](docs/sdks/router/README.md#post_v2_router_rerank) - rerank route
-* [post_v2_router_images_generations](docs/sdks/router/README.md#post_v2_router_images_generations)
+* [rerank](docs/sdks/router/README.md#rerank) - rerank route
+
+#### [router.chat](docs/sdks/chat/README.md)
+
+
+#### [router.chat.completions](docs/sdks/orqcompletions/README.md)
+
+* [create](docs/sdks/orqcompletions/README.md#create) - Chat
+
+#### [router.completions](docs/sdks/completions/README.md)
+
+* [create](docs/sdks/completions/README.md#create) - legacy completions route
+
+#### [router.embeddings](docs/sdks/embeddings/README.md)
+
+* [create](docs/sdks/embeddings/README.md#create) - Embeddings
+
+#### [router.images](docs/sdks/images/README.md)
+
+* [generate](docs/sdks/images/README.md#generate)
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -192,7 +192,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.deployments.post_v2_deployments_invoke(request={
+res = s.deployments.invoke(request={
     "key": "<key>",
 })
 
@@ -225,7 +225,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.public.post_v2_files()
+res = s.files.upload()
 
 if res is not None:
     # handle response
@@ -249,7 +249,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 },
     RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
@@ -271,7 +271,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 
@@ -296,7 +296,7 @@ By default, an API error will raise a models.SDKError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_v2_deployments_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
 
 | Error Type          | Status Code | Content Type     |
 | ------------------- | ----------- | ---------------- |
@@ -315,7 +315,7 @@ s = Orq(
 
 res = None
 try:
-    res = s.deployments.get_v2_deployments()
+    res = s.deployments.list()
 
     if res is not None:
         # handle response
@@ -345,7 +345,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 
@@ -457,7 +457,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.contacts.post_contacts(request={
+res = s.contacts.create(request={
     "external_id": "<id>",
 })
 

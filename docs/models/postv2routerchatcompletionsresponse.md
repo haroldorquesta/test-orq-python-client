@@ -9,9 +9,9 @@
 value: models.PostV2RouterChatCompletionsResponseBody = /* values here */
 ```
 
-### `Union[Generator[models.PostV2RouterChatCompletionsRouterResponseBody, None, None], AsyncGenerator[models.PostV2RouterChatCompletionsRouterResponseBody, None]]`
+### `Union[Generator[models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None, None], AsyncGenerator[models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None]]`
 
 ```python
-value: Union[Generator[models.PostV2RouterChatCompletionsRouterResponseBody, None, None], AsyncGenerator[models.PostV2RouterChatCompletionsRouterResponseBody, None]] = /* values here */
+value: Union[Generator[models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None, None], AsyncGenerator[models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None]] = /* values here */
 ```
 

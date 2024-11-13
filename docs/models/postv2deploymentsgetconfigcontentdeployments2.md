@@ -3,10 +3,10 @@
 
 ## Supported Types
 
-### `models.PostV2DeploymentsGetConfig2DeploymentsPublic1`
+### `models.PostV2DeploymentsGetConfig2DeploymentsResponse1`
 
 ```python
-value: models.PostV2DeploymentsGetConfig2DeploymentsPublic1 = /* values here */
+value: models.PostV2DeploymentsGetConfig2DeploymentsResponse1 = /* values here */
 ```
 
 ### `models.PostV2DeploymentsGetConfig2Deployments2`

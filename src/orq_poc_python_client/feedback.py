@@ -9,7 +9,7 @@ from typing import Optional, Union, cast
 
 
 class Feedback(BaseSDK):
-    def post_v2_feedback(
+    def create(
         self,
         *,
         request: Union[
@@ -98,7 +98,7 @@ class Feedback(BaseSDK):
             http_res,
         )
 
-    async def post_v2_feedback_async(
+    async def create_async(
         self,
         *,
         request: Union[

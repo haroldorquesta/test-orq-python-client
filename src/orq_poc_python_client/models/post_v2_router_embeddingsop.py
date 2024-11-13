@@ -56,7 +56,7 @@ class PostV2RouterEmbeddingsObject(str, Enum):
     LIST = "list"
 
 
-class PostV2RouterEmbeddingsRouterObject(str, Enum):
+class PostV2RouterEmbeddingsRouterEmbeddingsObject(str, Enum):
     r"""The object type, which is always \"embedding\"."""
 
     EMBEDDING = "embedding"
@@ -71,7 +71,7 @@ r"""The embedding result."""
 
 
 class PostV2RouterEmbeddingsDataTypedDict(TypedDict):
-    object: PostV2RouterEmbeddingsRouterObject
+    object: PostV2RouterEmbeddingsRouterEmbeddingsObject
     r"""The object type, which is always \"embedding\"."""
     embedding: EmbeddingTypedDict
     r"""The embedding result."""
@@ -80,7 +80,7 @@ class PostV2RouterEmbeddingsDataTypedDict(TypedDict):
 
 
 class PostV2RouterEmbeddingsData(BaseModel):
-    object: PostV2RouterEmbeddingsRouterObject
+    object: PostV2RouterEmbeddingsRouterEmbeddingsObject
     r"""The object type, which is always \"embedding\"."""
 
     embedding: Embedding

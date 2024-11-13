@@ -85,7 +85,7 @@ class PostV2RouterImagesGenerationsRequestBody(BaseModel):
     r"""The user who created the image"""
 
 
-class PostV2RouterImagesGenerationsMessageRouterPublicRole(str, Enum):
+class PostV2RouterImagesGenerationsMessageRouterImagesResponseRole(str, Enum):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -133,19 +133,19 @@ class PostV2RouterImagesGenerationsMessageToolCalls(BaseModel):
 
 
 class PostV2RouterImagesGenerationsMessage3TypedDict(TypedDict):
-    role: PostV2RouterImagesGenerationsMessageRouterPublicRole
+    role: PostV2RouterImagesGenerationsMessageRouterImagesResponseRole
     r"""The role of the prompt message"""
     tool_calls: List[PostV2RouterImagesGenerationsMessageToolCallsTypedDict]
 
 
 class PostV2RouterImagesGenerationsMessage3(BaseModel):
-    role: PostV2RouterImagesGenerationsMessageRouterPublicRole
+    role: PostV2RouterImagesGenerationsMessageRouterImagesResponseRole
     r"""The role of the prompt message"""
 
     tool_calls: List[PostV2RouterImagesGenerationsMessageToolCalls]
 
 
-class PostV2RouterImagesGenerationsMessageRouterRole(str, Enum):
+class PostV2RouterImagesGenerationsMessageRouterImagesRole(str, Enum):
     r"""The role of the prompt message"""
 
     SYSTEM = "system"
@@ -159,13 +159,13 @@ class PostV2RouterImagesGenerationsMessageRouterRole(str, Enum):
 
 
 class PostV2RouterImagesGenerationsMessage2TypedDict(TypedDict):
-    role: PostV2RouterImagesGenerationsMessageRouterRole
+    role: PostV2RouterImagesGenerationsMessageRouterImagesRole
     r"""The role of the prompt message"""
     url: str
 
 
 class PostV2RouterImagesGenerationsMessage2(BaseModel):
-    role: PostV2RouterImagesGenerationsMessageRouterRole
+    role: PostV2RouterImagesGenerationsMessageRouterImagesRole
     r"""The role of the prompt message"""
 
     url: str

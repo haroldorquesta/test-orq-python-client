@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [post_v2_feedback](#post_v2_feedback) - Submit feedback
+* [create](#create) - Submit feedback
 
-## post_v2_feedback
+## create
 
 Submit feedback for the LLM transaction via the API
 
@@ -21,7 +21,7 @@ s = Orq(
     bearer=os.getenv("ORQ_BEARER", ""),
 )
 
-res = s.feedback.post_v2_feedback(request={
+res = s.feedback.create(request={
     "property": "rating",
     "value": [
         "good",

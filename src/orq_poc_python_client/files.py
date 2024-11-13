@@ -9,7 +9,7 @@ from typing import List, Optional, Union, cast
 
 
 class Files(BaseSDK):
-    def post_v2_files(
+    def upload(
         self,
         *,
         request: Union[
@@ -100,7 +100,7 @@ class Files(BaseSDK):
             http_res,
         )
 
-    async def post_v2_files_async(
+    async def upload_async(
         self,
         *,
         request: Union[
@@ -191,7 +191,7 @@ class Files(BaseSDK):
             http_res,
         )
 
-    def post_v2_files_bulk(
+    def bulk_upload(
         self,
         *,
         request: Union[
@@ -279,7 +279,7 @@ class Files(BaseSDK):
             http_res,
         )
 
-    async def post_v2_files_bulk_async(
+    async def bulk_upload_async(
         self,
         *,
         request: Union[

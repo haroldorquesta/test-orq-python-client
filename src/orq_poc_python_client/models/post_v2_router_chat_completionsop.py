@@ -14,13 +14,15 @@ from typing import Any, AsyncGenerator, Dict, Generator, List, Optional, Union
 from typing_extensions import NotRequired, TypedDict
 
 
-class PostV2RouterChatCompletionsMessagesRouterPublicRole(str, Enum):
+class PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestRole(str, Enum):
     r"""The role of the messages author, in this case **tool**."""
 
     TOOL = "tool"
 
 
-class PostV2RouterChatCompletions2RouterPublicRequestRequestBodyMessagesType(str, Enum):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessages4Type(
+    str, Enum
+):
     IMAGE_URL = "image_url"
 
 
@@ -32,14 +34,16 @@ class PostV2RouterChatCompletions2Detail(str, Enum):
     AUTO = "auto"
 
 
-class PostV2RouterChatCompletions2RouterPublicImageURLTypedDict(TypedDict):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestImageURLTypedDict(
+    TypedDict
+):
     url: str
     r"""Either a URL of the image or the base64 encoded image data."""
     detail: NotRequired[PostV2RouterChatCompletions2Detail]
     r"""Specifies the detail level of the image."""
 
 
-class PostV2RouterChatCompletions2RouterPublicImageURL(BaseModel):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestImageURL(BaseModel):
     url: str
     r"""Either a URL of the image or the base64 encoded image data."""
 
@@ -47,84 +51,99 @@ class PostV2RouterChatCompletions2RouterPublicImageURL(BaseModel):
     r"""Specifies the detail level of the image."""
 
 
-class PostV2RouterChatCompletions2RouterPublic2TypedDict(TypedDict):
-    type: PostV2RouterChatCompletions2RouterPublicRequestRequestBodyMessagesType
-    image_url: PostV2RouterChatCompletions2RouterPublicImageURLTypedDict
+class PostV2RouterChatCompletions2RouterChatCompletionsRequest2TypedDict(TypedDict):
+    type: (
+        PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessages4Type
+    )
+    image_url: PostV2RouterChatCompletions2RouterChatCompletionsRequestImageURLTypedDict
 
 
-class PostV2RouterChatCompletions2RouterPublic2(BaseModel):
-    type: PostV2RouterChatCompletions2RouterPublicRequestRequestBodyMessagesType
+class PostV2RouterChatCompletions2RouterChatCompletionsRequest2(BaseModel):
+    type: (
+        PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessages4Type
+    )
 
-    image_url: PostV2RouterChatCompletions2RouterPublicImageURL
+    image_url: PostV2RouterChatCompletions2RouterChatCompletionsRequestImageURL
 
 
-class PostV2RouterChatCompletions2RouterPublicRequestRequestBodyType(str, Enum):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessagesType(
+    str, Enum
+):
     TEXT = "text"
 
 
-class PostV2RouterChatCompletions2RouterPublic1TypedDict(TypedDict):
-    type: PostV2RouterChatCompletions2RouterPublicRequestRequestBodyType
+class PostV2RouterChatCompletions2RouterChatCompletionsRequest1TypedDict(TypedDict):
+    type: (
+        PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessagesType
+    )
     text: str
 
 
-class PostV2RouterChatCompletions2RouterPublic1(BaseModel):
-    type: PostV2RouterChatCompletions2RouterPublicRequestRequestBodyType
+class PostV2RouterChatCompletions2RouterChatCompletionsRequest1(BaseModel):
+    type: (
+        PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyMessagesType
+    )
 
     text: str
 
 
-PostV2RouterChatCompletionsContentRouterPublic2TypedDict = Union[
-    PostV2RouterChatCompletions2RouterPublic1TypedDict,
-    PostV2RouterChatCompletions2RouterPublic2TypedDict,
+PostV2RouterChatCompletionsContentRouterChatCompletionsRequest2TypedDict = Union[
+    PostV2RouterChatCompletions2RouterChatCompletionsRequest1TypedDict,
+    PostV2RouterChatCompletions2RouterChatCompletionsRequest2TypedDict,
 ]
 
 
-PostV2RouterChatCompletionsContentRouterPublic2 = Union[
-    PostV2RouterChatCompletions2RouterPublic1, PostV2RouterChatCompletions2RouterPublic2
+PostV2RouterChatCompletionsContentRouterChatCompletionsRequest2 = Union[
+    PostV2RouterChatCompletions2RouterChatCompletionsRequest1,
+    PostV2RouterChatCompletions2RouterChatCompletionsRequest2,
 ]
 
 
-PostV2RouterChatCompletionsMessagesRouterPublicContentTypedDict = Union[
-    str, List[PostV2RouterChatCompletionsContentRouterPublic2TypedDict]
+PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestContentTypedDict = Union[
+    str, List[PostV2RouterChatCompletionsContentRouterChatCompletionsRequest2TypedDict]
 ]
 r"""The contents of a particular role's message."""
 
 
-PostV2RouterChatCompletionsMessagesRouterPublicContent = Union[
-    str, List[PostV2RouterChatCompletionsContentRouterPublic2]
+PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestContent = Union[
+    str, List[PostV2RouterChatCompletionsContentRouterChatCompletionsRequest2]
 ]
 r"""The contents of a particular role's message."""
 
 
 class FourTypedDict(TypedDict):
-    role: PostV2RouterChatCompletionsMessagesRouterPublicRole
+    role: PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestRole
     r"""The role of the messages author, in this case **tool**."""
     tool_call_id: str
-    content: PostV2RouterChatCompletionsMessagesRouterPublicContentTypedDict
+    content: (
+        PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestContentTypedDict
+    )
     r"""The contents of a particular role's message."""
 
 
 class Four(BaseModel):
-    role: PostV2RouterChatCompletionsMessagesRouterPublicRole
+    role: PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestRole
     r"""The role of the messages author, in this case **tool**."""
 
     tool_call_id: str
 
-    content: PostV2RouterChatCompletionsMessagesRouterPublicContent
+    content: PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestContent
     r"""The contents of a particular role's message."""
 
 
-class PostV2RouterChatCompletionsMessagesRouterRole(str, Enum):
+class PostV2RouterChatCompletionsMessagesRouterChatCompletionsRole(str, Enum):
     r"""The role of the messages author, in this case **assistant**."""
 
     ASSISTANT = "assistant"
 
 
-PostV2RouterChatCompletionsMessagesRouterContentTypedDict = Union[str, List[Any]]
+PostV2RouterChatCompletionsMessagesRouterChatCompletionsContentTypedDict = Union[
+    str, List[Any]
+]
 r"""The contents of the assistant message. Required unless tool_calls is specified."""
 
 
-PostV2RouterChatCompletionsMessagesRouterContent = Union[str, List[Any]]
+PostV2RouterChatCompletionsMessagesRouterChatCompletionsContent = Union[str, List[Any]]
 r"""The contents of the assistant message. Required unless tool_calls is specified."""
 
 
@@ -174,11 +193,13 @@ class MessagesToolCalls(BaseModel):
 
 
 class Messages3TypedDict(TypedDict):
-    role: PostV2RouterChatCompletionsMessagesRouterRole
+    role: PostV2RouterChatCompletionsMessagesRouterChatCompletionsRole
     r"""The role of the messages author, in this case **assistant**."""
     tool_calls: List[MessagesToolCallsTypedDict]
     r"""The tool calls generated by the model, such as function calls."""
-    content: NotRequired[PostV2RouterChatCompletionsMessagesRouterContentTypedDict]
+    content: NotRequired[
+        PostV2RouterChatCompletionsMessagesRouterChatCompletionsContentTypedDict
+    ]
     r"""The contents of the assistant message. Required unless tool_calls is specified."""
     refusal: NotRequired[Nullable[str]]
     r"""The refusal message by the assistant."""
@@ -187,13 +208,15 @@ class Messages3TypedDict(TypedDict):
 
 
 class Messages3(BaseModel):
-    role: PostV2RouterChatCompletionsMessagesRouterRole
+    role: PostV2RouterChatCompletionsMessagesRouterChatCompletionsRole
     r"""The role of the messages author, in this case **assistant**."""
 
     tool_calls: List[MessagesToolCalls]
     r"""The tool calls generated by the model, such as function calls."""
 
-    content: Optional[PostV2RouterChatCompletionsMessagesRouterContent] = None
+    content: Optional[
+        PostV2RouterChatCompletionsMessagesRouterChatCompletionsContent
+    ] = None
     r"""The contents of the assistant message. Required unless tool_calls is specified."""
 
     refusal: OptionalNullable[str] = UNSET
@@ -239,7 +262,9 @@ class PostV2RouterChatCompletionsMessagesRole(str, Enum):
     USER = "user"
 
 
-class PostV2RouterChatCompletions2RouterPublicRequestType(str, Enum):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyType(
+    str, Enum
+):
     IMAGE_URL = "image_url"
 
 
@@ -251,14 +276,14 @@ class TwoDetail(str, Enum):
     AUTO = "auto"
 
 
-class PostV2RouterChatCompletions2RouterImageURLTypedDict(TypedDict):
+class PostV2RouterChatCompletions2RouterChatCompletionsImageURLTypedDict(TypedDict):
     url: str
     r"""Either a URL of the image or the base64 encoded image data."""
     detail: NotRequired[TwoDetail]
     r"""Specifies the detail level of the image."""
 
 
-class PostV2RouterChatCompletions2RouterImageURL(BaseModel):
+class PostV2RouterChatCompletions2RouterChatCompletionsImageURL(BaseModel):
     url: str
     r"""Either a URL of the image or the base64 encoded image data."""
 
@@ -266,51 +291,52 @@ class PostV2RouterChatCompletions2RouterImageURL(BaseModel):
     r"""Specifies the detail level of the image."""
 
 
-class PostV2RouterChatCompletions2Router2TypedDict(TypedDict):
-    type: PostV2RouterChatCompletions2RouterPublicRequestType
-    image_url: PostV2RouterChatCompletions2RouterImageURLTypedDict
+class PostV2RouterChatCompletions2RouterChatCompletions2TypedDict(TypedDict):
+    type: PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyType
+    image_url: PostV2RouterChatCompletions2RouterChatCompletionsImageURLTypedDict
 
 
-class PostV2RouterChatCompletions2Router2(BaseModel):
-    type: PostV2RouterChatCompletions2RouterPublicRequestType
+class PostV2RouterChatCompletions2RouterChatCompletions2(BaseModel):
+    type: PostV2RouterChatCompletions2RouterChatCompletionsRequestRequestBodyType
 
-    image_url: PostV2RouterChatCompletions2RouterImageURL
+    image_url: PostV2RouterChatCompletions2RouterChatCompletionsImageURL
 
 
-class PostV2RouterChatCompletions2RouterPublicType(str, Enum):
+class PostV2RouterChatCompletions2RouterChatCompletionsRequestType(str, Enum):
     TEXT = "text"
 
 
-class PostV2RouterChatCompletions2Router1TypedDict(TypedDict):
-    type: PostV2RouterChatCompletions2RouterPublicType
+class PostV2RouterChatCompletions2RouterChatCompletions1TypedDict(TypedDict):
+    type: PostV2RouterChatCompletions2RouterChatCompletionsRequestType
     text: str
 
 
-class PostV2RouterChatCompletions2Router1(BaseModel):
-    type: PostV2RouterChatCompletions2RouterPublicType
+class PostV2RouterChatCompletions2RouterChatCompletions1(BaseModel):
+    type: PostV2RouterChatCompletions2RouterChatCompletionsRequestType
 
     text: str
 
 
-PostV2RouterChatCompletionsContentRouter2TypedDict = Union[
-    PostV2RouterChatCompletions2Router1TypedDict,
-    PostV2RouterChatCompletions2Router2TypedDict,
+PostV2RouterChatCompletionsContentRouterChatCompletions2TypedDict = Union[
+    PostV2RouterChatCompletions2RouterChatCompletions1TypedDict,
+    PostV2RouterChatCompletions2RouterChatCompletions2TypedDict,
 ]
 
 
-PostV2RouterChatCompletionsContentRouter2 = Union[
-    PostV2RouterChatCompletions2Router1, PostV2RouterChatCompletions2Router2
+PostV2RouterChatCompletionsContentRouterChatCompletions2 = Union[
+    PostV2RouterChatCompletions2RouterChatCompletions1,
+    PostV2RouterChatCompletions2RouterChatCompletions2,
 ]
 
 
 PostV2RouterChatCompletionsMessagesContentTypedDict = Union[
-    str, List[PostV2RouterChatCompletionsContentRouter2TypedDict]
+    str, List[PostV2RouterChatCompletionsContentRouterChatCompletions2TypedDict]
 ]
 r"""The contents of a particular role's message."""
 
 
 PostV2RouterChatCompletionsMessagesContent = Union[
-    str, List[PostV2RouterChatCompletionsContentRouter2]
+    str, List[PostV2RouterChatCompletionsContentRouterChatCompletions2]
 ]
 r"""The contents of a particular role's message."""
 
@@ -341,7 +367,7 @@ class MessagesRole(str, Enum):
     SYSTEM = "system"
 
 
-class PostV2RouterChatCompletions2RouterType(str, Enum):
+class PostV2RouterChatCompletions2RouterChatCompletionsType(str, Enum):
     IMAGE_URL = "image_url"
 
 
@@ -369,12 +395,12 @@ class PostV2RouterChatCompletions2ImageURL(BaseModel):
 
 
 class PostV2RouterChatCompletions22TypedDict(TypedDict):
-    type: PostV2RouterChatCompletions2RouterType
+    type: PostV2RouterChatCompletions2RouterChatCompletionsType
     image_url: PostV2RouterChatCompletions2ImageURLTypedDict
 
 
 class PostV2RouterChatCompletions22(BaseModel):
-    type: PostV2RouterChatCompletions2RouterType
+    type: PostV2RouterChatCompletions2RouterChatCompletionsType
 
     image_url: PostV2RouterChatCompletions2ImageURL
 
@@ -448,14 +474,14 @@ class PostV2RouterChatCompletionsType(str, Enum):
     FUNCTION = "function"
 
 
-class PostV2RouterChatCompletionsRouterType(str, Enum):
+class PostV2RouterChatCompletionsRouterChatCompletionsType(str, Enum):
     OBJECT = "object"
 
 
 class ParametersTypedDict(TypedDict):
     r"""The parameters the functions accepts, described as a JSON Schema object"""
 
-    type: PostV2RouterChatCompletionsRouterType
+    type: PostV2RouterChatCompletionsRouterChatCompletionsType
     properties: Dict[str, Any]
     required: NotRequired[List[str]]
 
@@ -463,7 +489,7 @@ class ParametersTypedDict(TypedDict):
 class Parameters(BaseModel):
     r"""The parameters the functions accepts, described as a JSON Schema object"""
 
-    type: PostV2RouterChatCompletionsRouterType
+    type: PostV2RouterChatCompletionsRouterChatCompletionsType
 
     properties: Dict[str, Any]
 
@@ -644,7 +670,7 @@ class PostV2RouterChatCompletionsRequestBody(BaseModel):
         return m
 
 
-class PostV2RouterChatCompletionsRouterResponseBodyTypedDict(TypedDict):
+class PostV2RouterChatCompletionsRouterChatCompletionsResponseBodyTypedDict(TypedDict):
     r"""A response body that follows the official OpenAI schema"""
 
     data: str
@@ -653,7 +679,7 @@ class PostV2RouterChatCompletionsRouterResponseBodyTypedDict(TypedDict):
     retry: NotRequired[int]
 
 
-class PostV2RouterChatCompletionsRouterResponseBody(BaseModel):
+class PostV2RouterChatCompletionsRouterChatCompletionsResponseBody(BaseModel):
     r"""A response body that follows the official OpenAI schema"""
 
     data: str
@@ -779,7 +805,9 @@ class PostV2RouterChatCompletionsResponseBodyContent(BaseModel):
         return m
 
 
-class PostV2RouterChatCompletionsResponseBodyRouterTopLogprobsTypedDict(TypedDict):
+class PostV2RouterChatCompletionsResponseBodyRouterChatCompletionsTopLogprobsTypedDict(
+    TypedDict
+):
     token: str
     r"""The token."""
     logprob: float
@@ -788,7 +816,9 @@ class PostV2RouterChatCompletionsResponseBodyRouterTopLogprobsTypedDict(TypedDic
     r"""A list of integers representing the UTF-8 bytes representation of the token."""
 
 
-class PostV2RouterChatCompletionsResponseBodyRouterTopLogprobs(BaseModel):
+class PostV2RouterChatCompletionsResponseBodyRouterChatCompletionsTopLogprobs(
+    BaseModel
+):
     token: str
     r"""The token."""
 
@@ -837,7 +867,7 @@ class ResponseBodyRefusalTypedDict(TypedDict):
     bytes: Nullable[List[float]]
     r"""A list of integers representing the UTF-8 bytes representation of the token."""
     top_logprobs: List[
-        PostV2RouterChatCompletionsResponseBodyRouterTopLogprobsTypedDict
+        PostV2RouterChatCompletionsResponseBodyRouterChatCompletionsTopLogprobsTypedDict
     ]
     r"""List of the most likely tokens and their log probability, at this token position."""
 
@@ -852,7 +882,9 @@ class ResponseBodyRefusal(BaseModel):
     bytes: Nullable[List[float]]
     r"""A list of integers representing the UTF-8 bytes representation of the token."""
 
-    top_logprobs: List[PostV2RouterChatCompletionsResponseBodyRouterTopLogprobs]
+    top_logprobs: List[
+        PostV2RouterChatCompletionsResponseBodyRouterChatCompletionsTopLogprobs
+    ]
     r"""List of the most likely tokens and their log probability, at this token position."""
 
     @model_serializer(mode="wrap")
@@ -1664,8 +1696,14 @@ r"""A response body that follows the official OpenAI schema"""
 PostV2RouterChatCompletionsResponseTypedDict = Union[
     PostV2RouterChatCompletionsResponseBodyTypedDict,
     Union[
-        Generator[PostV2RouterChatCompletionsRouterResponseBodyTypedDict, None, None],
-        AsyncGenerator[PostV2RouterChatCompletionsRouterResponseBodyTypedDict, None],
+        Generator[
+            PostV2RouterChatCompletionsRouterChatCompletionsResponseBodyTypedDict,
+            None,
+            None,
+        ],
+        AsyncGenerator[
+            PostV2RouterChatCompletionsRouterChatCompletionsResponseBodyTypedDict, None
+        ],
     ],
 ]
 
@@ -1673,7 +1711,11 @@ PostV2RouterChatCompletionsResponseTypedDict = Union[
 PostV2RouterChatCompletionsResponse = Union[
     PostV2RouterChatCompletionsResponseBody,
     Union[
-        Generator[PostV2RouterChatCompletionsRouterResponseBody, None, None],
-        AsyncGenerator[PostV2RouterChatCompletionsRouterResponseBody, None],
+        Generator[
+            PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None, None
+        ],
+        AsyncGenerator[
+            PostV2RouterChatCompletionsRouterChatCompletionsResponseBody, None
+        ],
     ],
 ]

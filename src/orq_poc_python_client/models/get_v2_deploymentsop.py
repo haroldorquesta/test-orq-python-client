@@ -47,7 +47,7 @@ class GetV2DeploymentsType(str, Enum):
     FUNCTION = "function"
 
 
-class GetV2DeploymentsDeploymentsPublicType(str, Enum):
+class GetV2DeploymentsDeploymentsResponseType(str, Enum):
     OBJECT = "object"
 
 
@@ -57,7 +57,7 @@ class GetV2DeploymentsParametersTypedDict(TypedDict):
     Omitting `parameters` defines a function with an empty parameter list.
     """
 
-    type: GetV2DeploymentsDeploymentsPublicType
+    type: GetV2DeploymentsDeploymentsResponseType
     properties: Dict[str, Any]
     required: NotRequired[List[str]]
     additional_properties: NotRequired[bool]
@@ -69,7 +69,7 @@ class GetV2DeploymentsParameters(BaseModel):
     Omitting `parameters` defines a function with an empty parameter list.
     """
 
-    type: GetV2DeploymentsDeploymentsPublicType
+    type: GetV2DeploymentsDeploymentsResponseType
 
     properties: Dict[str, Any]
 
