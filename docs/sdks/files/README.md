@@ -62,15 +62,12 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.files.bulk_upload(request={
-    "files": [
-        {
-            "file_name": "example.file",
-            "content": open("example.file", "rb"),
-        },
-    ],
-    "purpose": orq_poc_python_client.BulkFileUploadPurpose.RETRIEVAL,
-})
+res = s.files.bulk_upload(files=[
+    {
+        "file_name": "example.file",
+        "content": open("example.file", "rb"),
+    },
+], purpose=orq_poc_python_client.BulkFileUploadPurpose.RETRIEVAL)
 
 if res is not None:
     # handle response
@@ -80,10 +77,11 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [models.BulkFileUploadRequestBody](../../models/bulkfileuploadrequestbody.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
-| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `files`                                                                 | List[[models.BulkFileUploadFiles](../../models/bulkfileuploadfiles.md)] | :heavy_check_mark:                                                      | N/A                                                                     |
+| `purpose`                                                               | [models.BulkFileUploadPurpose](../../models/bulkfileuploadpurpose.md)   | :heavy_check_mark:                                                      | The intended purpose of the uploaded file.                              |
+| `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
 
 ### Response
 

@@ -21,13 +21,9 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.feedback.create(request={
-    "property": "rating",
-    "value": [
-        "good",
-    ],
-    "trace_id": "67HTZ65Z9W91HSF51CW68KK1QH",
-})
+res = s.feedback.create(property="rating", value=[
+    "good",
+], trace_id="67HTZ65Z9W91HSF51CW68KK1QH")
 
 if res is not None:
     # handle response
@@ -37,10 +33,12 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [models.CreateFeedbackRequestBody](../../models/createfeedbackrequestbody.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
-| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
+| Parameter                                                                                                                                             | Type                                                                                                                                                  | Required                                                                                                                                              | Description                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `property`                                                                                                                                            | *str*                                                                                                                                                 | :heavy_check_mark:                                                                                                                                    | A string describing the specific property or aspect rated.                                                                                            |
+| `value`                                                                                                                                               | [models.Value](../../models/value.md)                                                                                                                 | :heavy_check_mark:                                                                                                                                    | The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string. |
+| `trace_id`                                                                                                                                            | *str*                                                                                                                                                 | :heavy_check_mark:                                                                                                                                    | The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints                              |
+| `retries`                                                                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                      | :heavy_minus_sign:                                                                                                                                    | Configuration to override the default retry behavior of the client.                                                                                   |
 
 ### Response
 

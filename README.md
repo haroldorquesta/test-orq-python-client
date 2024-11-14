@@ -85,9 +85,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response
@@ -107,9 +105,7 @@ async def main():
     s = Orq(
         api_key=os.getenv("ORQ_API_KEY", ""),
     )
-    res = await s.contacts.create_async(request={
-        "external_id": "<id>",
-    })
+    res = await s.contacts.create_async(external_id="<id>")
     if res is not None:
         # handle response
         pass
@@ -195,9 +191,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.deployments.invoke(request={
-    "key": "<key>",
-})
+res = s.deployments.invoke(key="<key>")
 
 if res is not None:
     for event in res:
@@ -252,9 +246,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-},
+res = s.contacts.create(external_id="<id>",
     RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
 if res is not None:
@@ -274,9 +266,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response
@@ -348,9 +338,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response
@@ -460,9 +448,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response

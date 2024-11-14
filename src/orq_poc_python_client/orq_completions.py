@@ -4,9 +4,9 @@ from .basesdk import BaseSDK
 from enum import Enum
 from orq_poc_python_client import models, utils
 from orq_poc_python_client._hooks import HookContext
-from orq_poc_python_client.types import BaseModel, OptionalNullable, UNSET
+from orq_poc_python_client.types import OptionalNullable, UNSET
 from orq_poc_python_client.utils import eventstreaming, get_security_from_env
-from typing import Optional, Union, cast
+from typing import List, Optional, Union
 
 
 class CreateAcceptEnum(str, Enum):
@@ -18,10 +18,19 @@ class OrqCompletions(BaseSDK):
     def create(
         self,
         *,
-        request: Union[
-            models.RouterChatCompletionsRequestBody,
-            models.RouterChatCompletionsRequestBodyTypedDict,
+        model: str,
+        messages: Union[
+            List[models.RouterChatCompletionsMessages],
+            List[models.RouterChatCompletionsMessagesTypedDict],
         ],
+        frequency_penalty: OptionalNullable[float] = 0,
+        max_tokens: OptionalNullable[float] = UNSET,
+        presence_penalty: OptionalNullable[float] = 0,
+        seed: OptionalNullable[float] = UNSET,
+        stream: OptionalNullable[bool] = False,
+        temperature: OptionalNullable[float] = 1,
+        top_p: OptionalNullable[float] = 1,
+        tools: Optional[Union[List[models.Tools], List[models.ToolsTypedDict]]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -31,7 +40,16 @@ class OrqCompletions(BaseSDK):
 
         For sending requests to chat completion models
 
-        :param request: The request object to send.
+        :param model: ID of the model to use
+        :param messages: A list of messages comprising the conversation so far.
+        :param frequency_penalty: Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+        :param max_tokens: The maximum number of tokens that can be generated in the chat completion.
+        :param presence_penalty: Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+        :param seed: If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result.
+        :param stream: If set, partial message deltas will be sent, like in ChatGPT.
+        :param temperature: What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+        :param top_p: An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass.
+        :param tools: A list of tools the model may call.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -48,9 +66,20 @@ class OrqCompletions(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.RouterChatCompletionsRequestBody)
-        request = cast(models.RouterChatCompletionsRequestBody, request)
+        request = models.RouterChatCompletionsRequestBody(
+            model=model,
+            messages=utils.get_pydantic_model(
+                messages, List[models.RouterChatCompletionsMessages]
+            ),
+            frequency_penalty=frequency_penalty,
+            max_tokens=max_tokens,
+            presence_penalty=presence_penalty,
+            seed=seed,
+            stream=stream,
+            temperature=temperature,
+            top_p=top_p,
+            tools=utils.get_pydantic_model(tools, Optional[List[models.Tools]]),
+        )
 
         req = self.build_request(
             method="POST",
@@ -125,10 +154,19 @@ class OrqCompletions(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Union[
-            models.RouterChatCompletionsRequestBody,
-            models.RouterChatCompletionsRequestBodyTypedDict,
+        model: str,
+        messages: Union[
+            List[models.RouterChatCompletionsMessages],
+            List[models.RouterChatCompletionsMessagesTypedDict],
         ],
+        frequency_penalty: OptionalNullable[float] = 0,
+        max_tokens: OptionalNullable[float] = UNSET,
+        presence_penalty: OptionalNullable[float] = 0,
+        seed: OptionalNullable[float] = UNSET,
+        stream: OptionalNullable[bool] = False,
+        temperature: OptionalNullable[float] = 1,
+        top_p: OptionalNullable[float] = 1,
+        tools: Optional[Union[List[models.Tools], List[models.ToolsTypedDict]]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -138,7 +176,16 @@ class OrqCompletions(BaseSDK):
 
         For sending requests to chat completion models
 
-        :param request: The request object to send.
+        :param model: ID of the model to use
+        :param messages: A list of messages comprising the conversation so far.
+        :param frequency_penalty: Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+        :param max_tokens: The maximum number of tokens that can be generated in the chat completion.
+        :param presence_penalty: Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
+        :param seed: If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result.
+        :param stream: If set, partial message deltas will be sent, like in ChatGPT.
+        :param temperature: What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+        :param top_p: An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass.
+        :param tools: A list of tools the model may call.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -155,9 +202,20 @@ class OrqCompletions(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.RouterChatCompletionsRequestBody)
-        request = cast(models.RouterChatCompletionsRequestBody, request)
+        request = models.RouterChatCompletionsRequestBody(
+            model=model,
+            messages=utils.get_pydantic_model(
+                messages, List[models.RouterChatCompletionsMessages]
+            ),
+            frequency_penalty=frequency_penalty,
+            max_tokens=max_tokens,
+            presence_penalty=presence_penalty,
+            seed=seed,
+            stream=stream,
+            temperature=temperature,
+            top_p=top_p,
+            tools=utils.get_pydantic_model(tools, Optional[List[models.Tools]]),
+        )
 
         req = self.build_request_async(
             method="POST",

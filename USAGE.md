@@ -8,9 +8,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response
@@ -30,9 +28,7 @@ async def main():
     s = Orq(
         api_key=os.getenv("ORQ_API_KEY", ""),
     )
-    res = await s.contacts.create_async(request={
-        "external_id": "<id>",
-    })
+    res = await s.contacts.create_async(external_id="<id>")
     if res is not None:
         # handle response
         pass

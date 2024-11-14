@@ -200,9 +200,10 @@ class Files(BaseSDK):
     def bulk_upload(
         self,
         *,
-        request: Union[
-            models.BulkFileUploadRequestBody, models.BulkFileUploadRequestBodyTypedDict
+        files: Union[
+            List[models.BulkFileUploadFiles], List[models.BulkFileUploadFilesTypedDict]
         ],
+        purpose: models.BulkFileUploadPurpose,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -211,7 +212,8 @@ class Files(BaseSDK):
 
         Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
 
-        :param request: The request object to send.
+        :param files:
+        :param purpose: The intended purpose of the uploaded file.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -227,9 +229,10 @@ class Files(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.BulkFileUploadRequestBody)
-        request = cast(models.BulkFileUploadRequestBody, request)
+        request = models.BulkFileUploadRequestBody(
+            files=utils.get_pydantic_model(files, List[models.BulkFileUploadFiles]),
+            purpose=purpose,
+        )
 
         req = self.build_request(
             method="POST",
@@ -290,9 +293,10 @@ class Files(BaseSDK):
     async def bulk_upload_async(
         self,
         *,
-        request: Union[
-            models.BulkFileUploadRequestBody, models.BulkFileUploadRequestBodyTypedDict
+        files: Union[
+            List[models.BulkFileUploadFiles], List[models.BulkFileUploadFilesTypedDict]
         ],
+        purpose: models.BulkFileUploadPurpose,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -301,7 +305,8 @@ class Files(BaseSDK):
 
         Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
 
-        :param request: The request object to send.
+        :param files:
+        :param purpose: The intended purpose of the uploaded file.
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -317,9 +322,10 @@ class Files(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.BulkFileUploadRequestBody)
-        request = cast(models.BulkFileUploadRequestBody, request)
+        request = models.BulkFileUploadRequestBody(
+            files=utils.get_pydantic_model(files, List[models.BulkFileUploadFiles]),
+            purpose=purpose,
+        )
 
         req = self.build_request_async(
             method="POST",

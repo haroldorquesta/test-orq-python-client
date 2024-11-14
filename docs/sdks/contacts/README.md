@@ -21,9 +21,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.contacts.create(request={
-    "external_id": "<id>",
-})
+res = s.contacts.create(external_id="<id>")
 
 if res is not None:
     # handle response
@@ -33,10 +31,15 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [models.CreateContactRequestBody](../../models/createcontactrequestbody.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-| `retries`                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)            | :heavy_minus_sign:                                                          | Configuration to override the default retry behavior of the client.         |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `external_id`                                                             | *str*                                                                     | :heavy_check_mark:                                                        | Unique string value to identify the contact user in the customer's system |
+| `display_name`                                                            | *OptionalNullable[str]*                                                   | :heavy_minus_sign:                                                        | Display name or nickname of the user                                      |
+| `email`                                                                   | *OptionalNullable[str]*                                                   | :heavy_minus_sign:                                                        | Email address of the user                                                 |
+| `avatar_url`                                                              | *OptionalNullable[str]*                                                   | :heavy_minus_sign:                                                        | URL linking to the user's avatar image                                    |
+| `tags`                                                                    | List[*str*]                                                               | :heavy_minus_sign:                                                        | Array of UUIDs representing tags associated with the user                 |
+| `metadata`                                                                | Dict[str, *Any*]                                                          | :heavy_minus_sign:                                                        | Additional custom metadata associated with the user as key-value pairs    |
+| `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
 
 ### Response
 
