@@ -29,14 +29,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [models.PostV2RemoteconfigsRequestBody](../../models/postv2remoteconfigsrequestbody.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-| `retries`                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                        | :heavy_minus_sign:                                                                      | Configuration to override the default retry behavior of the client.                     |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [models.RemoteConfigsGetConfigRequestBody](../../models/remoteconfigsgetconfigrequestbody.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| `retries`                                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                              | :heavy_minus_sign:                                                                            | Configuration to override the default retry behavior of the client.                           |
 
 ### Response
 
-**[models.PostV2RemoteconfigsResponseBody](../../models/postv2remoteconfigsresponsebody.md)**
+**[models.RemoteConfigsGetConfigResponseBody](../../models/remoteconfigsgetconfigresponsebody.md)**
 
 ### Errors
 

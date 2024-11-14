@@ -35,14 +35,13 @@ class Router(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.PostV2RouterRerankRequestBody,
-                models.PostV2RouterRerankRequestBodyTypedDict,
+                models.RouterRerankRequestBody, models.RouterRerankRequestBodyTypedDict
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RouterRerankResponseBody:
+    ) -> models.RouterRerankResponseBody:
         r"""rerank route
 
         For sending requests to rerank models
@@ -64,10 +63,8 @@ class Router(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.PostV2RouterRerankRequestBody]
-            )
-        request = cast(Optional[models.PostV2RouterRerankRequestBody], request)
+            request = utils.unmarshal(request, Optional[models.RouterRerankRequestBody])
+        request = cast(Optional[models.RouterRerankRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -82,11 +79,7 @@ class Router(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.PostV2RouterRerankRequestBody],
+                request, False, True, "json", Optional[models.RouterRerankRequestBody]
             ),
             timeout_ms=timeout_ms,
         )
@@ -101,7 +94,7 @@ class Router(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/rerank",
+                operation_id="RouterRerank",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -113,9 +106,7 @@ class Router(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostV2RouterRerankResponseBody
-            )
+            return utils.unmarshal_json(http_res.text, models.RouterRerankResponseBody)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
@@ -136,14 +127,13 @@ class Router(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.PostV2RouterRerankRequestBody,
-                models.PostV2RouterRerankRequestBodyTypedDict,
+                models.RouterRerankRequestBody, models.RouterRerankRequestBodyTypedDict
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RouterRerankResponseBody:
+    ) -> models.RouterRerankResponseBody:
         r"""rerank route
 
         For sending requests to rerank models
@@ -165,10 +155,8 @@ class Router(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, Optional[models.PostV2RouterRerankRequestBody]
-            )
-        request = cast(Optional[models.PostV2RouterRerankRequestBody], request)
+            request = utils.unmarshal(request, Optional[models.RouterRerankRequestBody])
+        request = cast(Optional[models.RouterRerankRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -183,11 +171,7 @@ class Router(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                True,
-                "json",
-                Optional[models.PostV2RouterRerankRequestBody],
+                request, False, True, "json", Optional[models.RouterRerankRequestBody]
             ),
             timeout_ms=timeout_ms,
         )
@@ -202,7 +186,7 @@ class Router(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/rerank",
+                operation_id="RouterRerank",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -214,9 +198,7 @@ class Router(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostV2RouterRerankResponseBody
-            )
+            return utils.unmarshal_json(http_res.text, models.RouterRerankResponseBody)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(

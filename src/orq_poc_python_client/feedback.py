@@ -13,12 +13,12 @@ class Feedback(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FeedbackRequestBody, models.PostV2FeedbackRequestBodyTypedDict
+            models.CreateFeedbackRequestBody, models.CreateFeedbackRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2FeedbackResponseBody:
+    ) -> models.CreateFeedbackResponseBody:
         r"""Submit feedback
 
         Submit feedback for the LLM transaction via the API
@@ -40,8 +40,8 @@ class Feedback(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FeedbackRequestBody)
-        request = cast(models.PostV2FeedbackRequestBody, request)
+            request = utils.unmarshal(request, models.CreateFeedbackRequestBody)
+        request = cast(models.CreateFeedbackRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -56,7 +56,7 @@ class Feedback(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2FeedbackRequestBody
+                request, False, False, "json", models.CreateFeedbackRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -71,7 +71,7 @@ class Feedback(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/feedback",
+                operation_id="CreateFeedback",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -84,7 +84,7 @@ class Feedback(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2FeedbackResponseBody
+                http_res.text, models.CreateFeedbackResponseBody
             )
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
@@ -105,12 +105,12 @@ class Feedback(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FeedbackRequestBody, models.PostV2FeedbackRequestBodyTypedDict
+            models.CreateFeedbackRequestBody, models.CreateFeedbackRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2FeedbackResponseBody:
+    ) -> models.CreateFeedbackResponseBody:
         r"""Submit feedback
 
         Submit feedback for the LLM transaction via the API
@@ -132,8 +132,8 @@ class Feedback(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FeedbackRequestBody)
-        request = cast(models.PostV2FeedbackRequestBody, request)
+            request = utils.unmarshal(request, models.CreateFeedbackRequestBody)
+        request = cast(models.CreateFeedbackRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -148,7 +148,7 @@ class Feedback(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2FeedbackRequestBody
+                request, False, False, "json", models.CreateFeedbackRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -163,7 +163,7 @@ class Feedback(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/feedback",
+                operation_id="CreateFeedback",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -176,7 +176,7 @@ class Feedback(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2FeedbackResponseBody
+                http_res.text, models.CreateFeedbackResponseBody
             )
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)

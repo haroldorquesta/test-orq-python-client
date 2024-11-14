@@ -23,7 +23,7 @@ s = Orq(
 
 res = s.router.embeddings.create(request={
     "input": "<value>",
-    "model": "Accord",
+    "model": "LeBaron",
 })
 
 if res is not None:
@@ -34,14 +34,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [models.PostV2RouterEmbeddingsRequestBody](../../models/postv2routerembeddingsrequestbody.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
-| `retries`                                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                              | :heavy_minus_sign:                                                                            | Configuration to override the default retry behavior of the client.                           |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [models.RouterEmbeddingRequestBody](../../models/routerembeddingrequestbody.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `retries`                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                | :heavy_minus_sign:                                                              | Configuration to override the default retry behavior of the client.             |
 
 ### Response
 
-**[models.PostV2RouterEmbeddingsResponseBody](../../models/postv2routerembeddingsresponsebody.md)**
+**[models.RouterEmbeddingResponseBody](../../models/routerembeddingresponsebody.md)**
 
 ### Errors
 

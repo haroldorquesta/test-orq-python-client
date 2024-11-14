@@ -23,12 +23,28 @@ s = Orq(
 )
 
 res = s.router.chat.completions.create(request={
-    "model": "Land Cruiser",
+    "model": "Fiesta",
     "messages": [
         {
-            "role": orq_poc_python_client.PostV2RouterChatCompletionsMessagesRouterChatCompletionsRequestRole.TOOL,
-            "tool_call_id": "<id>",
+            "role": orq_poc_python_client.RouterChatCompletionsMessagesRole.USER,
             "content": "<value>",
+        },
+        {
+            "role": orq_poc_python_client.MessagesRole.SYSTEM,
+            "content": [
+                {
+                    "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                    "text": "<value>",
+                },
+                {
+                    "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                    "text": "<value>",
+                },
+                {
+                    "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                    "text": "<value>",
+                },
+            ],
         },
     ],
 })
@@ -42,14 +58,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                               | [models.PostV2RouterChatCompletionsRequestBody](../../models/postv2routerchatcompletionsrequestbody.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
-| `retries`                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                        | :heavy_minus_sign:                                                                                      | Configuration to override the default retry behavior of the client.                                     |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [models.RouterChatCompletionsRequestBody](../../models/routerchatcompletionsrequestbody.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| `retries`                                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                            | :heavy_minus_sign:                                                                          | Configuration to override the default retry behavior of the client.                         |
 
 ### Response
 
-**[models.PostV2RouterChatCompletionsResponse](../../models/postv2routerchatcompletionsresponse.md)**
+**[models.RouterChatCompletionsResponse](../../models/routerchatcompletionsresponse.md)**
 
 ### Errors
 
