@@ -41,7 +41,7 @@ python:
       shared: ""
       webhooks: ""
   inputModelSuffix: input
-  maxMethodParams: 4
+  maxMethodParams: 9
   methodArguments: infer-optional-args
   outputModelSuffix: output
   packageName: orq-poc-python-client

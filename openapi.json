@@ -37757,6 +37757,7 @@
           "Contacts"
         ],
         "x-speakeasy-name-override": "create",
+        "operationId": "CreateContact",
         "description": "Update or add user information to workspace",
         "summary": "Update user information",
         "requestBody": {
@@ -37913,6 +37914,7 @@
           "Feedback"
         ],
         "x-speakeasy-name-override": "create",
+        "operationId": "CreateFeedback",
         "description": "Submit feedback for the LLM transaction via the API",
         "summary": "Submit feedback",
         "requestBody": {
@@ -38017,6 +38019,7 @@
         ],
         "x-speakeasy-group": "deployments",
         "x-speakeasy-name-override": "getConfig",
+        "operationId": "DeploymentGetConfig",
         "description": "Retrieve the deployment configuration",
         "summary": "Get config",
         "requestBody": {
@@ -38813,6 +38816,7 @@
         ],
         "x-speakeasy-group": "deployments",
         "x-speakeasy-name-override": "invoke",
+        "operationId": "DeploymentInvoke",
         "description": "Invoke a deployment with a given payload",
         "summary": "Invoke",
         "requestBody": {
@@ -39416,8 +39420,9 @@
           "Deployments",
           "public"
         ],
-        "x-speakeasy-group": "deployments",
-        "x-speakeasy-name-override": "addMetrics",
+        "x-speakeasy-group": "deployments.metrics",
+        "x-speakeasy-name-override": "create",
+        "operationId": "DeploymentCreateMetric",
         "description": "Add metrics to a deployment",
         "summary": "Add metrics",
         "parameters": [
@@ -39845,6 +39850,7 @@
         ],
         "x-speakeasy-group": "deployments",
         "x-speakeasy-name-override": "list",
+        "operationId": "Deployments",
         "description": "Returns a list of your deployments. The deployments are returned sorted by creation date, with the most recent deployments appearing first.",
         "summary": "List all deployments",
         "parameters": [
@@ -40382,6 +40388,7 @@
         ],
         "x-speakeasy-group": "files",
         "x-speakeasy-name-override": "upload",
+        "operationId": "FileUpload",
         "summary": "Upload file",
         "description": "Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).",
         "requestBody": {
@@ -40470,6 +40477,7 @@
         ],
         "x-speakeasy-group": "files",
         "x-speakeasy-name-override": "bulkUpload",
+        "operationId": "BulkFileUpload",
         "summary": "Bulk upload file",
         "description": "Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).",
         "requestBody": {
@@ -40567,6 +40575,7 @@
         ],
         "x-speakeasy-group": "router.embeddings",
         "x-speakeasy-name-override": "create",
+        "operationId": "RouterEmbedding",
         "description": "Creates an embedding vector representing the input text.",
         "summary": "Embeddings",
         "requestBody": {
@@ -40722,6 +40731,7 @@
         ],
         "x-speakeasy-group": "router.chat.completions",
         "x-speakeasy-name-override": "create",
+        "operationId": "RouterChatCompletions",
         "description": "For sending requests to chat completion models",
         "summary": "Chat",
         "requestBody": {
@@ -41892,6 +41902,7 @@
         ],
         "x-speakeasy-group": "router.completions",
         "x-speakeasy-name-override": "create",
+        "operationId": "RouterCompletions",
         "description": "For sending requests to legacy completion models",
         "summary": "legacy completions route",
         "requestBody": {
@@ -42116,6 +42127,7 @@
         ],
         "x-speakeasy-group": "router",
         "x-speakeasy-name-override": "rerank",
+        "operationId": "RouterRerank",
         "description": "For sending requests to rerank models",
         "summary": "rerank route",
         "requestBody": {
@@ -42296,6 +42308,7 @@
         ],
         "x-speakeasy-group": "router.images",
         "x-speakeasy-name-override": "generate",
+        "operationId": "RouterImageGenerations",
         "requestBody": {
           "description": "A request body that follows the official OpenAI schema",
           "content": {
@@ -42562,6 +42575,7 @@
         ],
         "x-speakeasy-name-override": "getConfig",
         "x-speakeasy-group": "remoteconfig",
+        "operationId": "RemoteConfigsGetConfig",
         "requestBody": {
           "content": {
             "application/json": {
