@@ -32,14 +32,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [models.PostV2FilesRequestBody](../../models/postv2filesrequestbody.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
-| `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.FileUploadRequestBody](../../models/fileuploadrequestbody.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
 ### Response
 
-**[models.PostV2FilesResponseBody](../../models/postv2filesresponsebody.md)**
+**[models.FileUploadResponseBody](../../models/fileuploadresponsebody.md)**
 
 ### Errors
 
@@ -69,7 +69,7 @@ res = s.files.bulk_upload(request={
             "content": open("example.file", "rb"),
         },
     ],
-    "purpose": orq_poc_python_client.PostV2FilesBulkPurpose.RETRIEVAL,
+    "purpose": orq_poc_python_client.BulkFileUploadPurpose.RETRIEVAL,
 })
 
 if res is not None:
@@ -80,10 +80,10 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [models.PostV2FilesBulkRequestBody](../../models/postv2filesbulkrequestbody.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
-| `retries`                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                | :heavy_minus_sign:                                                              | Configuration to override the default retry behavior of the client.             |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [models.BulkFileUploadRequestBody](../../models/bulkfileuploadrequestbody.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
 
 ### Response
 

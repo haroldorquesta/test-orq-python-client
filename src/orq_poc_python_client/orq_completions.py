@@ -19,14 +19,14 @@ class OrqCompletions(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2RouterChatCompletionsRequestBody,
-            models.PostV2RouterChatCompletionsRequestBodyTypedDict,
+            models.RouterChatCompletionsRequestBody,
+            models.RouterChatCompletionsRequestBodyTypedDict,
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         accept_header_override: Optional[CreateAcceptEnum] = None,
-    ) -> models.PostV2RouterChatCompletionsResponse:
+    ) -> models.RouterChatCompletionsResponse:
         r"""Chat
 
         For sending requests to chat completion models
@@ -49,10 +49,8 @@ class OrqCompletions(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, models.PostV2RouterChatCompletionsRequestBody
-            )
-        request = cast(models.PostV2RouterChatCompletionsRequestBody, request)
+            request = utils.unmarshal(request, models.RouterChatCompletionsRequestBody)
+        request = cast(models.RouterChatCompletionsRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -69,11 +67,7 @@ class OrqCompletions(BaseSDK):
             else "application/json;q=1, text/event-stream;q=0",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                False,
-                "json",
-                models.PostV2RouterChatCompletionsRequestBody,
+                request, False, False, "json", models.RouterChatCompletionsRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -88,7 +82,7 @@ class OrqCompletions(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/chat/completions",
+                operation_id="RouterChatCompletions",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -103,14 +97,13 @@ class OrqCompletions(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             http_response_text = utils.stream_to_text(http_res)
             return utils.unmarshal_json(
-                http_response_text, models.PostV2RouterChatCompletionsResponseBody
+                http_response_text, models.RouterChatCompletionsResponseBody
             )
         if utils.match_response(http_res, "200", "text/event-stream"):
             return eventstreaming.stream_events(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody,
+                    raw, models.RouterChatCompletionsRouterChatCompletionsResponseBody
                 ),
                 sentinel="[DONE]",
             )
@@ -133,14 +126,14 @@ class OrqCompletions(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2RouterChatCompletionsRequestBody,
-            models.PostV2RouterChatCompletionsRequestBodyTypedDict,
+            models.RouterChatCompletionsRequestBody,
+            models.RouterChatCompletionsRequestBodyTypedDict,
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         accept_header_override: Optional[CreateAcceptEnum] = None,
-    ) -> models.PostV2RouterChatCompletionsResponse:
+    ) -> models.RouterChatCompletionsResponse:
         r"""Chat
 
         For sending requests to chat completion models
@@ -163,10 +156,8 @@ class OrqCompletions(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(
-                request, models.PostV2RouterChatCompletionsRequestBody
-            )
-        request = cast(models.PostV2RouterChatCompletionsRequestBody, request)
+            request = utils.unmarshal(request, models.RouterChatCompletionsRequestBody)
+        request = cast(models.RouterChatCompletionsRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -183,11 +174,7 @@ class OrqCompletions(BaseSDK):
             else "application/json;q=1, text/event-stream;q=0",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request,
-                False,
-                False,
-                "json",
-                models.PostV2RouterChatCompletionsRequestBody,
+                request, False, False, "json", models.RouterChatCompletionsRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -202,7 +189,7 @@ class OrqCompletions(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/chat/completions",
+                operation_id="RouterChatCompletions",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -217,14 +204,13 @@ class OrqCompletions(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             http_response_text = await utils.stream_to_text_async(http_res)
             return utils.unmarshal_json(
-                http_response_text, models.PostV2RouterChatCompletionsResponseBody
+                http_response_text, models.RouterChatCompletionsResponseBody
             )
         if utils.match_response(http_res, "200", "text/event-stream"):
             return eventstreaming.stream_events_async(
                 http_res,
                 lambda raw: utils.unmarshal_json(
-                    raw,
-                    models.PostV2RouterChatCompletionsRouterChatCompletionsResponseBody,
+                    raw, models.RouterChatCompletionsRouterChatCompletionsResponseBody
                 ),
                 sentinel="[DONE]",
             )

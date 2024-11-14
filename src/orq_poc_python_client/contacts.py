@@ -13,12 +13,12 @@ class Contacts(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2ContactsRequestBody, models.PostV2ContactsRequestBodyTypedDict
+            models.CreateContactRequestBody, models.CreateContactRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2ContactsResponseBody:
+    ) -> models.CreateContactResponseBody:
         r"""Update user information
 
         Update or add user information to workspace
@@ -40,8 +40,8 @@ class Contacts(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2ContactsRequestBody)
-        request = cast(models.PostV2ContactsRequestBody, request)
+            request = utils.unmarshal(request, models.CreateContactRequestBody)
+        request = cast(models.CreateContactRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -56,7 +56,7 @@ class Contacts(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2ContactsRequestBody
+                request, False, False, "json", models.CreateContactRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -71,7 +71,7 @@ class Contacts(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/contacts",
+                operation_id="CreateContact",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -83,9 +83,7 @@ class Contacts(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostV2ContactsResponseBody
-            )
+            return utils.unmarshal_json(http_res.text, models.CreateContactResponseBody)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
@@ -105,12 +103,12 @@ class Contacts(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2ContactsRequestBody, models.PostV2ContactsRequestBodyTypedDict
+            models.CreateContactRequestBody, models.CreateContactRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2ContactsResponseBody:
+    ) -> models.CreateContactResponseBody:
         r"""Update user information
 
         Update or add user information to workspace
@@ -132,8 +130,8 @@ class Contacts(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2ContactsRequestBody)
-        request = cast(models.PostV2ContactsRequestBody, request)
+            request = utils.unmarshal(request, models.CreateContactRequestBody)
+        request = cast(models.CreateContactRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -148,7 +146,7 @@ class Contacts(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2ContactsRequestBody
+                request, False, False, "json", models.CreateContactRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -163,7 +161,7 @@ class Contacts(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/contacts",
+                operation_id="CreateContact",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -175,9 +173,7 @@ class Contacts(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(
-                http_res.text, models.PostV2ContactsResponseBody
-            )
+            return utils.unmarshal_json(http_res.text, models.CreateContactResponseBody)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(

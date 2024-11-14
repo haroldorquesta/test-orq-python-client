@@ -31,14 +31,14 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [models.PostV2RouterCompletionsRequestBody](../../models/postv2routercompletionsrequestbody.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
-| `retries`                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                | :heavy_minus_sign:                                                                              | Configuration to override the default retry behavior of the client.                             |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [models.RouterCompletionsRequestBody](../../models/routercompletionsrequestbody.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
 
 ### Response
 
-**[models.PostV2RouterCompletionsResponseBody](../../models/postv2routercompletionsresponsebody.md)**
+**[models.RouterCompletionsResponseBody](../../models/routercompletionsresponsebody.md)**
 
 ### Errors
 
