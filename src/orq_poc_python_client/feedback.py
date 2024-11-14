@@ -3,18 +3,18 @@
 from .basesdk import BaseSDK
 from orq_poc_python_client import models, utils
 from orq_poc_python_client._hooks import HookContext
-from orq_poc_python_client.types import BaseModel, OptionalNullable, UNSET
+from orq_poc_python_client.types import OptionalNullable, UNSET
 from orq_poc_python_client.utils import get_security_from_env
-from typing import Optional, Union, cast
+from typing import Optional, Union
 
 
 class Feedback(BaseSDK):
     def create(
         self,
         *,
-        request: Union[
-            models.CreateFeedbackRequestBody, models.CreateFeedbackRequestBodyTypedDict
-        ],
+        property: str,
+        value: Union[models.Value, models.ValueTypedDict],
+        trace_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -23,7 +23,9 @@ class Feedback(BaseSDK):
 
         Submit feedback for the LLM transaction via the API
 
-        :param request: The request object to send.
+        :param property: A string describing the specific property or aspect rated.
+        :param value: The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string.
+        :param trace_id: The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -39,9 +41,11 @@ class Feedback(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.CreateFeedbackRequestBody)
-        request = cast(models.CreateFeedbackRequestBody, request)
+        request = models.CreateFeedbackRequestBody(
+            property=property,
+            value=value,
+            trace_id=trace_id,
+        )
 
         req = self.build_request(
             method="POST",
@@ -104,9 +108,9 @@ class Feedback(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Union[
-            models.CreateFeedbackRequestBody, models.CreateFeedbackRequestBodyTypedDict
-        ],
+        property: str,
+        value: Union[models.Value, models.ValueTypedDict],
+        trace_id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -115,7 +119,9 @@ class Feedback(BaseSDK):
 
         Submit feedback for the LLM transaction via the API
 
-        :param request: The request object to send.
+        :param property: A string describing the specific property or aspect rated.
+        :param value: The feedback value. For single selection of multiple choice, the value should be an array of strings. For `correction`, the value should be a string.
+        :param trace_id: The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -131,9 +137,11 @@ class Feedback(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.CreateFeedbackRequestBody)
-        request = cast(models.CreateFeedbackRequestBody, request)
+        request = models.CreateFeedbackRequestBody(
+            property=property,
+            value=value,
+            trace_id=trace_id,
+        )
 
         req = self.build_request_async(
             method="POST",

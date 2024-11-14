@@ -3,18 +3,21 @@
 from .basesdk import BaseSDK
 from orq_poc_python_client import models, utils
 from orq_poc_python_client._hooks import HookContext
-from orq_poc_python_client.types import BaseModel, OptionalNullable, UNSET
+from orq_poc_python_client.types import OptionalNullable, UNSET
 from orq_poc_python_client.utils import get_security_from_env
-from typing import Optional, Union, cast
+from typing import Any, Dict, List, Optional
 
 
 class Contacts(BaseSDK):
     def create(
         self,
         *,
-        request: Union[
-            models.CreateContactRequestBody, models.CreateContactRequestBodyTypedDict
-        ],
+        external_id: str,
+        display_name: OptionalNullable[str] = UNSET,
+        email: OptionalNullable[str] = UNSET,
+        avatar_url: OptionalNullable[str] = UNSET,
+        tags: Optional[List[str]] = None,
+        metadata: Optional[Dict[str, Any]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -23,7 +26,12 @@ class Contacts(BaseSDK):
 
         Update or add user information to workspace
 
-        :param request: The request object to send.
+        :param external_id: Unique string value to identify the contact user in the customer's system
+        :param display_name: Display name or nickname of the user
+        :param email: Email address of the user
+        :param avatar_url: URL linking to the user's avatar image
+        :param tags: Array of UUIDs representing tags associated with the user
+        :param metadata: Additional custom metadata associated with the user as key-value pairs
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -39,9 +47,14 @@ class Contacts(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.CreateContactRequestBody)
-        request = cast(models.CreateContactRequestBody, request)
+        request = models.CreateContactRequestBody(
+            external_id=external_id,
+            display_name=display_name,
+            email=email,
+            avatar_url=avatar_url,
+            tags=tags,
+            metadata=metadata,
+        )
 
         req = self.build_request(
             method="POST",
@@ -102,9 +115,12 @@ class Contacts(BaseSDK):
     async def create_async(
         self,
         *,
-        request: Union[
-            models.CreateContactRequestBody, models.CreateContactRequestBodyTypedDict
-        ],
+        external_id: str,
+        display_name: OptionalNullable[str] = UNSET,
+        email: OptionalNullable[str] = UNSET,
+        avatar_url: OptionalNullable[str] = UNSET,
+        tags: Optional[List[str]] = None,
+        metadata: Optional[Dict[str, Any]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -113,7 +129,12 @@ class Contacts(BaseSDK):
 
         Update or add user information to workspace
 
-        :param request: The request object to send.
+        :param external_id: Unique string value to identify the contact user in the customer's system
+        :param display_name: Display name or nickname of the user
+        :param email: Email address of the user
+        :param avatar_url: URL linking to the user's avatar image
+        :param tags: Array of UUIDs representing tags associated with the user
+        :param metadata: Additional custom metadata associated with the user as key-value pairs
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -129,9 +150,14 @@ class Contacts(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.CreateContactRequestBody)
-        request = cast(models.CreateContactRequestBody, request)
+        request = models.CreateContactRequestBody(
+            external_id=external_id,
+            display_name=display_name,
+            email=email,
+            avatar_url=avatar_url,
+            tags=tags,
+            metadata=metadata,
+        )
 
         req = self.build_request_async(
             method="POST",

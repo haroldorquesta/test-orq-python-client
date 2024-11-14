@@ -5,7 +5,7 @@ from orq_poc_python_client import models, utils
 from orq_poc_python_client._hooks import HookContext
 from orq_poc_python_client.types import OptionalNullable, UNSET
 from orq_poc_python_client.utils import get_security_from_env
-from typing import Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 
 class Metrics(BaseSDK):
@@ -13,10 +13,26 @@ class Metrics(BaseSDK):
         self,
         *,
         id: str,
-        request_body: Union[
-            models.DeploymentCreateMetricRequestBody,
-            models.DeploymentCreateMetricRequestBodyTypedDict,
-        ],
+        metadata: Optional[Dict[str, Any]] = None,
+        usage: Optional[Union[models.Usage, models.UsageTypedDict]] = None,
+        performance: Optional[
+            Union[models.Performance, models.PerformanceTypedDict]
+        ] = None,
+        messages: Optional[
+            Union[
+                List[models.DeploymentCreateMetricMessages],
+                List[models.DeploymentCreateMetricMessagesTypedDict],
+            ]
+        ] = None,
+        choices: Optional[
+            Union[List[models.Choices], List[models.ChoicesTypedDict]]
+        ] = None,
+        feedback: Optional[
+            Union[
+                models.DeploymentCreateMetricFeedback,
+                models.DeploymentCreateMetricFeedbackTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -26,7 +42,12 @@ class Metrics(BaseSDK):
         Add metrics to a deployment
 
         :param id: Deployment ID
-        :param request_body: The deployment request payload
+        :param metadata: Your own custom key-value pairs can be attached to the logs. This is useful for storing additional information related to your interactions with the LLM providers or specifics within your application.
+        :param usage: Usage statistics to add to the deployment
+        :param performance:
+        :param messages: A list of messages sent to the model.
+        :param choices: A list of completion choices. If you are using a `completion` model then you must provide the `completion content` with the chat completion format
+        :param feedback: Feedback from the user on the completion
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -44,8 +65,21 @@ class Metrics(BaseSDK):
 
         request = models.DeploymentCreateMetricRequest(
             id=id,
-            request_body=utils.get_pydantic_model(
-                request_body, models.DeploymentCreateMetricRequestBody
+            request_body=models.DeploymentCreateMetricRequestBody(
+                metadata=metadata,
+                usage=utils.get_pydantic_model(usage, Optional[models.Usage]),
+                performance=utils.get_pydantic_model(
+                    performance, Optional[models.Performance]
+                ),
+                messages=utils.get_pydantic_model(
+                    messages, Optional[List[models.DeploymentCreateMetricMessages]]
+                ),
+                choices=utils.get_pydantic_model(
+                    choices, Optional[List[models.Choices]]
+                ),
+                feedback=utils.get_pydantic_model(
+                    feedback, Optional[models.DeploymentCreateMetricFeedback]
+                ),
             ),
         )
 
@@ -115,10 +149,26 @@ class Metrics(BaseSDK):
         self,
         *,
         id: str,
-        request_body: Union[
-            models.DeploymentCreateMetricRequestBody,
-            models.DeploymentCreateMetricRequestBodyTypedDict,
-        ],
+        metadata: Optional[Dict[str, Any]] = None,
+        usage: Optional[Union[models.Usage, models.UsageTypedDict]] = None,
+        performance: Optional[
+            Union[models.Performance, models.PerformanceTypedDict]
+        ] = None,
+        messages: Optional[
+            Union[
+                List[models.DeploymentCreateMetricMessages],
+                List[models.DeploymentCreateMetricMessagesTypedDict],
+            ]
+        ] = None,
+        choices: Optional[
+            Union[List[models.Choices], List[models.ChoicesTypedDict]]
+        ] = None,
+        feedback: Optional[
+            Union[
+                models.DeploymentCreateMetricFeedback,
+                models.DeploymentCreateMetricFeedbackTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -128,7 +178,12 @@ class Metrics(BaseSDK):
         Add metrics to a deployment
 
         :param id: Deployment ID
-        :param request_body: The deployment request payload
+        :param metadata: Your own custom key-value pairs can be attached to the logs. This is useful for storing additional information related to your interactions with the LLM providers or specifics within your application.
+        :param usage: Usage statistics to add to the deployment
+        :param performance:
+        :param messages: A list of messages sent to the model.
+        :param choices: A list of completion choices. If you are using a `completion` model then you must provide the `completion content` with the chat completion format
+        :param feedback: Feedback from the user on the completion
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -146,8 +201,21 @@ class Metrics(BaseSDK):
 
         request = models.DeploymentCreateMetricRequest(
             id=id,
-            request_body=utils.get_pydantic_model(
-                request_body, models.DeploymentCreateMetricRequestBody
+            request_body=models.DeploymentCreateMetricRequestBody(
+                metadata=metadata,
+                usage=utils.get_pydantic_model(usage, Optional[models.Usage]),
+                performance=utils.get_pydantic_model(
+                    performance, Optional[models.Performance]
+                ),
+                messages=utils.get_pydantic_model(
+                    messages, Optional[List[models.DeploymentCreateMetricMessages]]
+                ),
+                choices=utils.get_pydantic_model(
+                    choices, Optional[List[models.Choices]]
+                ),
+                feedback=utils.get_pydantic_model(
+                    feedback, Optional[models.DeploymentCreateMetricFeedback]
+                ),
             ),
         )
 

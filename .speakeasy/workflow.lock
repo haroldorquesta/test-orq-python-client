@@ -1,4 +1,4 @@
-speakeasyVersion: 1.439.0
+speakeasyVersion: 1.438.1
 sources:
     orq-OAS:
         sourceNamespace: orq-oas
@@ -13,8 +13,6 @@ targets:
         sourceNamespace: orq-oas
         sourceRevisionDigest: sha256:4c619000e30db08f8d56e6ab4c406c51f04c08b1994a11a027baea2b01734fc0
         sourceBlobDigest: sha256:68f1d73db5ebd846a43b54ea051ed0fe7989aac90dcb1b5d1093d31be1e85b2c
-        codeSamplesNamespace: orq-oas-code-samples
-        codeSamplesRevisionDigest: sha256:0ce7b0a6ab29380fd2af11eef4be40499f18560d88873793bd57cdfc1166c259
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
