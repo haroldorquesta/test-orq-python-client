@@ -429,7 +429,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    def list(
+    def all(
         self,
         *,
         limit: Optional[float] = 10,
@@ -521,7 +521,7 @@ class DeploymentsSDK(BaseSDK):
             http_res,
         )
 
-    async def list_async(
+    async def all_async(
         self,
         *,
         limit: Optional[float] = 10,

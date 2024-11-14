@@ -132,7 +132,7 @@ asyncio.run(main())
 
 * [get_config](docs/sdks/deploymentssdk/README.md#get_config) - Get config
 * [invoke](docs/sdks/deploymentssdk/README.md#invoke) - Invoke
-* [list](docs/sdks/deploymentssdk/README.md#list) - List all deployments
+* [all](docs/sdks/deploymentssdk/README.md#all) - List all deployments
 
 #### [deployments.metrics](docs/sdks/metrics/README.md)
 
@@ -299,7 +299,7 @@ By default, an API error will raise a models.SDKError exception, which has the f
 | `.raw_response` | *httpx.Response* | The raw HTTP response |
 | `.body`         | *str*            | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `list_async` method may raise the following exceptions:
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `all_async` method may raise the following exceptions:
 
 | Error Type          | Status Code | Content Type     |
 | ------------------- | ----------- | ---------------- |
@@ -318,7 +318,7 @@ s = Orq(
 
 res = None
 try:
-    res = s.deployments.list()
+    res = s.deployments.all()
 
     if res is not None:
         # handle response
