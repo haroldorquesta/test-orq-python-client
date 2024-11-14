@@ -132,8 +132,11 @@ asyncio.run(main())
 
 * [get_config](docs/sdks/deploymentssdk/README.md#get_config) - Get config
 * [invoke](docs/sdks/deploymentssdk/README.md#invoke) - Invoke
-* [add_metrics](docs/sdks/deploymentssdk/README.md#add_metrics) - Add metrics
 * [list](docs/sdks/deploymentssdk/README.md#list) - List all deployments
+
+#### [deployments.metrics](docs/sdks/metrics/README.md)
+
+* [create](docs/sdks/metrics/README.md#create) - Add metrics
 
 ### [feedback](docs/sdks/feedback/README.md)
 

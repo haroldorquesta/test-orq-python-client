@@ -13,13 +13,13 @@ class Embeddings(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2RouterEmbeddingsRequestBody,
-            models.PostV2RouterEmbeddingsRequestBodyTypedDict,
+            models.RouterEmbeddingRequestBody,
+            models.RouterEmbeddingRequestBodyTypedDict,
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RouterEmbeddingsResponseBody:
+    ) -> models.RouterEmbeddingResponseBody:
         r"""Embeddings
 
         Creates an embedding vector representing the input text.
@@ -41,8 +41,8 @@ class Embeddings(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2RouterEmbeddingsRequestBody)
-        request = cast(models.PostV2RouterEmbeddingsRequestBody, request)
+            request = utils.unmarshal(request, models.RouterEmbeddingRequestBody)
+        request = cast(models.RouterEmbeddingRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -57,7 +57,7 @@ class Embeddings(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2RouterEmbeddingsRequestBody
+                request, False, False, "json", models.RouterEmbeddingRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -72,7 +72,7 @@ class Embeddings(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/embeddings",
+                operation_id="RouterEmbedding",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -85,7 +85,7 @@ class Embeddings(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2RouterEmbeddingsResponseBody
+                http_res.text, models.RouterEmbeddingResponseBody
             )
         if utils.match_response(http_res, ["400", "401", "4XX", "500", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
@@ -106,13 +106,13 @@ class Embeddings(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2RouterEmbeddingsRequestBody,
-            models.PostV2RouterEmbeddingsRequestBodyTypedDict,
+            models.RouterEmbeddingRequestBody,
+            models.RouterEmbeddingRequestBodyTypedDict,
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RouterEmbeddingsResponseBody:
+    ) -> models.RouterEmbeddingResponseBody:
         r"""Embeddings
 
         Creates an embedding vector representing the input text.
@@ -134,8 +134,8 @@ class Embeddings(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2RouterEmbeddingsRequestBody)
-        request = cast(models.PostV2RouterEmbeddingsRequestBody, request)
+            request = utils.unmarshal(request, models.RouterEmbeddingRequestBody)
+        request = cast(models.RouterEmbeddingRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -150,7 +150,7 @@ class Embeddings(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "json", models.PostV2RouterEmbeddingsRequestBody
+                request, False, False, "json", models.RouterEmbeddingRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -165,7 +165,7 @@ class Embeddings(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/router/embeddings",
+                operation_id="RouterEmbedding",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -178,7 +178,7 @@ class Embeddings(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2RouterEmbeddingsResponseBody
+                http_res.text, models.RouterEmbeddingResponseBody
             )
         if utils.match_response(http_res, ["400", "401", "4XX", "500", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)

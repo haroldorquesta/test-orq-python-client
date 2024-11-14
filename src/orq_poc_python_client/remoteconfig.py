@@ -14,14 +14,14 @@ class Remoteconfig(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.PostV2RemoteconfigsRequestBody,
-                models.PostV2RemoteconfigsRequestBodyTypedDict,
+                models.RemoteConfigsGetConfigRequestBody,
+                models.RemoteConfigsGetConfigRequestBodyTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RemoteconfigsResponseBody:
+    ) -> models.RemoteConfigsGetConfigResponseBody:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -41,9 +41,9 @@ class Remoteconfig(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.PostV2RemoteconfigsRequestBody]
+                request, Optional[models.RemoteConfigsGetConfigRequestBody]
             )
-        request = cast(Optional[models.PostV2RemoteconfigsRequestBody], request)
+        request = cast(Optional[models.RemoteConfigsGetConfigRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -62,7 +62,7 @@ class Remoteconfig(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.PostV2RemoteconfigsRequestBody],
+                Optional[models.RemoteConfigsGetConfigRequestBody],
             ),
             timeout_ms=timeout_ms,
         )
@@ -77,7 +77,7 @@ class Remoteconfig(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/remoteconfigs",
+                operation_id="RemoteConfigsGetConfig",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -90,7 +90,7 @@ class Remoteconfig(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2RemoteconfigsResponseBody
+                http_res.text, models.RemoteConfigsGetConfigResponseBody
             )
         if utils.match_response(
             http_res, ["400", "401", "404", "4XX", "500", "5XX"], "*"
@@ -114,14 +114,14 @@ class Remoteconfig(BaseSDK):
         *,
         request: Optional[
             Union[
-                models.PostV2RemoteconfigsRequestBody,
-                models.PostV2RemoteconfigsRequestBodyTypedDict,
+                models.RemoteConfigsGetConfigRequestBody,
+                models.RemoteConfigsGetConfigRequestBodyTypedDict,
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2RemoteconfigsResponseBody:
+    ) -> models.RemoteConfigsGetConfigResponseBody:
         r"""
         :param request: The request object to send.
         :param retries: Override the default retry configuration for this method
@@ -141,9 +141,9 @@ class Remoteconfig(BaseSDK):
 
         if not isinstance(request, BaseModel):
             request = utils.unmarshal(
-                request, Optional[models.PostV2RemoteconfigsRequestBody]
+                request, Optional[models.RemoteConfigsGetConfigRequestBody]
             )
-        request = cast(Optional[models.PostV2RemoteconfigsRequestBody], request)
+        request = cast(Optional[models.RemoteConfigsGetConfigRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -162,7 +162,7 @@ class Remoteconfig(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.PostV2RemoteconfigsRequestBody],
+                Optional[models.RemoteConfigsGetConfigRequestBody],
             ),
             timeout_ms=timeout_ms,
         )
@@ -177,7 +177,7 @@ class Remoteconfig(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/remoteconfigs",
+                operation_id="RemoteConfigsGetConfig",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -190,7 +190,7 @@ class Remoteconfig(BaseSDK):
 
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(
-                http_res.text, models.PostV2RemoteconfigsResponseBody
+                http_res.text, models.RemoteConfigsGetConfigResponseBody
             )
         if utils.match_response(
             http_res, ["400", "401", "404", "4XX", "500", "5XX"], "*"

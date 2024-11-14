@@ -13,12 +13,12 @@ class Files(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FilesRequestBody, models.PostV2FilesRequestBodyTypedDict
-        ] = models.PostV2FilesRequestBody(),
+            models.FileUploadRequestBody, models.FileUploadRequestBodyTypedDict
+        ] = models.FileUploadRequestBody(),
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2FilesResponseBody:
+    ) -> models.FileUploadResponseBody:
         r"""Upload file
 
         Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
@@ -40,8 +40,8 @@ class Files(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FilesRequestBody)
-        request = cast(models.PostV2FilesRequestBody, request)
+            request = utils.unmarshal(request, models.FileUploadRequestBody)
+        request = cast(models.FileUploadRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -60,7 +60,7 @@ class Files(BaseSDK):
                 False,
                 True,
                 "multipart",
-                Optional[models.PostV2FilesRequestBody],
+                Optional[models.FileUploadRequestBody],
             ),
             timeout_ms=timeout_ms,
         )
@@ -75,7 +75,7 @@ class Files(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/files",
+                operation_id="FileUpload",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -87,7 +87,7 @@ class Files(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostV2FilesResponseBody)
+            return utils.unmarshal_json(http_res.text, models.FileUploadResponseBody)
         if utils.match_response(http_res, ["400", "4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
@@ -107,12 +107,12 @@ class Files(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FilesRequestBody, models.PostV2FilesRequestBodyTypedDict
-        ] = models.PostV2FilesRequestBody(),
+            models.FileUploadRequestBody, models.FileUploadRequestBodyTypedDict
+        ] = models.FileUploadRequestBody(),
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ) -> models.PostV2FilesResponseBody:
+    ) -> models.FileUploadResponseBody:
         r"""Upload file
 
         Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).
@@ -134,8 +134,8 @@ class Files(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FilesRequestBody)
-        request = cast(models.PostV2FilesRequestBody, request)
+            request = utils.unmarshal(request, models.FileUploadRequestBody)
+        request = cast(models.FileUploadRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -154,7 +154,7 @@ class Files(BaseSDK):
                 False,
                 True,
                 "multipart",
-                Optional[models.PostV2FilesRequestBody],
+                Optional[models.FileUploadRequestBody],
             ),
             timeout_ms=timeout_ms,
         )
@@ -169,7 +169,7 @@ class Files(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/files",
+                operation_id="FileUpload",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -181,7 +181,7 @@ class Files(BaseSDK):
         )
 
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, models.PostV2FilesResponseBody)
+            return utils.unmarshal_json(http_res.text, models.FileUploadResponseBody)
         if utils.match_response(http_res, ["400", "4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(
@@ -201,8 +201,7 @@ class Files(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FilesBulkRequestBody,
-            models.PostV2FilesBulkRequestBodyTypedDict,
+            models.BulkFileUploadRequestBody, models.BulkFileUploadRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -229,8 +228,8 @@ class Files(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FilesBulkRequestBody)
-        request = cast(models.PostV2FilesBulkRequestBody, request)
+            request = utils.unmarshal(request, models.BulkFileUploadRequestBody)
+        request = cast(models.BulkFileUploadRequestBody, request)
 
         req = self.build_request(
             method="POST",
@@ -245,7 +244,7 @@ class Files(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "multipart", models.PostV2FilesBulkRequestBody
+                request, False, False, "multipart", models.BulkFileUploadRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -260,7 +259,7 @@ class Files(BaseSDK):
 
         http_res = self.do_request(
             hook_ctx=HookContext(
-                operation_id="post_/v2/files/bulk",
+                operation_id="BulkFileUpload",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
@@ -292,8 +291,7 @@ class Files(BaseSDK):
         self,
         *,
         request: Union[
-            models.PostV2FilesBulkRequestBody,
-            models.PostV2FilesBulkRequestBodyTypedDict,
+            models.BulkFileUploadRequestBody, models.BulkFileUploadRequestBodyTypedDict
         ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -320,8 +318,8 @@ class Files(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, models.PostV2FilesBulkRequestBody)
-        request = cast(models.PostV2FilesBulkRequestBody, request)
+            request = utils.unmarshal(request, models.BulkFileUploadRequestBody)
+        request = cast(models.BulkFileUploadRequestBody, request)
 
         req = self.build_request_async(
             method="POST",
@@ -336,7 +334,7 @@ class Files(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, False, "multipart", models.PostV2FilesBulkRequestBody
+                request, False, False, "multipart", models.BulkFileUploadRequestBody
             ),
             timeout_ms=timeout_ms,
         )
@@ -351,7 +349,7 @@ class Files(BaseSDK):
 
         http_res = await self.do_request_async(
             hook_ctx=HookContext(
-                operation_id="post_/v2/files/bulk",
+                operation_id="BulkFileUpload",
                 oauth2_scopes=[],
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
