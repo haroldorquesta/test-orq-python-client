@@ -7,7 +7,7 @@
 
 * [get_config](#get_config) - Get config
 * [invoke](#invoke) - Invoke
-* [list](#list) - List all deployments
+* [all](#all) - List all deployments
 
 ## get_config
 
@@ -92,7 +92,7 @@ if res is not None:
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4XX, 5XX        | \*/\*           |
 
-## list
+## all
 
 Returns a list of your deployments. The deployments are returned sorted by creation date, with the most recent deployments appearing first.
 
@@ -106,7 +106,7 @@ s = Orq(
     api_key=os.getenv("ORQ_API_KEY", ""),
 )
 
-res = s.deployments.list()
+res = s.deployments.all()
 
 if res is not None:
     # handle response
