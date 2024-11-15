@@ -35412,6 +35412,7 @@ paths:
         - public
       x-speakeasy-group: deployments
       x-speakeasy-name-override: invoke
+      x-internal: true
       operationId: DeploymentInvoke
       description: Invoke a deployment with a given payload
       summary: Invoke
