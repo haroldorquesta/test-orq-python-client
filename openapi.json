@@ -63,7 +63,7 @@ components:
     ReportFeedbackRequest:
       type: object
       properties:
-        property:
+        property2:
           type: string
           description: A string describing the specific property or aspect rated.
         value:
@@ -77,13 +77,13 @@ components:
           type: string
           description: The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints
       required:
-        - property
+        - property2
         - value
         - trace_id
     ReportFeedbackResponse:
       type: object
       properties:
-        property:
+        property2:
           type: string
           description: A string describing the specific property or aspect rated.
         value:
@@ -99,7 +99,7 @@ components:
         id:
           type: string
       required:
-        - property
+        - property2
         - value
         - trace_id
         - id
