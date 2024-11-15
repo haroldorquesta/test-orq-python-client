@@ -1,0 +1,544 @@
+lockVersion: 2.0.0
+id: 7d140e90-a9a1-4ced-a90b-5cb151974ab7
+management:
+  docChecksum: 3d6ac77a56bad5909fac289a1cfde644
+  docVersion: 0.0.2
+  speakeasyVersion: 1.440.0
+  generationVersion: 2.457.9
+  releaseVersion: 0.0.1
+  configChecksum: d2b6e392b992303f3418a7ead138d426
+features:
+  python:
+    acceptHeaders: 3.0.0
+    additionalDependencies: 1.0.0
+    constsAndDefaults: 1.0.4
+    core: 5.6.5
+    defaultEnabledRetries: 0.2.0
+    devContainers: 3.0.0
+    downloadStreams: 1.0.1
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.0.0
+    methodArguments: 1.0.2
+    multipartFileContentType: 1.0.0
+    nullables: 1.0.0
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    serverEvents: 1.0.4
+    tests: 1.6.0
+    unions: 3.0.3
+    uploadStreams: 1.0.0
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/agentscompletionrequest.md
+  - docs/models/agentscompletionrequestmessages.md
+  - docs/models/agentscompletionrequeststop.md
+  - docs/models/agentscompletionrequesttoolchoice.md
+  - docs/models/apiendpoint.md
+  - docs/models/archiveftmodelout.md
+  - docs/models/archiveftmodeloutobject.md
+  - docs/models/arguments.md
+  - docs/models/assistantmessage.md
+  - docs/models/assistantmessagecontent.md
+  - docs/models/assistantmessagerole.md
+  - docs/models/basemodelcard.md
+  - docs/models/batcherror.md
+  - docs/models/batchjobin.md
+  - docs/models/batchjobout.md
+  - docs/models/batchjoboutobject.md
+  - docs/models/batchjobsout.md
+  - docs/models/batchjobsoutobject.md
+  - docs/models/batchjobstatus.md
+  - docs/models/chatclassificationrequest.md
+  - docs/models/chatclassificationrequestinput.md
+  - docs/models/chatcompletionchoice.md
+  - docs/models/chatcompletionrequest.md
+  - docs/models/chatcompletionrequesttoolchoice.md
+  - docs/models/chatcompletionresponse.md
+  - docs/models/chatcompletionv1chatcompletionspostresponse.md
+  - docs/models/checkpointout.md
+  - docs/models/classificationobject.md
+  - docs/models/classificationrequest.md
+  - docs/models/classificationrequestinput.md
+  - docs/models/classificationresponse.md
+  - docs/models/completionchunk.md
+  - docs/models/completionevent.md
+  - docs/models/completionresponsestreamchoice.md
+  - docs/models/completionresponsestreamchoicefinishreason.md
+  - docs/models/content.md
+  - docs/models/contentchunk.md
+  - docs/models/data.md
+  - docs/models/deletefileout.md
+  - docs/models/deletemodelout.md
+  - docs/models/deletemodelv1modelsmodeliddeleterequest.md
+  - docs/models/deltamessage.md
+  - docs/models/detailedjobout.md
+  - docs/models/detailedjoboutintegrations.md
+  - docs/models/detailedjoboutobject.md
+  - docs/models/detailedjoboutrepositories.md
+  - docs/models/detailedjoboutstatus.md
+  - docs/models/embeddingrequest.md
+  - docs/models/embeddingresponse.md
+  - docs/models/embeddingresponsedata.md
+  - docs/models/eventout.md
+  - docs/models/file.md
+  - docs/models/filepurpose.md
+  - docs/models/filesapiroutesdeletefilerequest.md
+  - docs/models/filesapiroutesdownloadfilerequest.md
+  - docs/models/filesapirouteslistfilesrequest.md
+  - docs/models/filesapiroutesretrievefilerequest.md
+  - docs/models/filesapiroutesuploadfilefilepurpose.md
+  - docs/models/filesapiroutesuploadfilemultipartbodyparams.md
+  - docs/models/fileschema.md
+  - docs/models/fimcompletionrequest.md
+  - docs/models/fimcompletionrequeststop.md
+  - docs/models/fimcompletionresponse.md
+  - docs/models/fimcompletionv1fimcompletionspostresponse.md
+  - docs/models/finetuneablemodel.md
+  - docs/models/finishreason.md
+  - docs/models/ftmodelcapabilitiesout.md
+  - docs/models/ftmodelcard.md
+  - docs/models/ftmodelcardtype.md
+  - docs/models/ftmodelout.md
+  - docs/models/ftmodeloutobject.md
+  - docs/models/function.md
+  - docs/models/functioncall.md
+  - docs/models/functionname.md
+  - docs/models/githubrepositoryin.md
+  - docs/models/githubrepositoryintype.md
+  - docs/models/githubrepositoryout.md
+  - docs/models/githubrepositoryouttype.md
+  - docs/models/httpvalidationerror.md
+  - docs/models/imageurl.md
+  - docs/models/imageurlchunk.md
+  - docs/models/imageurlchunkimageurl.md
+  - docs/models/imageurlchunktype.md
+  - docs/models/input.md
+  - docs/models/integrations.md
+  - docs/models/jobin.md
+  - docs/models/jobinintegrations.md
+  - docs/models/jobinrepositories.md
+  - docs/models/jobmetadataout.md
+  - docs/models/jobout.md
+  - docs/models/jobsapiroutesbatchcancelbatchjobrequest.md
+  - docs/models/jobsapiroutesbatchgetbatchjobrequest.md
+  - docs/models/jobsapiroutesbatchgetbatchjobsrequest.md
+  - docs/models/jobsapiroutesfinetuningarchivefinetunedmodelrequest.md
+  - docs/models/jobsapiroutesfinetuningcancelfinetuningjobrequest.md
+  - docs/models/jobsapiroutesfinetuningcreatefinetuningjobrequest.md
+  - docs/models/jobsapiroutesfinetuningcreatefinetuningjobresponse.md
+  - docs/models/jobsapiroutesfinetuninggetfinetuningjobrequest.md
+  - docs/models/jobsapiroutesfinetuninggetfinetuningjobsrequest.md
+  - docs/models/jobsapiroutesfinetuningstartfinetuningjobrequest.md
+  - docs/models/jobsapiroutesfinetuningunarchivefinetunedmodelrequest.md
+  - docs/models/jobsapiroutesfinetuningupdatefinetunedmodelrequest.md
+  - docs/models/jobsout.md
+  - docs/models/jobsoutobject.md
+  - docs/models/legacyjobmetadataout.md
+  - docs/models/legacyjobmetadataoutobject.md
+  - docs/models/listfilesout.md
+  - docs/models/loc.md
+  - docs/models/messages.md
+  - docs/models/metricout.md
+  - docs/models/modelcapabilities.md
+  - docs/models/modellist.md
+  - docs/models/object.md
+  - docs/models/one.md
+  - docs/models/queryparamstatus.md
+  - docs/models/repositories.md
+  - docs/models/responseformat.md
+  - docs/models/responseformats.md
+  - docs/models/retrievefileout.md
+  - docs/models/retrievemodelv1modelsmodelidgetrequest.md
+  - docs/models/retrievemodelv1modelsmodelidgetresponseretrievemodelv1modelsmodelidget.md
+  - docs/models/role.md
+  - docs/models/sampletype.md
+  - docs/models/security.md
+  - docs/models/source.md
+  - docs/models/status.md
+  - docs/models/stop.md
+  - docs/models/systemmessage.md
+  - docs/models/systemmessagecontent.md
+  - docs/models/textchunk.md
+  - docs/models/textchunktype.md
+  - docs/models/tool.md
+  - docs/models/toolcall.md
+  - docs/models/toolchoice.md
+  - docs/models/toolchoiceenum.md
+  - docs/models/toolmessage.md
+  - docs/models/toolmessagerole.md
+  - docs/models/tooltypes.md
+  - docs/models/trainingfile.md
+  - docs/models/trainingparameters.md
+  - docs/models/trainingparametersin.md
+  - docs/models/two.md
+  - docs/models/type.md
+  - docs/models/unarchiveftmodelout.md
+  - docs/models/unarchiveftmodeloutobject.md
+  - docs/models/updateftmodelin.md
+  - docs/models/uploadfileout.md
+  - docs/models/usageinfo.md
+  - docs/models/usermessage.md
+  - docs/models/usermessagecontent.md
+  - docs/models/usermessagerole.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validationerror.md
+  - docs/models/wandbintegration.md
+  - docs/models/wandbintegrationout.md
+  - docs/models/wandbintegrationouttype.md
+  - docs/models/wandbintegrationtype.md
+  - docs/sdks/agents/README.md
+  - docs/sdks/batch/README.md
+  - docs/sdks/chat/README.md
+  - docs/sdks/classifiers/README.md
+  - docs/sdks/embeddings/README.md
+  - docs/sdks/files/README.md
+  - docs/sdks/fim/README.md
+  - docs/sdks/finetuning/README.md
+  - docs/sdks/models/README.md
+  - docs/sdks/testsdk/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/test_sdk/__init__.py
+  - src/test_sdk/_hooks/__init__.py
+  - src/test_sdk/_hooks/sdkhooks.py
+  - src/test_sdk/_hooks/types.py
+  - src/test_sdk/_version.py
+  - src/test_sdk/agents.py
+  - src/test_sdk/basesdk.py
+  - src/test_sdk/batch.py
+  - src/test_sdk/chat.py
+  - src/test_sdk/classifiers.py
+  - src/test_sdk/embeddings.py
+  - src/test_sdk/files.py
+  - src/test_sdk/fim.py
+  - src/test_sdk/fine_tuning.py
+  - src/test_sdk/httpclient.py
+  - src/test_sdk/models/__init__.py
+  - src/test_sdk/models/agentscompletionrequest.py
+  - src/test_sdk/models/apiendpoint.py
+  - src/test_sdk/models/apierror.py
+  - src/test_sdk/models/archiveftmodelout.py
+  - src/test_sdk/models/assistantmessage.py
+  - src/test_sdk/models/basemodelcard.py
+  - src/test_sdk/models/batcherror.py
+  - src/test_sdk/models/batchjobin.py
+  - src/test_sdk/models/batchjobout.py
+  - src/test_sdk/models/batchjobsout.py
+  - src/test_sdk/models/batchjobstatus.py
+  - src/test_sdk/models/chat_completion_v1_chat_completions_postop.py
+  - src/test_sdk/models/chatclassificationrequest.py
+  - src/test_sdk/models/chatcompletionchoice.py
+  - src/test_sdk/models/chatcompletionrequest.py
+  - src/test_sdk/models/chatcompletionresponse.py
+  - src/test_sdk/models/checkpointout.py
+  - src/test_sdk/models/classificationobject.py
+  - src/test_sdk/models/classificationrequest.py
+  - src/test_sdk/models/classificationresponse.py
+  - src/test_sdk/models/completionchunk.py
+  - src/test_sdk/models/completionevent.py
+  - src/test_sdk/models/completionresponsestreamchoice.py
+  - src/test_sdk/models/contentchunk.py
+  - src/test_sdk/models/delete_model_v1_models_model_id_deleteop.py
+  - src/test_sdk/models/deletefileout.py
+  - src/test_sdk/models/deletemodelout.py
+  - src/test_sdk/models/deltamessage.py
+  - src/test_sdk/models/detailedjobout.py
+  - src/test_sdk/models/embeddingrequest.py
+  - src/test_sdk/models/embeddingresponse.py
+  - src/test_sdk/models/embeddingresponsedata.py
+  - src/test_sdk/models/eventout.py
+  - src/test_sdk/models/filepurpose.py
+  - src/test_sdk/models/files_api_routes_delete_fileop.py
+  - src/test_sdk/models/files_api_routes_download_fileop.py
+  - src/test_sdk/models/files_api_routes_list_filesop.py
+  - src/test_sdk/models/files_api_routes_retrieve_fileop.py
+  - src/test_sdk/models/files_api_routes_upload_fileop.py
+  - src/test_sdk/models/fileschema.py
+  - src/test_sdk/models/fim_completion_v1_fim_completions_postop.py
+  - src/test_sdk/models/fimcompletionrequest.py
+  - src/test_sdk/models/fimcompletionresponse.py
+  - src/test_sdk/models/finetuneablemodel.py
+  - src/test_sdk/models/ftmodelcapabilitiesout.py
+  - src/test_sdk/models/ftmodelcard.py
+  - src/test_sdk/models/ftmodelout.py
+  - src/test_sdk/models/function.py
+  - src/test_sdk/models/functioncall.py
+  - src/test_sdk/models/functionname.py
+  - src/test_sdk/models/githubrepositoryin.py
+  - src/test_sdk/models/githubrepositoryout.py
+  - src/test_sdk/models/httpvalidationerror.py
+  - src/test_sdk/models/imageurl.py
+  - src/test_sdk/models/imageurlchunk.py
+  - src/test_sdk/models/jobin.py
+  - src/test_sdk/models/jobmetadataout.py
+  - src/test_sdk/models/jobout.py
+  - src/test_sdk/models/jobs_api_routes_batch_cancel_batch_jobop.py
+  - src/test_sdk/models/jobs_api_routes_batch_get_batch_jobop.py
+  - src/test_sdk/models/jobs_api_routes_batch_get_batch_jobsop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_archive_fine_tuned_modelop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_cancel_fine_tuning_jobop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_create_fine_tuning_jobop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_get_fine_tuning_jobop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_get_fine_tuning_jobsop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_start_fine_tuning_jobop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_unarchive_fine_tuned_modelop.py
+  - src/test_sdk/models/jobs_api_routes_fine_tuning_update_fine_tuned_modelop.py
+  - src/test_sdk/models/jobsout.py
+  - src/test_sdk/models/legacyjobmetadataout.py
+  - src/test_sdk/models/listfilesout.py
+  - src/test_sdk/models/metricout.py
+  - src/test_sdk/models/modelcapabilities.py
+  - src/test_sdk/models/modellist.py
+  - src/test_sdk/models/responseformat.py
+  - src/test_sdk/models/responseformats.py
+  - src/test_sdk/models/retrieve_model_v1_models_model_id_getop.py
+  - src/test_sdk/models/retrievefileout.py
+  - src/test_sdk/models/sampletype.py
+  - src/test_sdk/models/security.py
+  - src/test_sdk/models/source.py
+  - src/test_sdk/models/systemmessage.py
+  - src/test_sdk/models/textchunk.py
+  - src/test_sdk/models/tool.py
+  - src/test_sdk/models/toolcall.py
+  - src/test_sdk/models/toolchoice.py
+  - src/test_sdk/models/toolchoiceenum.py
+  - src/test_sdk/models/toolmessage.py
+  - src/test_sdk/models/tooltypes.py
+  - src/test_sdk/models/trainingfile.py
+  - src/test_sdk/models/trainingparameters.py
+  - src/test_sdk/models/trainingparametersin.py
+  - src/test_sdk/models/unarchiveftmodelout.py
+  - src/test_sdk/models/updateftmodelin.py
+  - src/test_sdk/models/uploadfileout.py
+  - src/test_sdk/models/usageinfo.py
+  - src/test_sdk/models/usermessage.py
+  - src/test_sdk/models/validationerror.py
+  - src/test_sdk/models/wandbintegration.py
+  - src/test_sdk/models/wandbintegrationout.py
+  - src/test_sdk/models_.py
+  - src/test_sdk/py.typed
+  - src/test_sdk/sdk.py
+  - src/test_sdk/sdkconfiguration.py
+  - src/test_sdk/types/__init__.py
+  - src/test_sdk/types/basemodel.py
+  - src/test_sdk/utils/__init__.py
+  - src/test_sdk/utils/annotations.py
+  - src/test_sdk/utils/enums.py
+  - src/test_sdk/utils/eventstreaming.py
+  - src/test_sdk/utils/forms.py
+  - src/test_sdk/utils/headers.py
+  - src/test_sdk/utils/logger.py
+  - src/test_sdk/utils/metadata.py
+  - src/test_sdk/utils/queryparams.py
+  - src/test_sdk/utils/requestbodies.py
+  - src/test_sdk/utils/retries.py
+  - src/test_sdk/utils/security.py
+  - src/test_sdk/utils/serializers.py
+  - src/test_sdk/utils/url.py
+  - src/test_sdk/utils/values.py
+examples:
+  list_models_v1_models_get: {}
+  retrieve_model_v1_models__model_id__get:
+    "":
+      parameters:
+        path:
+          model_id: "ft:open-mistral-7b:587a6b29:20240514:7e773925"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "job": "Forward Factors Facilitator", "root": "<value>"}
+        "422": {}
+  delete_model_v1_models__model_id__delete:
+    "":
+      parameters:
+        path:
+          model_id: "ft:open-mistral-7b:587a6b29:20240514:7e773925"
+      responses:
+        "200":
+          application/json: {"id": "ft:open-mistral-7b:587a6b29:20240514:7e773925", "deleted": true}
+        "422": {}
+  jobs_api_routes_fine_tuning_update_fine_tuned_model:
+    "":
+      parameters:
+        path:
+          model_id: "ft:open-mistral-7b:587a6b29:20240514:7e773925"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "created": 785014, "owned_by": "<value>", "root": "<value>", "archived": false, "job": "3dcfbd11-860c-4097-bf27-8bd843c8aeb7"}
+  jobs_api_routes_fine_tuning_archive_fine_tuned_model:
+    "":
+      parameters:
+        path:
+          model_id: "ft:open-mistral-7b:587a6b29:20240514:7e773925"
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+  jobs_api_routes_fine_tuning_unarchive_fine_tuned_model:
+    "":
+      parameters:
+        path:
+          model_id: "ft:open-mistral-7b:587a6b29:20240514:7e773925"
+      responses:
+        "200":
+          application/json: {"id": "<id>"}
+  files_api_routes_upload_file:
+    speakeasy-default-files-api-routes-upload-file:
+      requestBody:
+        multipart/form-data: {"file": {}}
+      responses:
+        "200":
+          application/json: {"id": "497f6eca-6276-4993-bfeb-53cbbbba6f09", "object": "file", "bytes": 13000, "created_at": 1716963433, "filename": "files_upload.jsonl", "purpose": "fine-tune", "sample_type": "batch_error", "source": "repository"}
+  files_api_routes_list_files:
+    speakeasy-default-files-api-routes-list-files:
+      responses:
+        "200":
+          application/json: {"data": [{"id": "497f6eca-6276-4993-bfeb-53cbbbba6f09", "object": "file", "bytes": 13000, "created_at": 1716963433, "filename": "files_upload.jsonl", "purpose": "batch", "sample_type": "pretrain", "source": "repository"}, {"id": "497f6eca-6276-4993-bfeb-53cbbbba6f09", "object": "file", "bytes": 13000, "created_at": 1716963433, "filename": "files_upload.jsonl", "purpose": "fine-tune", "sample_type": "instruct", "source": "mistral"}], "object": "<value>", "total": 669264}
+  files_api_routes_retrieve_file:
+    speakeasy-default-files-api-routes-retrieve-file:
+      parameters:
+        path:
+          file_id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "497f6eca-6276-4993-bfeb-53cbbbba6f09", "object": "file", "bytes": 13000, "created_at": 1716963433, "filename": "files_upload.jsonl", "purpose": "fine-tune", "sample_type": "batch_request", "source": "repository", "deleted": false}
+  files_api_routes_delete_file:
+    speakeasy-default-files-api-routes-delete-file:
+      parameters:
+        path:
+          file_id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "497f6eca-6276-4993-bfeb-53cbbbba6f09", "object": "file", "deleted": false}
+  files_api_routes_download_file:
+    speakeasy-default-files-api-routes-download-file:
+      parameters:
+        path:
+          file_id: "<id>"
+  jobs_api_routes_fine_tuning_get_fine_tuning_jobs:
+    speakeasy-default-jobs-api-routes-fine-tuning-get-fine-tuning-jobs:
+      responses:
+        "200":
+          application/json: {"total": 303343}
+  jobs_api_routes_fine_tuning_create_fine_tuning_job:
+    speakeasy-default-jobs-api-routes-fine-tuning-create-fine-tuning-job:
+      requestBody:
+        application/json: {"model": "codestral-latest"}
+      responses:
+        "200":
+          application/json: {"expected_duration_seconds": 220, "cost": 10, "cost_currency": "EUR", "train_tokens_per_step": 131072, "train_tokens": 1310720, "data_tokens": 305375, "details": "<value>", "epochs": 4.2922, "training_steps": 10}
+  jobs_api_routes_fine_tuning_get_fine_tuning_job:
+    speakeasy-default-jobs-api-routes-fine-tuning-get-fine-tuning-job:
+      parameters:
+        path:
+          job_id: "13975bcd-6f6a-41c0-b702-fbd352fae717"
+      responses:
+        "200":
+          application/json: {"id": "bee8c7d6-175c-4a12-a700-33867421d03a", "auto_start": true, "model": "open-mistral-nemo", "status": "QUEUED", "job_type": "<value>", "created_at": 573342, "modified_at": 461276, "training_files": ["64529e3f-5295-41fa-b0b5-6f345ff6f089"], "checkpoints": [{"step_number": 475704, "created_at": 1716963433}, {"step_number": 718894, "created_at": 1716963433}, {"step_number": 537174, "created_at": 1716963433}]}
+  jobs_api_routes_fine_tuning_cancel_fine_tuning_job:
+    speakeasy-default-jobs-api-routes-fine-tuning-cancel-fine-tuning-job:
+      parameters:
+        path:
+          job_id: "dcd95cf1-cef5-4de0-a453-c739fc681dfc"
+      responses:
+        "200":
+          application/json: {"id": "5dd95c62-62b0-4ffb-b637-b70c99d8f18b", "auto_start": true, "model": "open-mistral-nemo", "status": "FAILED", "job_type": "<value>", "created_at": 48699, "modified_at": 526444, "training_files": ["5675e2ff-d1f6-43c4-81a3-c529d540154e", "f80ab749-e110-446b-bcc4-1425bd6909ec"], "checkpoints": [{"step_number": 326850, "created_at": 1716963433}]}
+  jobs_api_routes_fine_tuning_start_fine_tuning_job:
+    speakeasy-default-jobs-api-routes-fine-tuning-start-fine-tuning-job:
+      parameters:
+        path:
+          job_id: "9481556b-8d5d-492b-b7a7-359108479216"
+      responses:
+        "200":
+          application/json: {"id": "60cf124c-8d70-4306-be85-f7388fcc7f3c", "auto_start": false, "model": "open-mistral-nemo", "status": "STARTED", "job_type": "<value>", "created_at": 165264, "modified_at": 539838, "training_files": [], "checkpoints": []}
+  jobs_api_routes_batch_get_batch_jobs:
+    speakeasy-default-jobs-api-routes-batch-get-batch-jobs:
+      responses:
+        "200":
+          application/json: {"total": 10163}
+  jobs_api_routes_batch_create_batch_job:
+    speakeasy-default-jobs-api-routes-batch-create-batch-job:
+      requestBody:
+        application/json: {"input_files": ["d1d4e83f-bb6a-4154-9e25-a41080d645f8", "43e2208f-5620-434a-9dd9-d8c5b82c0306", "92ce266a-adb5-41ed-b4f3-4410cf74e975"], "endpoint": "/v1/moderations", "model": "LeBaron"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "input_files": ["e0826596-cb44-4191-ba5d-7398e0f6f0f6"], "endpoint": "<value>", "model": "Fiesta", "errors": [], "status": "RUNNING", "created_at": 538061, "total_requests": 504818, "completed_requests": 732378, "succeeded_requests": 732563, "failed_requests": 37735}
+  jobs_api_routes_batch_get_batch_job:
+    speakeasy-default-jobs-api-routes-batch-get-batch-job:
+      parameters:
+        path:
+          job_id: "41a64b8b-8a35-4a35-9b8b-1158ce78c603"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "input_files": [], "endpoint": "<value>", "model": "Explorer", "errors": [{"message": "<value>"}, {"message": "<value>"}], "status": "QUEUED", "created_at": 453387, "total_requests": 847253, "completed_requests": 468421, "succeeded_requests": 964175, "failed_requests": 732061}
+  jobs_api_routes_batch_cancel_batch_job:
+    speakeasy-default-jobs-api-routes-batch-cancel-batch-job:
+      parameters:
+        path:
+          job_id: "3e7f4d33-06f6-4155-afae-18ac30f578a8"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "input_files": ["630fc4b6-058d-46a1-a1fd-35b0b544aea7", "834524bf-c557-4a1c-b0ca-8331f19d590b", "60ffa9fe-4216-4d9e-b5f6-e24279e763ee"], "endpoint": "<value>", "model": "Golf", "errors": [{"message": "<value>"}, {"message": "<value>"}], "status": "CANCELLED", "created_at": 593715, "total_requests": 373891, "completed_requests": 711605, "succeeded_requests": 448425, "failed_requests": 620346}
+  chat_completion_v1_chat_completions_post:
+    speakeasy-default-chat-completion-v1-chat-completions-post:
+      requestBody:
+        application/json: {"model": "mistral-small-latest", "messages": [{"content": "Who is the best French painter? Answer in one short sentence.", "role": "user"}]}
+      responses:
+        "200":
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": []}
+        "422": {}
+  fim_completion_v1_fim_completions_post:
+    speakeasy-default-fim-completion-v1-fim-completions-post:
+      requestBody:
+        application/json: {"model": "codestral-2405", "prompt": "def", "suffix": "return a+b"}
+      responses:
+        "200":
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "codestral-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": [{"index": 0, "finish_reason": "stop"}, {"index": 0, "finish_reason": "stop"}, {"index": 0, "finish_reason": "stop"}]}
+        "422": {}
+  agents_completion_v1_agents_completions_post:
+    speakeasy-default-agents-completion-v1-agents-completions-post:
+      requestBody:
+        application/json: {"messages": [{"content": "Who is the best French painter? Answer in one short sentence.", "role": "user"}], "agent_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "created": 1702256327, "choices": [{"index": 0, "finish_reason": "stop"}]}
+        "422": {}
+  embeddings_v1_embeddings_post:
+    speakeasy-default-embeddings-v1-embeddings-post:
+      requestBody:
+        application/json: {"input": ["Embed this sentence.", "As well as this one."]}
+      responses:
+        "200":
+          application/json: {"id": "cmpl-e5cc70bb28c444948073e77776eb30ef", "object": "chat.completion", "model": "mistral-small-latest", "usage": {"prompt_tokens": 16, "completion_tokens": 34, "total_tokens": 50}, "data": [{"object": "embedding", "embedding": [0.1, 0.2, 0.3], "index": 0}]}
+        "422": {}
+  moderations_v1_moderations_post:
+    speakeasy-default-moderations-v1-moderations-post:
+      requestBody:
+        application/json: {"input": "<value>"}
+      responses:
+        "200":
+          application/json: {"id": "mod-e5cc70bb28c444948073e77776eb30ef"}
+        "422": {}
+  moderations_chat_v1_chat_moderations_post:
+    speakeasy-default-moderations-chat-v1-chat-moderations-post:
+      requestBody:
+        application/json: {"input": [[{"content": "<value>"}, {"content": "<value>"}, {"content": "<value>"}]], "model": "Prius"}
+      responses:
+        "200":
+          application/json: {"id": "mod-e5cc70bb28c444948073e77776eb30ef"}
+        "422": {}

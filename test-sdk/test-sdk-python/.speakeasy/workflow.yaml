@@ -1,0 +1,16 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    TestSdk-OAS:
+        inputs:
+            - location: ../openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/orq/orq/test-sdk-oas
+targets:
+    test-sdk:
+        target: python
+        source: TestSdk-OAS
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/orq/orq/test-sdk-oas-code-samples
+            blocking: false

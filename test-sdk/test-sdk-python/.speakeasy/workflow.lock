@@ -1,0 +1,33 @@
+speakeasyVersion: 1.440.0
+sources:
+    TestSdk-OAS:
+        sourceNamespace: test-sdk-oas
+        sourceRevisionDigest: sha256:998df6cf5fd14a19b2bd70eeaf249def44053917c60a9fd01df85ea06f8f1597
+        sourceBlobDigest: sha256:a38521662df585c1112851f6856a6fb671f91b6ae333ce9c315537dc391f79ec
+        tags:
+            - latest
+targets:
+    test-sdk:
+        source: TestSdk-OAS
+        sourceNamespace: test-sdk-oas
+        sourceRevisionDigest: sha256:998df6cf5fd14a19b2bd70eeaf249def44053917c60a9fd01df85ea06f8f1597
+        sourceBlobDigest: sha256:a38521662df585c1112851f6856a6fb671f91b6ae333ce9c315537dc391f79ec
+        codeSamplesNamespace: test-sdk-oas-code-samples
+        codeSamplesRevisionDigest: sha256:5e78aac3ec2346593c8689f91abd4ba30e67121064310d2718fd57864107d45e
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        TestSdk-OAS:
+            inputs:
+                - location: ../openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/orq/orq/test-sdk-oas
+    targets:
+        test-sdk:
+            target: python
+            source: TestSdk-OAS
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/orq/orq/test-sdk-oas-code-samples
+                blocking: false
