@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "orq-poc-python-client"
-version = "0.5.0"
+version = "0.5.1"
 description = "Python Client SDK Generated for the Orq API."
 authors = ["Orq",]
 readme = "README-PYPI.md"
