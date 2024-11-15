@@ -54,7 +54,6 @@ Files are used to upload documents that can be used with features like [Deployme
 ### Example Usage
 
 ```python
-import orq_poc_python_client
 from orq_poc_python_client import Orq
 import os
 
@@ -67,7 +66,7 @@ res = s.files.bulk_upload(files=[
         "file_name": "example.file",
         "content": open("example.file", "rb"),
     },
-], purpose=orq_poc_python_client.BulkFileUploadPurpose.RETRIEVAL)
+], purpose="retrieval")
 
 if res is not None:
     # handle response

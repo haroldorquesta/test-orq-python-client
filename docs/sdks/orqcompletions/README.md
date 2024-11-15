@@ -14,7 +14,6 @@ For sending requests to chat completion models
 ### Example Usage
 
 ```python
-import orq_poc_python_client
 from orq_poc_python_client import Orq
 import os
 
@@ -24,22 +23,22 @@ s = Orq(
 
 res = s.router.chat.completions.create(model="Fiesta", messages=[
     {
-        "role": orq_poc_python_client.RouterChatCompletionsMessagesRole.USER,
+        "role": "user",
         "content": "<value>",
     },
     {
-        "role": orq_poc_python_client.MessagesRole.SYSTEM,
+        "role": "system",
         "content": [
             {
-                "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                "type": "text",
                 "text": "<value>",
             },
             {
-                "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                "type": "text",
                 "text": "<value>",
             },
             {
-                "type": orq_poc_python_client.RouterChatCompletions2Type.TEXT,
+                "type": "text",
                 "text": "<value>",
             },
         ],
