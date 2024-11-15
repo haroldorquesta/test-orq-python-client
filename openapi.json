@@ -63,7 +63,7 @@ components:
     ReportFeedbackRequest:
       type: object
       properties:
-        property2:
+        property:
           type: string
           description: A string describing the specific property or aspect rated.
         value:
@@ -77,13 +77,13 @@ components:
           type: string
           description: The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints
       required:
-        - property2
+        - property
         - value
         - trace_id
     ReportFeedbackResponse:
       type: object
       properties:
-        property2:
+        property:
           type: string
           description: A string describing the specific property or aspect rated.
         value:
@@ -99,7 +99,7 @@ components:
         id:
           type: string
       required:
-        - property2
+        - property
         - value
         - trace_id
         - id
@@ -34810,7 +34810,7 @@ paths:
             schema:
               type: object
               properties:
-                property2:
+                property:
                   type: string
                   description: A string describing the specific property or aspect rated.
                 value:
@@ -34824,13 +34824,13 @@ paths:
                   type: string
                   description: The id returned by the [`get_config`]() or [`invoke`](https://docs.orq.ai/reference/post_deployments-invoke-1) endpoints
               required:
-                - property2
+                - property
                 - value
                 - trace_id
             example:
               value:
                 - good
-              property2: rating
+              property: rating
               trace_id: 67HTZ65Z9W91HSF51CW68KK1QH
       responses:
         '200':
@@ -34840,7 +34840,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  property2:
+                  property:
                     type: string
                     description: A string describing the specific property or aspect rated.
                   value:
@@ -34856,7 +34856,7 @@ paths:
                   id:
                     type: string
                 required:
-                  - property2
+                  - property
                   - value
                   - trace_id
                   - id
@@ -35412,7 +35412,6 @@ paths:
         - public
       x-speakeasy-group: deployments
       x-speakeasy-name-override: invoke
-      x-internal: true
       operationId: DeploymentInvoke
       description: Invoke a deployment with a given payload
       summary: Invoke

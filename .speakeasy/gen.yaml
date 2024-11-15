@@ -22,7 +22,7 @@ python:
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   description: Python Client SDK Generated for the Orq API.
-  enumFormat: union
+  enumFormat: enum
   envVarPrefix: ORQ
   fixFlags:
     responseRequiredSep2024: true
