@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 30923d32-a782-4297-8a44-2a8c9d8fa755
 management:
-  docChecksum: 3db30b2ad10edf37047739e8af0c9a29
+  docChecksum: cf6b1e607bdc89b4013a962aa18b39f2
   docVersion: "2.0"
-  speakeasyVersion: 1.438.1
-  generationVersion: 2.457.2
-  releaseVersion: 0.4.0
-  configChecksum: aeaed02791b5f3d7b886357bbd8b6481
+  speakeasyVersion: 1.440.0
+  generationVersion: 2.457.9
+  releaseVersion: 0.5.0
+  configChecksum: 01596126a32069fcbdb5629032ceaaf7
   repoURL: https://github.com/haroldorquesta/test-orq-python-client.git
   installationURL: https://github.com/haroldorquesta/test-orq-python-client.git
   published: true
@@ -15,9 +15,8 @@ features:
     acceptHeaders: 3.0.0
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.4
-    core: 5.6.4
+    core: 5.6.5
     defaultEnabledRetries: 0.2.0
-    devContainers: 3.0.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.2
     flatRequests: 1.0.1
@@ -42,9 +41,6 @@ features:
     unions: 3.0.3
     uploadStreams: 1.0.0
 generatedFiles:
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
   - .gitattributes
   - .python-version
   - .vscode/settings.json
@@ -651,10 +647,10 @@ examples:
   CreateFeedback:
     "":
       requestBody:
-        application/json: {"property": "rating", "value": ["good"], "trace_id": "67HTZ65Z9W91HSF51CW68KK1QH"}
+        application/json: {"property2": "rating", "value": ["good"], "trace_id": "67HTZ65Z9W91HSF51CW68KK1QH"}
       responses:
         "200":
-          application/json: {"property": "<value>", "value": "<value>", "trace_id": "<id>", "id": "<id>"}
+          application/json: {"property2": "<value>", "value": "<value>", "trace_id": "<id>", "id": "<id>"}
   DeploymentGetConfig:
     speakeasy-default-deployment-get-config:
       requestBody:
